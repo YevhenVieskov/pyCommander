@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1143</width>
+    <height>745</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>10</y>
+      <width>1141</width>
+      <height>661</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QComboBox" name="comboBox"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTabWidget" name="tabWidget">
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="tab">
+            <attribute name="title">
+             <string>Tab 1</string>
+            </attribute>
+           </widget>
+           <widget class="QWidget" name="tab_2">
+            <attribute name="title">
+             <string>Tab 2</string>
+            </attribute>
+            <widget class="QTreeView" name="treeView">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>351</width>
+               <height>391</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QComboBox" name="comboBox_2"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QTabWidget" name="tabWidget_2">
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <widget class="QWidget" name="tab_3">
+            <attribute name="title">
+             <string>Tab 1</string>
+            </attribute>
+            <widget class="QTreeView" name="treeView_2">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>331</width>
+               <height>391</height>
+              </rect>
+             </property>
+            </widget>
+           </widget>
+           <widget class="QWidget" name="tab_4">
+            <attribute name="title">
+             <string>Tab 2</string>
+            </attribute>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFontComboBox" name="fontComboBox"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>F3 View</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>F4 Edit </string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="text">
+          <string>F5 Copy</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="text">
+          <string>F6 Move</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string>F7 New Folder</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="text">
+          <string>F8 Delete</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_7">
+         <property name="text">
+          <string>Alt+F4 Exit</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1143</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuPrint">
+     <property name="title">
+      <string>Print</string>
+     </property>
+     <addaction name="actionFile_List"/>
+     <addaction name="actionFile_list_with_subdirs"/>
+     <addaction name="actionFile_contents"/>
+    </widget>
+    <addaction name="actionChange_Attributes"/>
+    <addaction name="actionPack"/>
+    <addaction name="actionUnpack_Specific_Files"/>
+    <addaction name="actionTest_Archive_s"/>
+    <addaction name="actionCompare_by_Content"/>
+    <addaction name="actionAssociate_With"/>
+    <addaction name="actionInternal_Associations_pyCommander_only"/>
+    <addaction name="actionProperties"/>
+    <addaction name="actionCalculate_Occupied_Space"/>
+    <addaction name="actionMulti_Rename_Tool"/>
+    <addaction name="actionEdit_Comment"/>
+    <addaction name="menuPrint"/>
+    <addaction name="separator"/>
+    <addaction name="actionSplit_File"/>
+    <addaction name="actionCombine_File"/>
+    <addaction name="actionEncode_File"/>
+    <addaction name="actionDecode_File"/>
+    <addaction name="actionCreate_Checksum_File_s_CRC32_MD5_SHAT"/>
+    <addaction name="actionVerify_Checksum_from_checksum_files"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuMark">
+    <property name="title">
+     <string>Mark</string>
+    </property>
+    <addaction name="actionSelect_Group"/>
+    <addaction name="actionUnselect_Group"/>
+    <addaction name="actionSelect_All"/>
+    <addaction name="actionUnselect_All"/>
+    <addaction name="actionInvert_Selection"/>
+    <addaction name="actionSelect_All_With_Same_Extension"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_Selection"/>
+    <addaction name="actionRestore_Selection"/>
+    <addaction name="actionSave_Selection_To_File"/>
+    <addaction name="actionLoad_Selection_From_File"/>
+    <addaction name="separator"/>
+    <addaction name="actionCopy_Selected_Names_To_Clipboard"/>
+    <addaction name="actionCopy_Names_With_Path_To_Clipboard"/>
+    <addaction name="actionCopy_To_Clipboard_With_All_Details"/>
+    <addaction name="actionCopy_To_Clipboard_With_Path_Details"/>
+    <addaction name="separator"/>
+    <addaction name="actionCompare_Directories"/>
+    <addaction name="actionMark_Newer_Hide_Same_Files"/>
+   </widget>
+   <widget class="QMenu" name="menuCommands">
+    <property name="title">
+     <string>Commands</string>
+    </property>
+    <addaction name="actionCD_Tree"/>
+    <addaction name="actionSearch"/>
+    <addaction name="actionSearch_in_separate_Process"/>
+    <addaction name="actionVolume_Label"/>
+    <addaction name="actionSystem_Information"/>
+    <addaction name="actionSynchronize_Dirs"/>
+    <addaction name="actionDirectory_Hotlist"/>
+    <addaction name="actionGo_Back"/>
+    <addaction name="separator"/>
+    <addaction name="actionOpen_command_prompt_window"/>
+    <addaction name="actionBranch_View"/>
+    <addaction name="actionOpen_Desktop_Folder"/>
+    <addaction name="actionBackground_Transfer_Manager"/>
+    <addaction name="actionSource_Target"/>
+    <addaction name="actionTarget_Source"/>
+   </widget>
+   <widget class="QMenu" name="menuNet">
+    <property name="title">
+     <string>Net</string>
+    </property>
+    <addaction name="actionNetwork_Connections"/>
+    <addaction name="actionDisconnect_Network_Drives"/>
+    <addaction name="actionShare_Current_Directory"/>
+    <addaction name="actionUnshare_Directory"/>
+    <addaction name="actionShow_Admin_Shares"/>
+    <addaction name="separator"/>
+    <addaction name="actionFTP_Connect"/>
+    <addaction name="actionFTP_New_Connection"/>
+    <addaction name="actionFTP_Disconnect"/>
+    <addaction name="actionFTP_Show_Hidden_Files"/>
+    <addaction name="actionFTP_Download_From_List"/>
+    <addaction name="actionPORT_Connection_To_Other_PC"/>
+   </widget>
+   <widget class="QMenu" name="menuShow">
+    <property name="title">
+     <string>Show</string>
+    </property>
+    <addaction name="actionBrief"/>
+    <addaction name="actionFull"/>
+    <addaction name="actionComments"/>
+    <addaction name="actionCustom_Columns_Mode"/>
+    <addaction name="actionCustom_View_Modes"/>
+    <addaction name="actionTree"/>
+    <addaction name="actionSeparate_Tree"/>
+    <addaction name="actionThumbnail_View"/>
+    <addaction name="actionQuick_View_Panel"/>
+    <addaction name="actionVertical_Arrangement"/>
+    <addaction name="actionNew_Folder_Tab"/>
+    <addaction name="separator"/>
+    <addaction name="actionAll_Files"/>
+    <addaction name="actionPrograms"/>
+    <addaction name="action_3"/>
+    <addaction name="actionCustom"/>
+    <addaction name="actionOnly_Selected_Files"/>
+    <addaction name="separator"/>
+    <addaction name="actionName"/>
+    <addaction name="actionExtension"/>
+    <addaction name="actionTime"/>
+    <addaction name="actionSize"/>
+    <addaction name="actionUnsorted"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuonfiguration">
+    <property name="title">
+     <string>Configuration</string>
+    </property>
+    <addaction name="actionButton_Bar"/>
+    <addaction name="actionButton_Bar2"/>
+    <addaction name="actionChange_Settings_Files_Directly"/>
+    <addaction name="actionSave_Position"/>
+    <addaction name="actionSave_Settings"/>
+   </widget>
+   <widget class="QMenu" name="menuStart">
+    <property name="title">
+     <string>Start</string>
+    </property>
+    <addaction name="actionChange_Start_Menu"/>
+    <addaction name="actionChange_Main_Menu"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuMark"/>
+   <addaction name="menuCommands"/>
+   <addaction name="menuNet"/>
+   <addaction name="menuShow"/>
+   <addaction name="menuonfiguration"/>
+   <addaction name="menuStart"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+  </widget>
+  <action name="actionChange_Attributes">
+   <property name="text">
+    <string>Change Attributes</string>
+   </property>
+  </action>
+  <action name="actionPack">
+   <property name="text">
+    <string>Pack</string>
+   </property>
+  </action>
+  <action name="actionUnpack_Specific_Files">
+   <property name="text">
+    <string>Unpack Specific Files</string>
+   </property>
+  </action>
+  <action name="actionTest_Archive_s">
+   <property name="text">
+    <string>Test Archive(s)</string>
+   </property>
+  </action>
+  <action name="actionCompare_by_Content">
+   <property name="text">
+    <string>Compare by Content</string>
+   </property>
+  </action>
+  <action name="actionAssociate_With">
+   <property name="text">
+    <string>Associate With...</string>
+   </property>
+  </action>
+  <action name="actionInternal_Associations_pyCommander_only">
+   <property name="text">
+    <string>Internal Associations (pyCommander only)</string>
+   </property>
+  </action>
+  <action name="actionProperties">
+   <property name="text">
+    <string>Properties</string>
+   </property>
+  </action>
+  <action name="actionCalculate_Occupied_Space">
+   <property name="text">
+    <string>Calculate Occupied Space...</string>
+   </property>
+  </action>
+  <action name="actionMulti_Rename_Tool">
+   <property name="text">
+    <string>Multi-Rename Tool...</string>
+   </property>
+  </action>
+  <action name="actionEdit_Comment">
+   <property name="text">
+    <string>Edit Comment...</string>
+   </property>
+  </action>
+  <action name="actionFile_List">
+   <property name="text">
+    <string>File List</string>
+   </property>
+  </action>
+  <action name="actionFile_list_with_subdirs">
+   <property name="text">
+    <string>File list with subdirs...</string>
+   </property>
+  </action>
+  <action name="actionFile_contents">
+   <property name="text">
+    <string>File contents</string>
+   </property>
+  </action>
+  <action name="actionSplit_File">
+   <property name="text">
+    <string>Split File ...</string>
+   </property>
+  </action>
+  <action name="actionCombine_File">
+   <property name="text">
+    <string>Combine File...</string>
+   </property>
+  </action>
+  <action name="actionEncode_File">
+   <property name="text">
+    <string>Encode File (MIME,UUE,XXE)...</string>
+   </property>
+  </action>
+  <action name="actionDecode_File">
+   <property name="text">
+    <string>Decode File(MIME,UUE,XXE,BinHex)...</string>
+   </property>
+  </action>
+  <action name="actionCreate_Checksum_File_s_CRC32_MD5_SHAT">
+   <property name="text">
+    <string>Create Checksum File(s) (CRC32,MD5,SHAT)...</string>
+   </property>
+  </action>
+  <action name="actionVerify_Checksum_from_checksum_files">
+   <property name="text">
+    <string>Verify Checksum (from checksum files)</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionSelect_Group">
+   <property name="text">
+    <string>Select Group...</string>
+   </property>
+  </action>
+  <action name="actionUnselect_Group">
+   <property name="text">
+    <string>Unselect Group...</string>
+   </property>
+  </action>
+  <action name="actionSelect_All">
+   <property name="text">
+    <string>Select All</string>
+   </property>
+  </action>
+  <action name="actionUnselect_All">
+   <property name="text">
+    <string>Unselect All</string>
+   </property>
+  </action>
+  <action name="actionInvert_Selection">
+   <property name="text">
+    <string>Invert Selection</string>
+   </property>
+  </action>
+  <action name="actionSelect_All_With_Same_Extension">
+   <property name="text">
+    <string>Select All With Same Extension</string>
+   </property>
+  </action>
+  <action name="actionSave_Selection">
+   <property name="text">
+    <string>Save Selection</string>
+   </property>
+  </action>
+  <action name="actionRestore_Selection">
+   <property name="text">
+    <string>Restore Selection</string>
+   </property>
+  </action>
+  <action name="actionSave_Selection_To_File">
+   <property name="text">
+    <string>Save Selection To File</string>
+   </property>
+  </action>
+  <action name="actionLoad_Selection_From_File">
+   <property name="text">
+    <string>Load Selection From File</string>
+   </property>
+  </action>
+  <action name="actionCopy_Selected_Names_To_Clipboard">
+   <property name="text">
+    <string>Copy Selected Names To Clipboard</string>
+   </property>
+  </action>
+  <action name="actionCopy_Names_With_Path_To_Clipboard">
+   <property name="text">
+    <string>Copy Names With Path To Clipboard</string>
+   </property>
+  </action>
+  <action name="actionCopy_To_Clipboard_With_All_Details">
+   <property name="text">
+    <string>Copy To Clipboard With All Details</string>
+   </property>
+  </action>
+  <action name="actionCopy_To_Clipboard_With_Path_Details">
+   <property name="text">
+    <string>Copy To Clipboard With Path + Details</string>
+   </property>
+  </action>
+  <action name="actionCompare_Directories">
+   <property name="text">
+    <string>Compare Directories</string>
+   </property>
+  </action>
+  <action name="actionMark_Newer_Hide_Same_Files">
+   <property name="text">
+    <string>Mark Newer, Hide Same Files</string>
+   </property>
+  </action>
+  <action name="actionCD_Tree">
+   <property name="text">
+    <string>CD Tree</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </action>
+  <action name="actionSearch_in_separate_Process">
+   <property name="text">
+    <string>Search in separate Process</string>
+   </property>
+  </action>
+  <action name="actionVolume_Label">
+   <property name="text">
+    <string>Volume Label...</string>
+   </property>
+  </action>
+  <action name="actionSystem_Information">
+   <property name="text">
+    <string>System Information...</string>
+   </property>
+  </action>
+  <action name="actionSynchronize_Dirs">
+   <property name="text">
+    <string>Synchronize Dirs...</string>
+   </property>
+  </action>
+  <action name="actionDirectory_Hotlist">
+   <property name="text">
+    <string>Directory Hotlist</string>
+   </property>
+  </action>
+  <action name="actionGo_Back">
+   <property name="text">
+    <string>Go Back</string>
+   </property>
+  </action>
+  <action name="actionOpen_command_prompt_window">
+   <property name="text">
+    <string>Open command prompt window</string>
+   </property>
+  </action>
+  <action name="actionBranch_View">
+   <property name="text">
+    <string>Branch View</string>
+   </property>
+  </action>
+  <action name="actionOpen_Desktop_Folder">
+   <property name="text">
+    <string>Open Desktop Folder</string>
+   </property>
+  </action>
+  <action name="actionBackground_Transfer_Manager">
+   <property name="text">
+    <string>Background Transfer Manager...</string>
+   </property>
+  </action>
+  <action name="actionSource_Target">
+   <property name="text">
+    <string>Source&lt;-&gt;Target</string>
+   </property>
+  </action>
+  <action name="actionTarget_Source">
+   <property name="text">
+    <string>Target&lt;-&gt;Source</string>
+   </property>
+  </action>
+  <action name="actionNetwork_Connections">
+   <property name="text">
+    <string>Network Connections...</string>
+   </property>
+  </action>
+  <action name="actionDisconnect_Network_Drives">
+   <property name="text">
+    <string>Disconnect Network Drives...</string>
+   </property>
+  </action>
+  <action name="actionShare_Current_Directory">
+   <property name="text">
+    <string>Share Current Directory...</string>
+   </property>
+  </action>
+  <action name="actionUnshare_Directory">
+   <property name="text">
+    <string>Unshare Directory...</string>
+   </property>
+  </action>
+  <action name="actionShow_Admin_Shares">
+   <property name="text">
+    <string>Show Admin Shares</string>
+   </property>
+  </action>
+  <action name="actionFTP_Connect">
+   <property name="text">
+    <string>FTP Connect...</string>
+   </property>
+  </action>
+  <action name="actionFTP_New_Connection">
+   <property name="text">
+    <string>FTP New Connection...</string>
+   </property>
+  </action>
+  <action name="actionFTP_Disconnect">
+   <property name="text">
+    <string>FTP Disconnect</string>
+   </property>
+  </action>
+  <action name="actionFTP_Show_Hidden_Files">
+   <property name="text">
+    <string>FTP Show Hidden Files</string>
+   </property>
+  </action>
+  <action name="actionFTP_Download_From_List">
+   <property name="text">
+    <string>FTP Download From List...</string>
+   </property>
+  </action>
+  <action name="actionPORT_Connection_To_Other_PC">
+   <property name="text">
+    <string>PORT Connection To Other PC</string>
+   </property>
+  </action>
+  <action name="actionBrief">
+   <property name="text">
+    <string>Brief</string>
+   </property>
+  </action>
+  <action name="actionFull">
+   <property name="text">
+    <string>Full</string>
+   </property>
+  </action>
+  <action name="actionComments">
+   <property name="text">
+    <string>Comments</string>
+   </property>
+  </action>
+  <action name="actionCustom_Columns_Mode">
+   <property name="text">
+    <string>Custom Columns Mode</string>
+   </property>
+  </action>
+  <action name="actionCustom_View_Modes">
+   <property name="text">
+    <string>Custom View Modes</string>
+   </property>
+  </action>
+  <action name="actionTree">
+   <property name="text">
+    <string>Tree</string>
+   </property>
+  </action>
+  <action name="actionSeparate_Tree">
+   <property name="text">
+    <string>Separate Tree</string>
+   </property>
+  </action>
+  <action name="actionThumbnail_View">
+   <property name="text">
+    <string>Thumbnail View</string>
+   </property>
+  </action>
+  <action name="actionQuick_View_Panel">
+   <property name="text">
+    <string>Quick View Panel</string>
+   </property>
+  </action>
+  <action name="actionVertical_Arrangement">
+   <property name="text">
+    <string>Vertical Arrangement</string>
+   </property>
+  </action>
+  <action name="actionNew_Folder_Tab">
+   <property name="text">
+    <string>New Folder Tab</string>
+   </property>
+  </action>
+  <action name="actionAll_Files">
+   <property name="text">
+    <string>All Files</string>
+   </property>
+  </action>
+  <action name="actionPrograms">
+   <property name="text">
+    <string>Programs</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>*.*</string>
+   </property>
+  </action>
+  <action name="actionCustom">
+   <property name="text">
+    <string>Custom...</string>
+   </property>
+  </action>
+  <action name="actionOnly_Selected_Files">
+   <property name="text">
+    <string>Only Selected Files</string>
+   </property>
+  </action>
+  <action name="actionName">
+   <property name="text">
+    <string>Name</string>
+   </property>
+  </action>
+  <action name="actionExtension">
+   <property name="text">
+    <string>Extension</string>
+   </property>
+  </action>
+  <action name="actionTime">
+   <property name="text">
+    <string>Time</string>
+   </property>
+  </action>
+  <action name="actionSize">
+   <property name="text">
+    <string>Size</string>
+   </property>
+  </action>
+  <action name="actionUnsorted">
+   <property name="text">
+    <string>Unsorted</string>
+   </property>
+  </action>
+  <action name="actionButton_Bar">
+   <property name="text">
+    <string>Button Bar</string>
+   </property>
+  </action>
+  <action name="actionButton_Bar2">
+   <property name="text">
+    <string>Button Bar2(Vertical)</string>
+   </property>
+  </action>
+  <action name="actionChange_Settings_Files_Directly">
+   <property name="text">
+    <string>Change Settings Files Directly</string>
+   </property>
+  </action>
+  <action name="actionSave_Position">
+   <property name="text">
+    <string>Save Position</string>
+   </property>
+  </action>
+  <action name="actionSave_Settings">
+   <property name="text">
+    <string>Save Settings</string>
+   </property>
+  </action>
+  <action name="actionChange_Start_Menu">
+   <property name="text">
+    <string>Change Start Menu</string>
+   </property>
+  </action>
+  <action name="actionChange_Main_Menu">
+   <property name="text">
+    <string>Change Main Menu</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

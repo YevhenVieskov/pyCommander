@@ -69,6 +69,20 @@ initHeigh = 768
         self.helpContentAction = QAction("&Help Content", self)
         self.aboutAction = QAction("&About", self)
 '''
+
+'''
+button = QtWidgets.QPushButton("Закрыть окно", window)
+button.setFixedSize(150, 30)
+button.move(75, 20)
+button.setToolTip("Это всплывающая подсказка для кнопки")
+button.setToolTipDuration(3000)
+window.setToolTip("Это всплывающая подсказка для окна")
+button.setToolTipDuration(5000)
+button.setWhatsThis("Это справка для кнопки")
+window.setWhatsThis("Это справка для окна")
+button.clicked.connect(QtWidgets.qApp.quit)
+'''
+
 #paths to icons 
 #File
 change_attributes_icon = 'pyCommander/icons/menu/file/change_attributes.png'
@@ -190,7 +204,8 @@ class customAction(QAction):
             self.setStatusTip(name)
             self.triggered.connect(change_attributes)
 
-
+class FileManagerActions:
+    pass
 
 
 '''class exitAction(QAction):
@@ -203,6 +218,24 @@ class customAction(QAction):
 '''
 
 
+class ButtomToolbar(QWidget):
+
+    def __init__(self, parent):
+        super(ButtomToolbar, self).__init__()
+        self.parent = parent
+        self.layout = QHBoxLayout()
+        self.layout.setContentsMargins(0, 0, 0, 0)
+        #self._createActions()
+        #self.menu_bar = QMenuBar()
+        #self.menu_file = self.menu_bar.addMenu("&Files")
+        # Create a QHBoxLayout instance
+        layout = QHBoxLayout()
+        # Add widgets to the layout
+        layout.addWidget(QPushButton("Left-Most"))
+        layout.addWidget(QPushButton("Center"), 1)
+        layout.addWidget(QPushButton("Right-Most"), 2)
+        # Set the layout on the application's window
+        self.setLayout(layout)
 
 
 
