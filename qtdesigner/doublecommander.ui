@@ -1,0 +1,1166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>987</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>987</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFiles">
+    <property name="title">
+     <string>Files</string>
+    </property>
+    <addaction name="actionCreate_Symbolic_Link"/>
+    <addaction name="actionCreate_Hard_Link"/>
+    <addaction name="actionCreate_Directory"/>
+    <addaction name="actionCreate_Shortcut"/>
+    <addaction name="separator"/>
+    <addaction name="actionChange_Attributes"/>
+    <addaction name="actionShow_File_Properties"/>
+    <addaction name="actionEdit_Comment"/>
+    <addaction name="actionCalculate_Occupied_Space"/>
+    <addaction name="actionCompare_by_Contents"/>
+    <addaction name="actionMulti_Rename_Tool"/>
+    <addaction name="separator"/>
+    <addaction name="actionPack_Files"/>
+    <addaction name="actionExtract_Files"/>
+    <addaction name="actionTest_Archive_s"/>
+    <addaction name="actionSplit_File"/>
+    <addaction name="actionCombine_Files"/>
+    <addaction name="actionCalculate_Checksum"/>
+    <addaction name="actionVerify_Checksum"/>
+    <addaction name="separator"/>
+    <addaction name="actionWipe"/>
+    <addaction name="actionDelete"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuMark">
+    <property name="title">
+     <string>Mark</string>
+    </property>
+    <addaction name="actionSelect_a_Group"/>
+    <addaction name="actionUnselect_a_Group"/>
+    <addaction name="actionSelect_All"/>
+    <addaction name="actionUnselect_All"/>
+    <addaction name="actionInvert_Selection"/>
+    <addaction name="actionSelect_All_with_the_Same_Extension"/>
+    <addaction name="actionUnselect_All_with_the_Same_Extension"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_Selection"/>
+    <addaction name="actionRestore_Selection"/>
+    <addaction name="actionSave_Selection_to_File"/>
+    <addaction name="actionLoad_Selection_from_File"/>
+    <addaction name="actionLoad_Selection_from_Clipboard"/>
+    <addaction name="separator"/>
+    <addaction name="actionCopy_Filename_s_to_Clipboard"/>
+    <addaction name="actionCopy_Filename_s_with_Full_Path"/>
+    <addaction name="actionCopy_all_shown_columns"/>
+    <addaction name="separator"/>
+    <addaction name="actionCompare_Directories"/>
+   </widget>
+   <widget class="QMenu" name="menuSearch">
+    <property name="title">
+     <string>Commands</string>
+    </property>
+    <addaction name="actionSearch"/>
+    <addaction name="actionNew_search_instance"/>
+    <addaction name="actionView_current_search_instances"/>
+    <addaction name="actionDirectory_Hotlist"/>
+    <addaction name="actionSynchronize_dirs"/>
+    <addaction name="separator"/>
+    <addaction name="actionRun_Terminal"/>
+    <addaction name="actionExecute_internal_command"/>
+    <addaction name="separator"/>
+    <addaction name="actionFlat_view"/>
+    <addaction name="actionOpen_VFS_List"/>
+    <addaction name="actionSwap_Panels"/>
+    <addaction name="actionTarget_Source"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_Occupied_Space"/>
+   </widget>
+   <widget class="QMenu" name="menuNetwork">
+    <property name="title">
+     <string>Network</string>
+    </property>
+    <addaction name="actionNetwork_Connect"/>
+    <addaction name="actionNetwork_Disconnect"/>
+    <addaction name="separator"/>
+    <addaction name="actionMap_Network_Drive"/>
+    <addaction name="actionDisconnect_Network_Drive"/>
+    <addaction name="separator"/>
+    <addaction name="actionCopy_names_with_UNC_path"/>
+   </widget>
+   <widget class="QMenu" name="menuTabs">
+    <property name="title">
+     <string>Tabs</string>
+    </property>
+    <widget class="QMenu" name="menuTab_Options">
+     <property name="title">
+      <string>Tab Options</string>
+     </property>
+     <addaction name="actionNormal"/>
+     <addaction name="actionLocked"/>
+     <addaction name="actionLocked_with_Directory_Changes_Allowed"/>
+     <addaction name="actionLocked_with_Directories_Opened_in_New_Tabs"/>
+     <addaction name="separator"/>
+     <addaction name="actionSet_all_tabs_to_Normal"/>
+     <addaction name="actionSet_all_tabs_to_Locked"/>
+     <addaction name="actionAll_tabs_Locked_with_Dir_Changes_Allowed"/>
+     <addaction name="actionAlltabs_Locked_with_Dir_Opened_in_New_Tabs"/>
+    </widget>
+    <addaction name="actionNew_Tab"/>
+    <addaction name="actionRename_Tab"/>
+    <addaction name="actionOpen_Folder_in_a_New_Tab"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose_Tab"/>
+    <addaction name="actionClose_All_Tabs"/>
+    <addaction name="actionClose_Duplicate_Tabs"/>
+    <addaction name="separator"/>
+    <addaction name="menuTab_Options"/>
+    <addaction name="separator"/>
+    <addaction name="actionSwitch_to_Next_Tab"/>
+    <addaction name="actionSwitch_to_Previous_Tab"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_Tabs_to_File"/>
+    <addaction name="actionLoad_Tabs_from_File"/>
+    <addaction name="actionSave_current_tabs_to_a_New_FavoriteTabs"/>
+    <addaction name="actionLoad_tabs_from_Favorite_Tabs"/>
+    <addaction name="separator"/>
+    <addaction name="actionConfiguration_of_folder_tabs"/>
+    <addaction name="actionConfiguration_of_Favorite_Tabs"/>
+   </widget>
+   <widget class="QMenu" name="menuFavorities">
+    <property name="title">
+     <string>Favorities</string>
+    </property>
+    <addaction name="actionSave_current_tabs_to_a_New_Favorite_Tabs"/>
+    <addaction name="actionResave_on_the_last_Favorite_Tabs_loaded"/>
+    <addaction name="actionRelopad_the_last_Favorite_Tabs_loaded"/>
+    <addaction name="actionConfiguration_of_Favorite_Tabs_2"/>
+   </widget>
+   <widget class="QMenu" name="menuShow">
+    <property name="title">
+     <string>Show</string>
+    </property>
+    <addaction name="actionBrief_view"/>
+    <addaction name="actionFull"/>
+    <addaction name="actionThumbnails"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuick_View_Panel"/>
+    <addaction name="actionTree_View_Panel"/>
+    <addaction name="actionSort_by_Name"/>
+    <addaction name="actionSort_by_Extension"/>
+    <addaction name="actionSort_by_Size"/>
+    <addaction name="actionSort_by_Date"/>
+    <addaction name="actionSort_by_Attributes"/>
+    <addaction name="separator"/>
+    <addaction name="actionReverse_Order"/>
+    <addaction name="actionRefresh"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_Hidden_System_Files"/>
+    <addaction name="separator"/>
+    <addaction name="actionHorizontal_Panels_Mode"/>
+    <addaction name="separator"/>
+    <addaction name="actionOperations_Viewer"/>
+   </widget>
+   <widget class="QMenu" name="menuConfiguration">
+    <property name="title">
+     <string>Configuration</string>
+    </property>
+    <addaction name="actionOptions"/>
+    <addaction name="actionConfiguration_of_Directory_Hotlist"/>
+    <addaction name="actionConfiguration_of_Favorite_Tabs_4"/>
+    <addaction name="actionConfiguration_of_File_Associations"/>
+    <addaction name="actionConfiguration_of_folder_tabs_2"/>
+    <addaction name="actionConfiguration_of_Archivers"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave_Position"/>
+    <addaction name="actionSave_Settings"/>
+   </widget>
+   <widget class="QMenu" name="menuContents">
+    <property name="title">
+     <string>Contents</string>
+    </property>
+    <addaction name="actionKeyboard"/>
+    <addaction name="actionVisit_Double_Commander_Website"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFiles"/>
+   <addaction name="menuMark"/>
+   <addaction name="menuSearch"/>
+   <addaction name="menuNetwork"/>
+   <addaction name="menuTabs"/>
+   <addaction name="menuFavorities"/>
+   <addaction name="menuShow"/>
+   <addaction name="menuConfiguration"/>
+   <addaction name="menuContents"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionTB_Refresh"/>
+   <addaction name="actionTB_Run_Terminal"/>
+   <addaction name="actionTB_Options"/>
+   <addaction name="separator"/>
+   <addaction name="actionTB_Brief_view"/>
+   <addaction name="actionTB_Columns_View"/>
+   <addaction name="actionTB_Thumbnails"/>
+   <addaction name="separator"/>
+   <addaction name="actionTBFlat_view"/>
+   <addaction name="separator"/>
+   <addaction name="actionTB_Goto_Previous_entry_in_history"/>
+   <addaction name="actionTB_Goto_Previous_entry_in_history_2"/>
+   <addaction name="separator"/>
+   <addaction name="actionTB_Select_a_Group"/>
+   <addaction name="actionTB_Unselect_a_Group"/>
+   <addaction name="actionTB_Invert_Selection"/>
+   <addaction name="separator"/>
+   <addaction name="actionTB_Pack_Files"/>
+   <addaction name="actionTB_Extract_Files"/>
+   <addaction name="separator"/>
+   <addaction name="actionTB_Search"/>
+   <addaction name="actionTB_Multi_Rename_Tool"/>
+   <addaction name="actionTB_Synchronize_dirs"/>
+   <addaction name="actionTB_Copy_Filename_s_with_Full_Path"/>
+  </widget>
+  <action name="actionCreate_Symbolic_Link">
+   <property name="text">
+    <string>Create Symbolic Link...</string>
+   </property>
+  </action>
+  <action name="actionCreate_Hard_Link">
+   <property name="text">
+    <string>Create Hard Link...</string>
+   </property>
+  </action>
+  <action name="actionCreate_Directory">
+   <property name="text">
+    <string>Create Directory</string>
+   </property>
+   <property name="shortcut">
+    <string>F7</string>
+   </property>
+  </action>
+  <action name="actionCreate_Shortcut">
+   <property name="text">
+    <string>Create Shortcut...</string>
+   </property>
+  </action>
+  <action name="actionChange_Attributes">
+   <property name="text">
+    <string>Change Attributes...</string>
+   </property>
+  </action>
+  <action name="actionShow_File_Properties">
+   <property name="text">
+    <string>Show File Properties</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Return</string>
+   </property>
+  </action>
+  <action name="actionEdit_Comment">
+   <property name="text">
+    <string>Edit Comment...</string>
+   </property>
+  </action>
+  <action name="actionCalculate_Occupied_Space">
+   <property name="text">
+    <string>Calculate Occupied Space</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionCompare_by_Contents">
+   <property name="text">
+    <string>Compare by Contents</string>
+   </property>
+  </action>
+  <action name="actionMulti_Rename_Tool">
+   <property name="text">
+    <string>Multi-Rename Tool</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionPack_Files">
+   <property name="text">
+    <string>Pack Files...</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F5</string>
+   </property>
+  </action>
+  <action name="actionExtract_Files">
+   <property name="text">
+    <string>Extract Files...</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F9</string>
+   </property>
+  </action>
+  <action name="actionTest_Archive_s">
+   <property name="text">
+    <string>Test Archive(s)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Shift+F9</string>
+   </property>
+  </action>
+  <action name="actionSplit_File">
+   <property name="text">
+    <string>Split File...</string>
+   </property>
+  </action>
+  <action name="actionCombine_Files">
+   <property name="text">
+    <string>Combine Files...</string>
+   </property>
+  </action>
+  <action name="actionCalculate_Checksum">
+   <property name="text">
+    <string>Calculate Checksum...</string>
+   </property>
+  </action>
+  <action name="actionVerify_Checksum">
+   <property name="text">
+    <string>Verify Checksum...</string>
+   </property>
+  </action>
+  <action name="actionWipe">
+   <property name="text">
+    <string>Wipe</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Del</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+X</string>
+   </property>
+  </action>
+  <action name="actionSelect_a_Group">
+   <property name="text">
+    <string>Select  a Group...</string>
+   </property>
+  </action>
+  <action name="actionUnselect_a_Group">
+   <property name="text">
+    <string>Unselect a Group...</string>
+   </property>
+  </action>
+  <action name="actionSelect_All">
+   <property name="text">
+    <string>Select All</string>
+   </property>
+  </action>
+  <action name="actionUnselect_All">
+   <property name="text">
+    <string>Unselect All</string>
+   </property>
+  </action>
+  <action name="actionInvert_Selection">
+   <property name="text">
+    <string>Invert Selection</string>
+   </property>
+  </action>
+  <action name="actionSelect_All_with_the_Same_Extension">
+   <property name="text">
+    <string>Select All with the Same Extension</string>
+   </property>
+  </action>
+  <action name="actionUnselect_All_with_the_Same_Extension">
+   <property name="text">
+    <string>Unselect All with the Same Extension</string>
+   </property>
+  </action>
+  <action name="actionSave_Selection">
+   <property name="text">
+    <string>Save Selection</string>
+   </property>
+  </action>
+  <action name="actionRestore_Selection">
+   <property name="text">
+    <string>Restore Selection</string>
+   </property>
+  </action>
+  <action name="actionSave_Selection_to_File">
+   <property name="text">
+    <string>Save Selection to File...</string>
+   </property>
+  </action>
+  <action name="actionLoad_Selection_from_File">
+   <property name="text">
+    <string>Load Selection from File...</string>
+   </property>
+  </action>
+  <action name="actionLoad_Selection_from_Clipboard">
+   <property name="text">
+    <string>Load Selection from Clipboard</string>
+   </property>
+  </action>
+  <action name="actionCopy_Filename_s_to_Clipboard">
+   <property name="text">
+    <string>Copy Filename(s) to Clipboard</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+X</string>
+   </property>
+  </action>
+  <action name="actionCopy_Filename_s_with_Full_Path">
+   <property name="text">
+    <string>Copy Filename(s) with Full Path</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+  <action name="actionCopy_all_shown_columns">
+   <property name="text">
+    <string>Copy all shown columns</string>
+   </property>
+  </action>
+  <action name="actionCompare_Directories">
+   <property name="text">
+    <string>Compare Directories</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="text">
+    <string>Search...</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F7</string>
+   </property>
+  </action>
+  <action name="actionNew_search_instance">
+   <property name="text">
+    <string>New search instance...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F7</string>
+   </property>
+  </action>
+  <action name="actionView_current_search_instances">
+   <property name="text">
+    <string>View current search instances</string>
+   </property>
+  </action>
+  <action name="actionDirectory_Hotlist">
+   <property name="text">
+    <string>Directory Hotlist</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionSynchronize_dirs">
+   <property name="text">
+    <string>Synchronize dirs...</string>
+   </property>
+  </action>
+  <action name="actionRun_Terminal">
+   <property name="text">
+    <string>Run Terminal</string>
+   </property>
+   <property name="shortcut">
+    <string>F9</string>
+   </property>
+  </action>
+  <action name="actionExecute_internal_command">
+   <property name="text">
+    <string>Execute internal command...</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F12</string>
+   </property>
+  </action>
+  <action name="actionFlat_view">
+   <property name="text">
+    <string>Flat view</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionOpen_VFS_List">
+   <property name="text">
+    <string>Open VFS List</string>
+   </property>
+  </action>
+  <action name="actionSwap_Panels">
+   <property name="text">
+    <string>Swap Panels</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="actionTarget_Source">
+   <property name="text">
+    <string>Target = Source</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Z</string>
+   </property>
+  </action>
+  <action name="actionShow_Occupied_Space">
+   <property name="text">
+    <string>Show Occupied Space</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Shift+Return</string>
+   </property>
+  </action>
+  <action name="actionNetwork_Connect">
+   <property name="text">
+    <string>Network Connect...</string>
+   </property>
+  </action>
+  <action name="actionNetwork_Disconnect">
+   <property name="text">
+    <string>Network Disconnect</string>
+   </property>
+  </action>
+  <action name="actionMap_Network_Drive">
+   <property name="text">
+    <string>Map Network Drive...</string>
+   </property>
+  </action>
+  <action name="actionDisconnect_Network_Drive">
+   <property name="text">
+    <string>Disconnect Network Drive...</string>
+   </property>
+  </action>
+  <action name="actionCopy_names_with_UNC_path">
+   <property name="text">
+    <string>Copy_names_with_UNC_path</string>
+   </property>
+  </action>
+  <action name="actionNew_Tab">
+   <property name="text">
+    <string>New Tab</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionRename_Tab">
+   <property name="text">
+    <string>Rename Tab</string>
+   </property>
+  </action>
+  <action name="actionOpen_Folder_in_a_New_Tab">
+   <property name="text">
+    <string>Open Folder in a New Tab</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Up</string>
+   </property>
+  </action>
+  <action name="actionClose_Tab">
+   <property name="text">
+    <string>Close Tab</string>
+   </property>
+  </action>
+  <action name="actionClose_All_Tabs">
+   <property name="text">
+    <string>Close All Tabs</string>
+   </property>
+  </action>
+  <action name="actionClose_Duplicate_Tabs">
+   <property name="text">
+    <string>Close Duplicate Tabs</string>
+   </property>
+  </action>
+  <action name="actionSwitch_to_Next_Tab">
+   <property name="text">
+    <string>Switch to Next Tab</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Tab</string>
+   </property>
+  </action>
+  <action name="actionSwitch_to_Previous_Tab">
+   <property name="text">
+    <string>Switch to Previous Tab</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Tab</string>
+   </property>
+  </action>
+  <action name="actionSave_Tabs_to_File">
+   <property name="text">
+    <string>Save Tabs to File</string>
+   </property>
+  </action>
+  <action name="actionLoad_Tabs_from_File">
+   <property name="text">
+    <string>Load Tabs from File</string>
+   </property>
+  </action>
+  <action name="actionSave_current_tabs_to_a_New_FavoriteTabs">
+   <property name="text">
+    <string>Save current tabs to a New FavoriteTabs</string>
+   </property>
+  </action>
+  <action name="actionLoad_tabs_from_Favorite_Tabs">
+   <property name="text">
+    <string>Load tabs from Favorite Tabs</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_of_folder_tabs">
+   <property name="text">
+    <string>Configuration of folder tabs</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_of_Favorite_Tabs">
+   <property name="text">
+    <string>Configuration of Favorite Tabs</string>
+   </property>
+  </action>
+  <action name="actionNormal">
+   <property name="text">
+    <string>Normal</string>
+   </property>
+  </action>
+  <action name="actionLocked">
+   <property name="text">
+    <string>Locked</string>
+   </property>
+  </action>
+  <action name="actionLocked_with_Directory_Changes_Allowed">
+   <property name="text">
+    <string>Locked with Directory Changes Allowed</string>
+   </property>
+  </action>
+  <action name="actionLocked_with_Directories_Opened_in_New_Tabs">
+   <property name="text">
+    <string>Locked with Directories Opened in New Tabs</string>
+   </property>
+  </action>
+  <action name="actionSet_all_tabs_to_Normal">
+   <property name="text">
+    <string>Set all tabs to Normal</string>
+   </property>
+  </action>
+  <action name="actionSet_all_tabs_to_Locked">
+   <property name="text">
+    <string>Set all tabs to Locked</string>
+   </property>
+  </action>
+  <action name="actionAll_tabs_Locked_with_Dir_Changes_Allowed">
+   <property name="text">
+    <string>All tabs Locked with Dir Changes Allowed</string>
+   </property>
+  </action>
+  <action name="actionAlltabs_Locked_with_Dir_Opened_in_New_Tabs">
+   <property name="text">
+    <string>Alltabs Locked with Dir Opened in New Tabs</string>
+   </property>
+  </action>
+  <action name="actionSave_current_tabs_to_a_New_Favorite_Tabs">
+   <property name="text">
+    <string>Save current tabs to a New Favorite Tabs</string>
+   </property>
+  </action>
+  <action name="actionResave_on_the_last_Favorite_Tabs_loaded">
+   <property name="text">
+    <string>Resave on the last Favorite Tabs loaded</string>
+   </property>
+  </action>
+  <action name="actionRelopad_the_last_Favorite_Tabs_loaded">
+   <property name="text">
+    <string>Relopad the last Favorite Tabs loaded</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_of_Favorite_Tabs_2">
+   <property name="text">
+    <string>Configuration of Favorite Tabs</string>
+   </property>
+  </action>
+  <action name="actionBrief_view">
+   <property name="text">
+    <string>Brief view</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F1</string>
+   </property>
+  </action>
+  <action name="actionFull">
+   <property name="text">
+    <string>Full</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F2</string>
+   </property>
+  </action>
+  <action name="actionThumbnails">
+   <property name="text">
+    <string>Thumbnails</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F1</string>
+   </property>
+  </action>
+  <action name="actionQuick_View_Panel">
+   <property name="text">
+    <string>Quick View Panel</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionTree_View_Panel">
+   <property name="text">
+    <string>Tree View Panel</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F8</string>
+   </property>
+  </action>
+  <action name="actionSort_by_Name">
+   <property name="text">
+    <string>Sort by Name</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F3</string>
+   </property>
+  </action>
+  <action name="actionSort_by_Extension">
+   <property name="text">
+    <string>Sort by Extension</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F4</string>
+   </property>
+  </action>
+  <action name="actionSort_by_Size">
+   <property name="text">
+    <string>Sort by Size</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F6</string>
+   </property>
+  </action>
+  <action name="actionSort_by_Date">
+   <property name="text">
+    <string>Sort by Date</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F5</string>
+   </property>
+  </action>
+  <action name="actionSort_by_Attributes">
+   <property name="text">
+    <string>Sort by Attributes</string>
+   </property>
+  </action>
+  <action name="actionReverse_Order">
+   <property name="text">
+    <string>Reverse Order</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionShow_Hidden_System_Files">
+   <property name="text">
+    <string>Show Hidden/System Files</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+.</string>
+   </property>
+  </action>
+  <action name="actionHorizontal_Panels_Mode">
+   <property name="text">
+    <string>Horizontal Panels Mode</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+H</string>
+   </property>
+  </action>
+  <action name="actionOperations_Viewer">
+   <property name="text">
+    <string>Operations Viewer</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+V</string>
+   </property>
+  </action>
+  <action name="actionSave_current_tabs_to_a_New_Favorite_Tabs_2">
+   <property name="text">
+    <string>Save current tabs to a New Favorite Tabs</string>
+   </property>
+  </action>
+  <action name="actionResave_on_the_last_Favorite_Tabs_loaded_2">
+   <property name="text">
+    <string>Resave on the last Favorite Tabs loaded</string>
+   </property>
+  </action>
+  <action name="actionReload_the_last_Favorite_Tabs_loaded">
+   <property name="text">
+    <string>Reload the last Favorite Tabs loaded</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_of_Favorite_Tabs_3">
+   <property name="text">
+    <string>Configuration of Favorite Tabs</string>
+   </property>
+  </action>
+  <action name="actionOptions">
+   <property name="text">
+    <string>Options...</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_of_Directory_Hotlist">
+   <property name="text">
+    <string>Configuration of Directory Hotlist</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+D</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_of_Favorite_Tabs_4">
+   <property name="text">
+    <string>Configuration of Favorite Tabs</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_of_File_Associations">
+   <property name="text">
+    <string>Configuration of File Associations</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_of_folder_tabs_2">
+   <property name="text">
+    <string>Configuration of folder tabs</string>
+   </property>
+  </action>
+  <action name="actionConfiguration_of_Archivers">
+   <property name="text">
+    <string>Configuration of Archivers</string>
+   </property>
+  </action>
+  <action name="actionSave_Position">
+   <property name="text">
+    <string>Save Position</string>
+   </property>
+  </action>
+  <action name="actionSave_Settings">
+   <property name="text">
+    <string>Save Settings</string>
+   </property>
+  </action>
+  <action name="actionKeyboard">
+   <property name="text">
+    <string>Keyboard</string>
+   </property>
+  </action>
+  <action name="actionVisit_Double_Commander_Website">
+   <property name="text">
+    <string>Visit Double Commander Website</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionTB_Refresh">
+   <property name="icon">
+    <iconset>
+     <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png</normaloff>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png</normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionTB_Run_Terminal">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_runterm.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Run Terminal</string>
+   </property>
+   <property name="shortcut">
+    <string>F9</string>
+   </property>
+  </action>
+  <action name="actionTB_Options">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_options.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Options...</string>
+   </property>
+  </action>
+  <action name="actionTB_Brief_view">
+   <property name="icon">
+    <iconset>
+     <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png</normaloff>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png</normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png</iconset>
+   </property>
+   <property name="text">
+    <string>Brief view</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F1</string>
+   </property>
+  </action>
+  <action name="actionTB_Columns_View">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_columnsview.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Columns View</string>
+   </property>
+   <property name="toolTip">
+    <string>Columns view</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F2</string>
+   </property>
+  </action>
+  <action name="actionTB_Thumbnails">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_thumbnailsview.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Thumbnails</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F1</string>
+   </property>
+  </action>
+  <action name="actionTBFlat_view">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_flatview.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Flat view</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actionTB_Goto_Previous_entry_in_history">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_viewhistoryprev.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Go to previous entry in history</string>
+   </property>
+   <property name="toolTip">
+    <string>Go to previous entry in history (Alt+Left)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Left</string>
+   </property>
+  </action>
+  <action name="actionTB_Goto_Previous_entry_in_history_2">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_viewhistorynext.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Go to next entry in history</string>
+   </property>
+   <property name="toolTip">
+    <string>Go to next entry in history (Alt+Right)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+Right</string>
+   </property>
+  </action>
+  <action name="actionTB_Select_a_Group">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Select  a Group...</string>
+   </property>
+  </action>
+  <action name="actionTB_Unselect_a_Group">
+   <property name="icon">
+    <iconset>
+     <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markminus.png</normaloff>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png</normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markminus.png</iconset>
+   </property>
+   <property name="text">
+    <string>Unselect  a Group...</string>
+   </property>
+   <property name="toolTip">
+    <string>Unselect  a Group</string>
+   </property>
+  </action>
+  <action name="actionTB_Invert_Selection">
+   <property name="icon">
+    <iconset>
+     <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markinvert.png</normaloff>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png</normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markinvert.png</iconset>
+   </property>
+   <property name="text">
+    <string>Unelect  a Group...</string>
+   </property>
+   <property name="toolTip">
+    <string>Invert Selection</string>
+   </property>
+  </action>
+  <action name="actionTB_Pack_Files">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_packfiles.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Pack Files...</string>
+   </property>
+   <property name="toolTip">
+    <string>Pack Files... (Alt+F5)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F5</string>
+   </property>
+  </action>
+  <action name="actionTB_Extract_Files">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_extractfiles.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Extract Files...</string>
+   </property>
+   <property name="toolTip">
+    <string>Extract Files (Alt+F9)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F9</string>
+   </property>
+  </action>
+  <action name="actionTB_Search">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_search.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Search...</string>
+   </property>
+   <property name="toolTip">
+    <string>Search... (Alt+F7)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+F7</string>
+   </property>
+  </action>
+  <action name="actionTB_Multi_Rename_Tool">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_multirename.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Multi-Rename Tool</string>
+   </property>
+   <property name="toolTip">
+    <string>Multi-Rename Tool (Ctrl+M)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionTB_Synchronize_dirs">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_syncdirs.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Synchronize dirs...</string>
+   </property>
+   <property name="toolTip">
+    <string>Synchronize dirs...</string>
+   </property>
+  </action>
+  <action name="actionTB_Copy_Filename_s_with_Full_Path">
+   <property name="icon">
+    <iconset>
+     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_copyfullnamestoclip.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Copy Filename(s) with Full Path</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

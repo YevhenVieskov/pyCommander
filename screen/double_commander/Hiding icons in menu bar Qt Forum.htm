@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html data-dir="ltr" style="direction: ltr;" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Hiding icons in menu bar | Qt Forum</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="content-type" content="text/html; charset=UTF-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta property="og:site_name" content="Qt Forum">
+	<meta name="msapplication-badge" content="frequency=30; polling-uri=https://forum.qt.io/sitemap.xml">
+	<meta name="keywords" content="Qt,discussion,question,q&amp;a,answer,forum">
+	<meta name="msapplication-square150x150logo" content="https://ddgobkiprc33d.cloudfront.net/bfdb2533-84e9-45a1-956a-106722433d3f.png">
+	<meta name="title" content="Hiding icons in menu bar">
+	<meta name="description" content="Is there a way to hide the icons in the main menu bar (for example to be more compliant to the OS X way to show menus) in a QWidget (with QMainWindow) application? Code like this will also remove the icons of the main toolbar.     QList lst;     lst = ui-...">
+	<meta property="og:title" content="Hiding icons in menu bar">
+	<meta property="og:description" content="Is there a way to hide the icons in the main menu bar (for example to be more compliant to the OS X way to show menus) in a QWidget (with QMainWindow) application? Code like this will also remove the icons of the main toolbar.     QList lst;     lst = ui-...">
+	<meta property="og:type" content="article">
+	<meta property="article:published_time" content="2016-06-12T07:10:30.638Z">
+	<meta property="article:modified_time" content="2016-06-13T16:55:52.732Z">
+	<meta property="article:section" content="General and Desktop">
+	<meta property="og:image" content="https://www.gravatar.com/avatar/207928c36f71324847ddb6c3d3b619ef?size=192&amp;d=mm">
+	<meta property="og:image:url" content="https://www.gravatar.com/avatar/207928c36f71324847ddb6c3d3b619ef?size=192&amp;d=mm">
+	<meta property="og:image" content="https://ddgobkiprc33d.cloudfront.net/bfdb2533-84e9-45a1-956a-106722433d3f.png">
+	<meta property="og:image:url" content="https://ddgobkiprc33d.cloudfront.net/bfdb2533-84e9-45a1-956a-106722433d3f.png">
+	<meta property="og:image:width" content="175">
+	<meta property="og:image:height" content="175">
+	<meta property="og:url" content="https://forum.qt.io/topic/68169/hiding-icons-in-menu-bar">
+	
+	<link rel="stylesheet" type="text/css" href="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/client.css">
+	<link rel="icon" type="image/x-icon" href="https://forum.qt.io/assets/uploads/system/favicon.ico?v=500i9cmpogn">
+	<link rel="manifest" href="https://forum.qt.io/manifest.json">
+	<link rel="search" type="application/opensearchdescription+xml" title="Qt Forum" href="https://forum.qt.io/osd.xml">
+	<link rel="prefetch stylesheet" href="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/googlecode.css">
+	<link rel="prefetch" href="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/highlight.js">
+	<link rel="prefetch" href="https://forum.qt.io/assets/language/en-GB/markdown.json?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/src/modules/composer.js?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/src/modules/composer/uploads.js?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/src/modules/composer/drafts.js?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/src/modules/composer/tags.js?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/src/modules/composer/categoryList.js?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/src/modules/composer/resize.js?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/src/modules/composer/autocomplete.js?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/templates/composer.tpl?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/language/en-GB/topic.json?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/language/en-GB/modules.json?v=500i9cmpogn">
+	<link rel="prefetch" href="https://forum.qt.io/assets/language/en-GB/tags.json?v=500i9cmpogn">
+	<link rel="canonical" href="https://forum.qt.io/topic/68169/hiding-icons-in-menu-bar">
+	<link rel="alternate" type="application/rss+xml">
+	<link rel="up" href="https://forum.qt.io/category/10/general-and-desktop">
+	
+
+	<script type="text/javascript" async="" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/js_002"></script><script type="text/javascript" async="" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/js"></script><script async="" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/analytics.js"></script><script async="" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/gtm.js"></script><script>
+		var RELATIVE_PATH = "";
+		var config = JSON.parse('{"relative_path":"","upload_url":"/assets/uploads","siteTitle":"Qt Forum","browserTitle":"Qt Forum","titleLayout":"&#123;pageTitle&#125; | &#123;browserTitle&#125;","showSiteTitle":true,"minimumTitleLength":3,"maximumTitleLength":255,"minimumPostLength":8,"maximumPostLength":32767,"minimumTagsPerTopic":0,"maximumTagsPerTopic":5,"minimumTagLength":3,"maximumTagLength":15,"useOutgoingLinksPage":false,"allowGuestHandles":false,"allowFileUploads":true,"allowTopicsThumbnail":false,"usePagination":false,"disableChat":false,"disableChatMessageEditing":false,"maximumChatMessageLength":1000,"socketioTransports":["websocket","polling"],"socketioOrigins":"https://forum.qt.io:*","websocketAddress":"","maxReconnectionAttempts":5,"reconnectionDelay":3000,"topicsPerPage":40,"postsPerPage":40,"maximumFileSize":2048,"theme:id":"nodebb-theme-qt","theme:src":"","defaultLang":"en-GB","userLang":"en-US","loggedIn":false,"uid":0,"cache-buster":"v=500i9cmpogn","requireEmailConfirmation":false,"topicPostSort":"oldest_to_newest","categoryTopicSort":"newest_to_oldest","csrf_token":"mPifDP4D-FnhZKVibQ8vCo5XwXFLcJBNkOF8","searchEnabled":true,"bootswatchSkin":"","enablePostHistory":true,"notificationAlertTimeout":5000,"timeagoCodes":["af","ar","az-short","az","bg","bs","ca","cs","cy","da","de-short","de","dv","el","en-short","en","es-short","es","et","eu","fa-short","fa","fi","fr-short","fr","gl","he","hr","hu","hy","id","is","it-short","it","ja","jv","ko","ky","lt","lv","mk","nl","no","pl","pt-br-short","pt-br","pt-short","pt","ro","rs","ru","rw","si","sk","sl","sr","sv","th","tr-short","tr","uk","uz","vi","zh-CN","zh-TW"],"timeagoCutoff":30,"cookies":{"enabled":false,"message":"[[global:cookies.message]]","dismiss":"[[global:cookies.accept]]","link":"[[global:cookies.learn_more]]"},"acpLang":"en-US","topicSearchEnabled":false,"hideSubCategories":false,"hideCategoryLastPost":false,"enableQuickReply":false,"markdown":{"highlight":1,"highlightLinesLanguageList":[],"theme":"googlecode.css"},"composer-default":{},"question-and-answer":{"makeDefault":"on","defaultCid":"0","forceQuestions":"on","defaultCid_4":"off","defaultCid_10":"off","defaultCid_11":"off","defaultCid_12":"off","defaultCid_13":"off","defaultCid_14":"off","defaultCid_52":"off","defaultCid_17":"off","defaultCid_21":"off","defaultCid_54":"off","defaultCid_20":"off","defaultCid_15":"off","defaultCid_45":"off","defaultCid_18":"off","defaultCid_19":"off","defaultCid_22":"off","defaultCid_53":"off","defaultCid_3":"off","defaultCid_6":"off","defaultCid_7":"off","defaultCid_23":"off","defaultCid_8":"off","defaultCid_9":"off","defaultCid_24":"off","defaultCid_25":"off","defaultCid_49":"off","defaultCid_48":"off","defaultCid_47":"off","defaultCid_34":"off","defaultCid_35":"off","defaultCid_36":"off","defaultCid_29":"off","defaultCid_39":"off","defaultCid_37":"off","defaultCid_46":"off","defaultCid_28":"off","defaultCid_43":"off","defaultCid_33":"off","defaultCid_26":"off","defaultCid_30":"off","defaultCid_40":"off","defaultCid_38":"off","defaultCid_42":"off","defaultCid_32":"off","defaultCid_41":"off","defaultCid_27":"off","defaultCid_31":"off","defaultCid_50":"off","defaultCid_51":"off","defaultCid_2":"off","defaultCid_5":"off","defaultCid_16":"off","defaultCid_44":"off","defaultCid_55":"off"}}');
+		var app = {
+			template: "topic",
+			user: JSON.parse('{"uid":0,"username":"Guest","userslug":"","fullname":"Guest","email":"","icon:text":"?","icon:bgColor":"#aaa","groupTitle":"","status":"offline","reputation":0,"email:confirmed":false,"postcount":0,"topiccount":0,"profileviews":0,"banned":0,"banned:expire":0,"joindate":0,"lastonline":0,"lastposttime":0,"followingCount":0,"followerCount":0,"picture":"https://www.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?size=192&d=mm","groupTitleArray":[],"joindateISO":"","lastonlineISO":"","banned_until":0,"banned_until_readable":"Not Banned","unreadData":{"":{},"new":{},"watched":{},"unreplied":{}},"isAdmin":false,"isGlobalMod":false,"isMod":false,"privileges":{"chat":false,"upload:post:image":false,"upload:post:file":false,"search:content":true,"search:users":false,"search:tags":true,"view:users":false,"view:tags":true,"view:groups":false},"offline":true,"isEmailConfirmSent":false}')
+		};
+	</script>
+
+	
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K584VXP');</script>
+<!-- End Google Tag Manager -->
+	
+	
+<link rel="stylesheet" href="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/js-enabled.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="pulling" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/pulling.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/assets/templates/modules/taskbar.js" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/taskbar.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="highlight" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/highlight.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="highlightjs-line-numbers" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/highlightjs-line-numbers.js"></script><style type="text/css">.hljs-ln{border-collapse:collapse}            .hljs-ln td{padding:0}            .hljs-ln-n:before{content:attr(data-line-number)}</style></head>
+
+<body class="page-topic page-topic-68169 page-topic-hiding-icons-in-menu-bar page-topic-category-10 page-topic-category-general-and-desktop page-status-200 skin-noskin">
+	<nav id="menu" class="slideout-menu" style="transition: transform 200ms ease 0s; overflow: hidden auto; position: fixed; left: -256px; top: 0px; bottom: 0px; width: 256px; z-index: 1; transform: translateX(0px);">
+		<div class="menu-profile">
+	
+</div>
+
+<section class="menu-section" data-section="navigation">
+	<h3 class="menu-section-title">Navigation</h3>
+	<ul class="menu-section-list">
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/categories" title="" data-original-title="Categories">
+							
+							<i class="fa fa-fw fa-list" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Categories</span>
+							
+						</a>
+					</li>
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/recent" title="" data-original-title="Recent">
+							
+							<i class="fa fa-fw fa-clock-o" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Recent</span>
+							
+						</a>
+					</li>
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/tags" title="" data-original-title="Tags">
+							
+							<i class="fa fa-fw fa-tags" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Tags</span>
+							
+						</a>
+					</li>
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/popular" title="" data-original-title="Popular">
+							
+							<i class="fa fa-fw fa-fire" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Popular</span>
+							
+						</a>
+					</li>
+					
+					
+					
+					
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/search" title="" data-original-title="Search">
+							
+							<i class="fa fa-fw fa-search" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Search</span>
+							
+						</a>
+					</li>
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://marketplace.qt.io/" title="" target="_blank" data-original-title="Get Qt Extensions">
+							
+							<i class="fa fa-fw fa-shopping-basket" data-content=""></i>
+							
+
+							
+						</a>
+					</li>
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/unsolved" title="" data-original-title="Unsolved">
+							
+							<i class="fa fa-fw fa-question-circle" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Unsolved</span>
+							
+						</a>
+					</li>
+					
+					
+				
+						<a href="https://forum.qt.io/search">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					
+					
+					<li>
+						<a href="https://forum.qt.io/login">
+							<i class="fa fa-sign-in fa-fw hidden-sm hidden-md hidden-lg"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+</section>
+
+
+	</nav>
+	<nav id="chats-menu" class="slideout-menu hidden">
+		
+	</nav>
+
+	<main id="panel" class="slideout-panel" style="padding-top: 0.8px;">
+		<nav class="navbar navbar-default navbar-fixed-top header" id="header-menu" component="navbar">
+			<div class="container">
+							<div class="navbar-header">
+				<button type="button" class="navbar-toggle pull-left" id="mobile-menu">
+					<span component="notifications/icon" class="notification-icon fa fa-fw fa-bell-o unread-count" data-content="0"></span>
+					<i class="fa fa-lg fa-fw fa-bars"></i>
+				</button>
+				<button type="button" class="navbar-toggle hidden" id="mobile-chats">
+					<span component="chat/icon" class="notification-icon fa fa-fw fa-comments unread-count" data-content="0"></span>
+					<i class="fa fa-lg fa-comment-o"></i>
+				</button>
+
+				
+				<a href="https://forum.qt.io/">
+					<img alt="" class=" forum-logo" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/bfdb2533-84e9-45a1-956a-106722433d3f.png">
+				</a>
+				
+				
+				<a href="https://forum.qt.io/">
+					<h1 class="navbar-brand forum-title">Qt Forum</h1>
+				</a>
+				
+
+				<div component="navbar/title" class="visible-xs hidden">
+					<span class="">Hiding icons in menu bar</span>
+				</div>
+			</div>
+
+			<div id="nav-dropdown" class="hidden-xs">
+				
+				
+				<ul id="logged-out-menu" class="nav navbar-nav navbar-right">
+					
+					<li>
+						<a href="https://forum.qt.io/login">
+							<i class="fa fa-sign-in fa-fw hidden-sm hidden-md hidden-lg"></i>
+							<span>Login</span>
+						</a>
+					</li>
+				</ul>
+				
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li data-original-title="" title="">
+						<form id="search-form" class="navbar-form navbar-right hidden-xs" role="search" method="GET">
+							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="Search"></i></button>
+							<div class="hidden" id="search-fields">
+								<div class="form-group">
+									<input autocomplete="off" type="text" class="form-control" placeholder="Search" name="query">
+									<a href="#"><i class="fa fa-gears fa-fw advanced-search-link"></i></a>
+								</div>
+								<button type="submit" class="btn btn-default hide">Search</button>
+							</div>
+						</form>
+						<ul id="quick-search-results" class="dropdown-menu quick-search-results hidden">
+							
+
+						</ul>
+					</li>
+					<li class="visible-xs" id="search-menu">
+						<a href="https://forum.qt.io/search">
+							<i class="fa fa-search fa-fw"></i> Search
+						</a>
+					</li>
+				</ul>
+				
+
+				<ul class="nav navbar-nav navbar-right hidden-xs">
+					<li>
+						<a href="#" id="reconnect" class="hide" title="" data-original-title="Looks like your connection to Qt Forum was lost, please wait while we try to reconnect.">
+							<i class="fa fa-check"></i>
+						</a>
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right pagination-block visible-lg visible-md ready">
+					<li class="dropdown">
+						<a><i class="fa fa-angle-double-up pointer fa-fw pagetop"></i></a>
+						<a><i class="fa fa-angle-up pointer fa-fw pageup"></i></a>
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<span class="pagination-text">3 out of 3</span>
+						</a>
+
+						<a><i class="fa fa-angle-down pointer fa-fw pagedown"></i></a>
+						<a><i class="fa fa-angle-double-down pointer fa-fw pagebottom"></i></a>
+
+						<div class="progress-container">
+							<div class="progress-bar" style="width: 100%;"></div>
+						</div>
+
+						<ul class="dropdown-menu" role="menu">
+							<li>
+  								<input type="text" class="form-control" id="indexInput" placeholder="Enter index">
+  							</li>
+						</ul>
+					</li>
+				</ul>
+
+				<ul id="main-nav" class="nav navbar-nav">
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/categories" title="" data-original-title="Categories">
+							
+							<i class="fa fa-fw fa-list" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Categories</span>
+							
+						</a>
+					</li>
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/recent" title="" data-original-title="Recent">
+							
+							<i class="fa fa-fw fa-clock-o" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Recent</span>
+							
+						</a>
+					</li>
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/tags" title="" data-original-title="Tags">
+							
+							<i class="fa fa-fw fa-tags" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Tags</span>
+							
+						</a>
+					</li>
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/popular" title="" data-original-title="Popular">
+							
+							<i class="fa fa-fw fa-fire" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Popular</span>
+							
+						</a>
+					</li>
+					
+					
+					
+					
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/search" title="" data-original-title="Search">
+							
+							<i class="fa fa-fw fa-search" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Search</span>
+							
+						</a>
+					</li>
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://marketplace.qt.io/" title="" target="_blank" data-original-title="Get Qt Extensions">
+							
+							<i class="fa fa-fw fa-shopping-basket" data-content=""></i>
+							
+
+							
+						</a>
+					</li>
+					
+					
+					
+					<li class="">
+						<a class="navigation-link" href="https://forum.qt.io/unsolved" title="" data-original-title="Unsolved">
+							
+							<i class="fa fa-fw fa-question-circle" data-content=""></i>
+							
+
+							
+							<span class="visible-xs-inline">Unsolved</span>
+							
+						</a>
+					</li>
+					
+					
+				</ul>
+
+				
+			</div>
+
+			</div>
+		</nav>
+		<div class="container" id="content">
+			<noscript>
+		<div class="alert alert-danger">
+			<p>
+				Your browser does not seem to support JavaScript. As a result, your viewing experience will be diminished, and you may not be able to execute some actions.
+			</p>
+			<p>
+				Please download a browser that supports JavaScript, or enable it if it's disabled (i.e. NoScript).
+			</p>
+		</div>
+	</noscript>
+
+<ol class="breadcrumb">
+	
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+		<a href="https://forum.qt.io/" itemprop="url">
+			<span itemprop="title">
+				Home
+				
+			</span>
+		</a>
+	</li>
+	
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+		<a href="https://forum.qt.io/category/4/qt-development" itemprop="url">
+			<span itemprop="title">
+				Qt Development
+				
+			</span>
+		</a>
+	</li>
+	
+	<li itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb">
+		<a href="https://forum.qt.io/category/10/general-and-desktop" itemprop="url">
+			<span itemprop="title">
+				General and Desktop
+				
+			</span>
+		</a>
+	</li>
+	
+	<li component="breadcrumb/current" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" class="active">
+		
+			<span itemprop="title">
+				Hiding icons in menu bar
+				
+				
+				<a target="_blank" href="https://forum.qt.io/topic/68169.rss"><i class="fa fa-rss-square"></i></a>
+				
+			</span>
+		
+	</li>
+	
+</ol>
+
+<div widget-area="header">
+	
+	<h4><a href="https://forum.qt.io/topic/141704/congratulations-to-our-qt-champions-2022"><mark style="color: white; background-color: #41cd52;">Congratulations to our 2022 Qt Champions!</mark></a></h4>
+
+<!--<h4><a href="https://forum.qt.io/topic/140852/qt-champions-let-s-nominate-them"><mark style="color: white; background-color: #41cd52;">Nominate our 2022 Qt Champions!</a></mark></h4>-->
+
+<!--<h4><a href="https://www.qt.io/qtws_2022"><mark style="color: white; background-color: #41cd52;">Qt World Summit: Register Today!</a></mark></h4>
+<br>-->
+<!--<h3>Qt Forum will be updated on May 27 2021 starting at 10:00 AM (EEST) and the maintenance will last about 2 hours. Sorry for the inconvenience.</h3>
+<h4><a href="https://forum.qt.io/topic/135943/we-have-10-free-developerweek-europe-tickets-for-you"><mark style="color: white; background-color: #41cd52;">DeveloperWeek Europe: 10 Free Tickets!</a></mark></h4>
+<h4><a href="https://forum.qt.io/category/63/qt-6"><mark style="color: white; background-color: #41cd52;">Qt6 topics merged with General</a></mark></h4>
+<br>-->
+  
+
+  <style>
+    a { text-decoration: none; }
+h4:hover {
+  font-weight: bold;
+}
+  </style>
+
+	
+</div>
+<div class="row">
+	<div class="topic col-lg-12">
+
+		<h1 component="post/header" class="hidden-xs" itemprop="name"><span class="answered"><i class="fa fa-question-circle"></i> SOLVED</span>
+
+			<i class="pull-left fa fa-thumb-tack hidden" title="Pinned"></i>
+			<i class="pull-left fa fa-lock hidden" title="Locked"></i>
+			<i class="pull-left fa fa-arrow-circle-right hidden" title="Moved"></i>
+			
+
+			<span class="topic-title" component="topic/title">Hiding icons in menu bar</span>
+		</h1>
+
+		
+
+		<div component="topic/deleted/message" class="alert alert-warning hidden clearfix">
+    <span class="pull-left">This topic has been deleted. Only users with topic management privileges can see it.</span>
+    <span class="pull-right">
+        
+    </span>
+</div>
+
+		<hr class="visible-xs">
+
+		<ul component="topic" class="posts" data-tid="68169" data-cid="10">
+			
+				<li component="post" class="" data-index="0" data-pid="332458" data-uid="21112" data-timestamp="1465715430659" data-username="pbe" data-userslug="pbe" itemscope="" itemtype="http://schema.org/Comment">
+					<a component="post/anchor" data-index="0" id="0"></a>
+
+					<meta itemprop="datePublished" content="2016-06-12T07:10:30.659Z">
+					<meta itemprop="dateModified" content="">
+
+					<div class="clearfix post-header">
+	<div class="icon pull-left">
+		<a href="https://forum.qt.io/user/pbe">
+			
+			<img component="user/picture" data-uid="21112" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/207928c36f71324847ddb6c3d3b619ef.jpeg" itemprop="image" align="left">
+			
+			<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<strong>
+			<a href="https://forum.qt.io/user/pbe" itemprop="author" data-username="pbe" data-uid="21112">pbe</a>
+		</strong>
+
+		
+
+		
+
+		<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			<a class="permalink" href="https://forum.qt.io/post/332458"><span class="timeago" title="Jun 12, 2016, 10:10 AM" datetime="2016-06-12T07:10:30.659Z">Jun 12, 2016, 10:10 AM</span></a>
+
+			<i component="post/edit-indicator" class="fa fa-pencil-square edit-icon hidden"></i>
+
+			<small data-editor="" component="post/editor" class="hidden">last edited by  <span class="timeago" title=""></span></small>
+
+			
+
+			<span>
+				
+			</span>
+		</span>
+		<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+
+	</small>
+</div>
+
+<br>
+
+<div class="content" component="post/content" itemprop="text">
+	<p>Is there a way to hide the icons in the main menu bar (for example 
+to be more compliant to the OS X way to show menus) in a QWidget (with 
+QMainWindow) application?</p>
+<p>Code like this will also remove the icons of the main toolbar.</p>
+<pre class="markdown-highlight"><code class="hljs php">    QList&lt;QMenu*&gt; lst;
+    lst = ui-&gt;menuBar-&gt;findChildren&lt;QMenu*&gt;();
+    <span class="hljs-keyword">foreach</span> (QMenu* m, lst) {
+        <span class="hljs-keyword">foreach</span> (QAction* a, m-&gt;actions()) {
+            a-&gt;setIcon(QIcon());
+        }
+    }
+</code></pre>
+<p>I'm asking for this issue: <a href="https://github.com/pbek/QOwnNotes/issues/198" rel="nofollow">OS X: Icons in menus</a><br>
+Thank you for helping!</p>
+
+</div>
+
+<div class="clearfix post-footer">
+	
+
+	<small class="pull-right">
+		<span class="post-tools">
+			<a component="post/reply" href="#" class="no-select hidden">Reply</a>
+			<a component="post/quote" href="#" class="no-select hidden">Quote</a>
+		</span>
+
+		
+		<span class="votes">
+			<a component="post/upvote" href="#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+
+			<span component="post/vote-count" data-votes="0">0</span>
+
+			
+		</span>
+		
+
+		<span component="post/tools" class="dropdown moderator-tools bottom-sheet ">
+	<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+</span>
+
+	</small>
+
+	
+	<a component="post/reply-count" href="#" class="threaded-replies no-select hidden">
+		<span component="post/reply-count/avatars" class="avatars ">
+			
+		</span>
+
+		<span class="replies-count" component="post/reply-count/text" data-replies="0">1 Reply</span>
+		<span class="replies-last hidden-xs">Last reply <span class="timeago" title=""></span></span>
+
+		<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
+		<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
+		<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+	</a>
+	
+</div>
+
+<hr>
+
+					
+					<div class="post-bar">
+			<div class="clearfix">
+	<div class="tags pull-left">
+		
+	</div>
+
+	<div component="topic/browsing-users">
+	
+</div>
+
+	<div class="topic-main-buttons pull-right">
+		<span class="loading-indicator btn pull-left hidden" done="0" style="display: none;">
+			<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+		</span>
+
+		<div class="stats hidden-xs">
+	<span component="topic/post-count" class="human-readable-number" title="3">3</span><br>
+	<small>Posts</small>
+</div>
+<div class="stats hidden-xs">
+	<span class="human-readable-number" title="4202">4.2k</span><br>
+	<small>Views</small>
+</div>
+
+		<div component="topic/reply/container" class="btn-group action-bar bottom-sheet hidden">
+	<a href="https://forum.qt.io/compose?tid=68169&amp;title=Hiding%20icons%20in%20menu%20bar" class="btn btn-primary" component="topic/reply" data-ajaxify="false" role="button"><i class="fa fa-reply visible-xs-inline"></i><span class="visible-sm-inline visible-md-inline visible-lg-inline"> Reply</span></a>
+	<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu pull-right" role="menu">
+		<li><a href="#" component="topic/reply-as-topic">Reply as topic</a></li>
+	</ul>
+</div>
+
+
+
+
+<a component="topic/reply/guest" href="https://forum.qt.io/login" class="btn btn-primary">Log in to reply</a>
+
+
+
+		
+
+		
+
+		
+
+		<div class="pull-right">&nbsp;
+		
+		</div>
+	</div>
+</div>
+<hr>
+		</div>
+					
+				</li>
+			
+				<li component="post" class="" data-index="1" data-pid="332459" data-uid="747" data-timestamp="1465716823320" data-username="Chris Kawa" data-userslug="chris-kawa" itemscope="" itemtype="http://schema.org/Comment">
+					<a component="post/anchor" data-index="1" id="1"></a>
+
+					<meta itemprop="datePublished" content="2016-06-12T07:33:43.320Z">
+					<meta itemprop="dateModified" content="">
+
+					<div class="clearfix post-header">
+	<div class="icon pull-left">
+		<a href="https://forum.qt.io/user/chris-kawa">
+			
+			<img component="user/picture" data-uid="747" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/45bb97cd3a32d6468c962c9cd09ae59e.png" itemprop="image" align="left">
+			
+			<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<strong>
+			<a href="https://forum.qt.io/user/chris-kawa" itemprop="author" data-username="Chris Kawa" data-uid="747">Chris Kawa</a>
+		</strong>
+
+		
+
+<a href="https://forum.qt.io/groups/moderators"><small class="label group-label inline-block" style="color:#ffffff;background-color: #408500;"><i class="fa fa-check-square-o"></i> Moderators</small></a>
+
+
+
+		
+
+		<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			<a class="permalink" href="https://forum.qt.io/post/332459"><span class="timeago" title="Jun 12, 2016, 10:33 AM" datetime="2016-06-12T07:33:43.320Z">Jun 12, 2016, 10:33 AM</span></a>
+
+			<i component="post/edit-indicator" class="fa fa-pencil-square edit-icon hidden"></i>
+
+			<small data-editor="" component="post/editor" class="hidden">last edited by  <span class="timeago" title=""></span></small>
+
+			
+
+			<span>
+				
+			</span>
+		</span>
+		<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+
+	</small>
+</div>
+
+<br>
+
+<div class="content" component="post/content" itemprop="text">
+	<p>Assuming the icon sizes in the menu and on the toolbar are different
+ you can add an empty pixmap for the size in the menu. Something like 
+this:</p>
+<pre class="markdown-highlight"><code class="language-cpp hljs"><span class="hljs-function">QPixmap <span class="hljs-title">dummy</span> <span class="hljs-params">(<span class="hljs-number">16</span>,<span class="hljs-number">16</span>)</span></span>; <span class="hljs-comment">//or whatever the size of the menu icon is on OS X</span>
+dummy.fill(Qt::transparent);
+
+QList&lt;QMenu*&gt; lst = ui-&gt;menuBar-&gt;findChildren&lt;QMenu*&gt;();
+foreach (QMenu* m, lst) {
+    foreach (QAction* a, m-&gt;actions()) {
+        QIcon icon = a-&gt;icon();
+        icon.addPixmap(dummy);
+        a-&gt;setIcon(icon);
+    }
+}
+</code></pre>
+
+</div>
+
+<div class="clearfix post-footer">
+	
+
+	<small class="pull-right">
+		<span class="post-tools">
+			<a component="post/reply" href="#" class="no-select hidden">Reply</a>
+			<a component="post/quote" href="#" class="no-select hidden">Quote</a>
+		</span>
+
+		
+		<span class="votes">
+			<a component="post/upvote" href="#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+
+			<span component="post/vote-count" data-votes="0">0</span>
+
+			
+		</span>
+		
+
+		<span component="post/tools" class="dropdown moderator-tools bottom-sheet ">
+	<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+</span>
+
+	</small>
+
+	
+	<a component="post/reply-count" href="#" class="threaded-replies no-select ">
+		<span component="post/reply-count/avatars" class="avatars ">
+			
+			
+			<span><img component="user/picture" data-uid="21112" title="" class="avatar" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/207928c36f71324847ddb6c3d3b619ef.jpeg" itemprop="image" data-original-title="pbe"></span>
+			
+			
+		</span>
+
+		<span class="replies-count" component="post/reply-count/text" data-replies="1">1 Reply</span>
+		<span class="replies-last hidden-xs">Last reply <span class="timeago" title="Jun 13, 2016, 7:55 PM" datetime="2016-06-13T16:55:52.732Z">Jun 13, 2016, 7:55 PM</span></span>
+
+		<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
+		<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
+		<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+	</a>
+	
+</div>
+
+<hr>
+
+					
+				</li>
+			
+				<li component="post" class="" data-index="2" data-pid="332665" data-uid="21112" data-timestamp="1465836952732" data-username="pbe" data-userslug="pbe" itemscope="" itemtype="http://schema.org/Comment">
+					<a component="post/anchor" data-index="2" id="2"></a>
+
+					<meta itemprop="datePublished" content="2016-06-13T16:55:52.732Z">
+					<meta itemprop="dateModified" content="">
+
+					<div class="clearfix post-header">
+	<div class="icon pull-left">
+		<a href="https://forum.qt.io/user/pbe">
+			
+			<img component="user/picture" data-uid="21112" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/207928c36f71324847ddb6c3d3b619ef.jpeg" itemprop="image" align="left">
+			
+			<i component="user/status" class="fa fa-circle status offline" title="Offline"></i>
+
+		</a>
+	</div>
+
+	<small class="pull-left">
+		<strong>
+			<a href="https://forum.qt.io/user/pbe" itemprop="author" data-username="pbe" data-uid="21112">pbe</a>
+		</strong>
+
+		
+
+		
+
+		<span class="visible-xs-inline-block visible-sm-inline-block visible-md-inline-block visible-lg-inline-block">
+			<a class="permalink" href="https://forum.qt.io/post/332665"><span class="timeago" title="Jun 13, 2016, 7:55 PM" datetime="2016-06-13T16:55:52.732Z">Jun 13, 2016, 7:55 PM</span></a>
+
+			<i component="post/edit-indicator" class="fa fa-pencil-square edit-icon hidden"></i>
+
+			<small data-editor="" component="post/editor" class="hidden">last edited by  <span class="timeago" title=""></span></small>
+
+			
+			<a component="post/parent" class="btn btn-xs btn-default hidden-xs" data-topid="332459" href="https://forum.qt.io/post/332459"><i class="fa fa-reply"></i> @Chris Kawa</a>
+			
+
+			<span>
+				
+			</span>
+		</span>
+		<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+
+	</small>
+</div>
+
+<br>
+
+<div class="content" component="post/content" itemprop="text">
+	<p><a class="plugin-mentions-user plugin-mentions-a" href="https://forum.qt.io/uid/747">@Chris-Kawa</a>, thank you for your reply! Your solution caused all menu entries to have as width of a few pixels. :)</p>
+<p>I found salvation in <a href="https://forum.qt.io/topic/24960/solved-osx-menu-icons/2">https://forum.qt.io/topic/24960/solved-osx-menu-icons/2</a></p>
+<p>This code worked:</p>
+<pre class="markdown-highlight"><code class="hljs php">QApplication::instance()-&gt;setAttribute(Qt::AA_DontShowIconsInMenus, <span class="hljs-keyword">true</span>);
+</code></pre>
+
+</div>
+
+<div class="clearfix post-footer">
+	
+
+	<small class="pull-right">
+		<span class="post-tools">
+			<a component="post/reply" href="#" class="no-select hidden">Reply</a>
+			<a component="post/quote" href="#" class="no-select hidden">Quote</a>
+		</span>
+
+		
+		<span class="votes">
+			<a component="post/upvote" href="#" class="">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+
+			<span component="post/vote-count" data-votes="2">2</span>
+
+			
+		</span>
+		
+
+		<span component="post/tools" class="dropdown moderator-tools bottom-sheet ">
+	<a href="#" data-toggle="dropdown"><i class="fa fa-fw fa-ellipsis-v"></i></a>
+	<ul class="dropdown-menu dropdown-menu-right" role="menu"></ul>
+</span>
+
+	</small>
+
+	
+	<a component="post/reply-count" href="#" class="threaded-replies no-select hidden">
+		<span component="post/reply-count/avatars" class="avatars ">
+			
+		</span>
+
+		<span class="replies-count" component="post/reply-count/text" data-replies="0">1 Reply</span>
+		<span class="replies-last hidden-xs">Last reply <span class="timeago" title=""></span></span>
+
+		<i class="fa fa-fw fa-chevron-right" component="post/replies/open"></i>
+		<i class="fa fa-fw fa-chevron-down hidden" component="post/replies/close"></i>
+		<i class="fa fa-fw fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+	</a>
+	
+</div>
+
+<hr>
+
+					
+				</li>
+			
+		</ul>
+
+		
+
+		<div class="post-bar">
+			<div class="clearfix">
+	<div class="tags pull-left">
+		
+	</div>
+
+	<div component="topic/browsing-users">
+	
+</div>
+
+	<div class="topic-main-buttons pull-right">
+		<span class="loading-indicator btn pull-left hidden" done="0" style="display: none;">
+			<span class="hidden-xs">Loading More Posts</span> <i class="fa fa-refresh fa-spin"></i>
+		</span>
+
+		<div class="stats hidden-xs">
+	<span component="topic/post-count" class="human-readable-number" title="3">3</span><br>
+	<small>Posts</small>
+</div>
+<div class="stats hidden-xs">
+	<span class="human-readable-number" title="4202">4.2k</span><br>
+	<small>Views</small>
+</div>
+
+		<div component="topic/reply/container" class="btn-group action-bar bottom-sheet hidden">
+	<a href="https://forum.qt.io/compose?tid=68169&amp;title=Hiding%20icons%20in%20menu%20bar" class="btn btn-primary" component="topic/reply" data-ajaxify="false" role="button"><i class="fa fa-reply visible-xs-inline"></i><span class="visible-sm-inline visible-md-inline visible-lg-inline"> Reply</span></a>
+	<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+		<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu pull-right" role="menu">
+		<li><a href="#" component="topic/reply-as-topic">Reply as topic</a></li>
+	</ul>
+</div>
+
+
+
+
+<a component="topic/reply/guest" href="https://forum.qt.io/login" class="btn btn-primary">Log in to reply</a>
+
+
+
+		
+
+		
+
+		
+
+		<div class="pull-right">&nbsp;
+		
+		</div>
+	</div>
+</div>
+<hr>
+		</div>
+
+		
+
+		<div class="navigator-thumb text-center hidden">
+			<strong class="text"></strong><br>
+			<span class="time"></span>
+		</div>
+		<div class="visible-xs visible-sm pagination-block text-center ready">
+			<div class="progress-bar" style="width: 100%;"></div>
+			<div class="wrapper">
+				<i class="fa fa-2x fa-angle-double-up pointer fa-fw pagetop"></i>
+				<i class="fa fa-2x fa-angle-up pointer fa-fw pageup"></i>
+				<span class="pagination-text">3 out of 3</span>
+				<i class="fa fa-2x fa-angle-down pointer fa-fw pagedown"></i>
+				<i class="fa fa-2x fa-angle-double-down pointer fa-fw pagebottom"></i>
+			</div>
+		</div>
+	</div>
+	<div widget-area="sidebar" class="col-lg-3 col-sm-12 hidden">
+		
+	</div>
+</div>
+<div widget-area="footer">
+	
+</div>
+
+
+<noscript>
+	<div component="pagination" class="text-center pagination-container hidden">
+	<ul class="pagination hidden-xs">
+		<li class="previous pull-left disabled">
+			<a href="?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+		
+
+		<li class="next pull-right disabled">
+			<a href="?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+	</ul>
+
+	<ul class="pagination hidden-sm hidden-md hidden-lg">
+		<li class="first disabled">
+			<a href="?" data-page="1"><i class="fa fa-fast-backward"></i> </a>
+		</li>
+
+		<li class="previous disabled">
+			<a href="?" data-page="1"><i class="fa fa-chevron-left"></i> </a>
+		</li>
+
+		<li component="pagination/select-page" class="page select-page">
+			<a href="#">1 / 1</a>
+		</li>
+
+		<li class="next disabled">
+			<a href="?" data-page="1"> <i class="fa fa-chevron-right"></i></a>
+		</li>
+
+		<li class="last disabled">
+			<a href="?" data-page="1"><i class="fa fa-fast-forward"></i> </a>
+		</li>
+	</ul>
+</div>
+</noscript>
+
+		</div><!-- /.container#content -->
+	</main>
+	
+	<div class="topic-search hidden">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default count"></button>
+			<button type="button" class="btn btn-default prev"><i class="fa fa-fw fa-angle-up"></i></button>
+			<button type="button" class="btn btn-default next"><i class="fa fa-fw fa-angle-down"></i></button>
+		</div>
+	</div>
+
+	<div component="toaster/tray" class="alert-window">
+		<div id="reconnect-alert" class="alert alert-dismissable alert-warning clearfix hide" component="toaster/toast">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			<p>Looks like your connection to Qt Forum was lost, please wait while we try to reconnect.</p>
+		</div>
+	</div>
+	
+
+
+	<script defer="defer" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/nodebb.min.js"></script>
+
+	
+	<script defer="defer" type="text/javascript" src="Hiding%20icons%20in%20menu%20bar%20Qt%20Forum_files/jquery.timeago.en.js"></script>
+	
+
+	<script>
+		window.addEventListener('load', function () {
+			require(['forum/footer']);
+
+			
+		});
+	</script>
+
+	<div class="hide">
+	<script>
+	window.addEventListener('load', function () {
+		define(config.relative_path + '/assets/templates/500.js', function () {
+			function compiled(helpers, context, get, iter, helper) {
+				return '<div class="alert alert-danger">\n\t<strong>Internal Error.</strong>\n\t<p>Oops! Looks like something went wrong!</p>\n\t<p>' + 
+					helpers.__escape(get(context && context['path'])) + '</p>\n\t' + 
+					(get(context && context['error']) ? '<p>' + helpers.__escape(get(context && context['error'])) + '</p>' : '') + '\n\n\t' + 
+					(get(context && context['returnLink']) ? '\n\t<p>Press back to return to the previous page</p>\n\t' : '') + '\n</div>\n';
+			}
+
+			return compiled;
+		});
+	});
+</script>
+	</div>
+
+
+<script type="text/javascript" id="gtm-vimeo-tracking">(function(l,f,n){function q(){var a=r(v("iframe"),w);a.length&&x(function(){m(a,y)})}function w(a){return-1<a.src.indexOf("player.vimeo.com/video/")}function x(a){p(f.Vimeo)?z("https://player.vimeo.com/api/player.js",a):a()}function y(a){if(!a.__vimeoTracked){a.__vimeoTracked=!0;var d=new Vimeo.Player(a),b=n._track.percentages,c={Play:"play",Pause:"pause","Watch to End":"ended"},e={};d.getVideoTitle().then(function(h){m(["Play","Pause","Watch to End"],function(g){if(n.events[g])d.on(c[g],function(){t(g,
+h)})});if(b)d.on("timeupdate",function(g){g=g.percent;for(var k in b)g>=b[k]&&!e[k]&&(e[k]=!0,t(k,h))})})}}function A(a){a=B({},{events:{Play:!0,Pause:!0,"Watch to End":!0},percentages:{each:[],every:[]}},a);m(["each","every"],function(c){var e=a.percentages[c];u(e)||(e=[e]);e&&(a.percentages[c]=C(e,Number))});var d=[].concat(a.percentages.each);a.percentages.every&&m(a.percentages.every,function(c){var e=100/c,h=[],g;for(g=1;g<e;g++)h.push(c*g);d=d.concat(r(h,function(k){return 0<k&&100>k}))});var b=
+D(d,function(c,e){c[e+"%"]=e/100;return c},{});a._track={percentages:b};return a}function E(a){a=a||{};var d=a.name||"dataLayer",b=a.name||f.GoogleAnalyticsObject||"ga",c="_gaq",e={gtm:function(h,g){f.dataLayer.push({event:"vimeoTrack",vimeoTrack:{videoAction:h,videoName:g}})},cl:function(h,g){f[c].push(["_trackEvent","Videos",h,g])},ua:function(h,g){f[b]("send","event","Videos",h,g)}};switch(a.type){case "gtm":f[d]=f[d]||[];break;case "ua":f[b]=f[b]||function(){(f[b].q=f[b].q||[]).push(arguments)};
+f[b].l=+new Date;break;case "cl":f[c]=f[c]||[];break;default:p(f[d])?b&&!p(f[b])?a.type="ua":p(f[c])||p(f[c].push)||(a.type="cl"):(a.type="gtm",f[d]=f[d]||[])}return e[a.type]}function B(){var a=[].slice.call(arguments),d=a.shift(),b,c;for(c=0;c<a.length;c++){var e=a[c];for(b in e)d[b]=e[b]}return d}function u(a){return Array.isArray_?Array.isArray_(a):"[object Array]"===Object.prototype.toString.call(a)}function m(a,d){if(Array.prototype.forEach_)return a.forEach.call(a,d);var b;for(b=0;b<a.length;b++)d.call(f,
+a[b],b,a)}function C(a,d){if(Array.prototype.map_)return a.map.call(a,d);var b=[];m(a,function(c,e,h){b.push(d.call(f,c,e,h))});return b}function r(a,d){if(Array.prototype.filter)return a.filter.call(a,d);var b=[];m(a,function(c,e,h){d.call(f,c,e,h)&&b.push(c)});return b}function D(a,d,b){if(Array.prototype.reduce)return a.reduce.call(a,d,b);var c;for(c=0;c<a.length;c++){var e=a[c];b=d.call(f,b,e,a,c)}return b}function p(a){return"undefined"===typeof a}function v(a){u(a)||(a=[a]);return[].slice.call(l.querySelectorAll(a.join()))}
+function z(a,d){function b(){d&&(d(),e.onload=null)}var c=l.getElementsByTagName("script")[0];var e=l.createElement("script");e.onload=b;e.src=a;e.async=!0;c.parentNode.insertBefore(e,c)}if(!navigator.userAgent.match(/MSIE [678]\./gi)){n=A(n);var t=E(n.syntax);"loading"!==l.readyState?q():l.addEventListener("DOMContentLoaded",q);l.addEventListener("load",q,!0)}})(document,window,{events:{Play:!0,Pause:!0,"Watch to End":!0},percentages:{every:25,each:[10,90]}});</script><div id="taskbar" class="taskbar navbar-fixed-bottom">
+	<div class="navbar-inner"><ul class="nav navbar-nav pull-right"></ul></div>
+</div></body></html>
