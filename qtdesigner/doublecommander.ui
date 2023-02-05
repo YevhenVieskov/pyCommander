@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1252</width>
-    <height>600</height>
+    <width>1838</width>
+    <height>757</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -32,128 +32,12 @@
    <property name="enabled">
     <bool>true</bool>
    </property>
-   <widget class="QTabWidget" name="tabWidgetRightPanel">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>120</y>
-      <width>401</width>
-      <height>291</height>
-     </rect>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <widget class="QWidget" name="tabRight1">
-     <attribute name="title">
-      <string>Tab 1</string>
-     </attribute>
-     <widget class="QWidget" name="">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>307</width>
-        <height>240</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayoutRightTab1">
-       <item>
-        <widget class="QLabel" name="labelRightTabCurrentDirectoryBar1">
-         <property name="text">
-          <string>C:Users</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTreeWidget" name="treeWidgetRightFilePanel1">
-         <column>
-          <property name="text">
-           <string notr="true">1</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="labelRightFileStatusBar1">
-         <property name="text">
-          <string>Selected 0 B of 13.2 MB, files: 0 of 12, folders: 0 of 5</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tabRight2">
-     <attribute name="title">
-      <string>Tab 2</string>
-     </attribute>
-    </widget>
-   </widget>
-   <widget class="QTabWidget" name="tabWidgetLeftPanel">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>120</y>
-      <width>401</width>
-      <height>291</height>
-     </rect>
-    </property>
-    <property name="currentIndex">
-     <number>1</number>
-    </property>
-    <widget class="QWidget" name="tabLeft1">
-     <attribute name="title">
-      <string>Tab 1</string>
-     </attribute>
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>307</width>
-        <height>240</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayoutLeftTab1">
-       <item>
-        <widget class="QLabel" name="labelLeftTabCurrentDirectoryBar1">
-         <property name="text">
-          <string>C:Users</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QTreeWidget" name="treeWidgetLeftFilePanel1">
-         <column>
-          <property name="text">
-           <string notr="true">1</string>
-          </property>
-         </column>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="labelLeftFileStatusBar1">
-         <property name="text">
-          <string>Selected 0 B of 13.2 MB, files: 0 of 12, folders: 0 of 5</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tabLeft2">
-     <attribute name="title">
-      <string>Tab 2</string>
-     </attribute>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>550</x>
-      <y>50</y>
-      <width>753</width>
+      <x>750</x>
+      <y>110</y>
+      <width>881</width>
       <height>48</height>
      </rect>
     </property>
@@ -181,6 +65,19 @@
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacerRightDrivesLeft">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QLabel" name="labelRightDiskVolumeSize">
        <property name="text">
         <string>396Gb</string>
@@ -188,7 +85,38 @@
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacerRightDrivesRight">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QPushButton" name="pushButtonRightDirectoryHotlist">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>2</width>
+         <height>2</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>2</width>
+         <height>2</height>
+        </size>
+       </property>
        <property name="toolTip">
         <string>Directory Hotlist</string>
        </property>
@@ -202,6 +130,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonRightGotoRootDirectory">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="toolTip">
         <string>Go to root directory</string>
        </property>
@@ -215,6 +149,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonRightGotoParentDirectory">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="toolTip">
         <string>Go to parent directory</string>
        </property>
@@ -228,6 +168,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonRightGotoHomeDirectory">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="toolTip">
         <string>Go to home directory</string>
        </property>
@@ -241,6 +187,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonRightRightLeftPanel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="toolTip">
         <string>Show the current directory of the  left panel to the right panel</string>
        </property>
@@ -254,12 +206,12 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>550</x>
-      <y>10</y>
-      <width>195</width>
+      <x>750</x>
+      <y>30</y>
+      <width>251</width>
       <height>30</height>
      </rect>
     </property>
@@ -304,13 +256,26 @@
        </property>
       </widget>
      </item>
+     <item>
+      <spacer name="horizontalSpacerRightButtonBar">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>430</y>
+      <x>40</x>
+      <y>530</y>
       <width>797</width>
       <height>63</height>
      </rect>
@@ -420,12 +385,12 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>60</y>
-      <width>451</width>
+      <x>0</x>
+      <y>120</y>
+      <width>731</width>
       <height>30</height>
      </rect>
     </property>
@@ -459,11 +424,37 @@
       </widget>
      </item>
      <item>
+      <spacer name="horizontalSpacerLeftDrivesLeft">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QLabel" name="labelLeftDiskVolumeSize">
        <property name="text">
         <string>396Gb</string>
        </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacerLeftDrivesRight">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonLeftDirectoryHotlist">
@@ -532,12 +523,12 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>195</width>
+      <width>311</width>
       <height>30</height>
      </rect>
     </property>
@@ -564,6 +555,12 @@
      </item>
      <item>
       <widget class="QPushButton" name="pushButtonLeftVFS">
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
        <property name="text">
         <string> \\</string>
        </property>
@@ -582,7 +579,146 @@
        </property>
       </widget>
      </item>
+     <item>
+      <spacer name="horizontalSpacerLeftButtonBar">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>1401</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>881</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <widget class="QTabWidget" name="tabWidgetLeftPanel">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabLeft1">
+      <attribute name="title">
+       <string>Tab 1</string>
+      </attribute>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>307</width>
+         <height>240</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutLeftTab1">
+        <item>
+         <widget class="QLabel" name="labelLeftTabCurrentDirectoryBar1">
+          <property name="text">
+           <string>C:Users</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="treeWidgetLeftFilePanel1">
+          <column>
+           <property name="text">
+            <string notr="true">1</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelLeftFileStatusBar1">
+          <property name="text">
+           <string>Selected 0 B of 13.2 MB, files: 0 of 12, folders: 0 of 5</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tabLeft2">
+      <attribute name="title">
+       <string>Tab 2</string>
+      </attribute>
+     </widget>
+    </widget>
+    <widget class="QTabWidget" name="tabWidgetRightPanel">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tabRight1">
+      <attribute name="title">
+       <string>Tab 1</string>
+      </attribute>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>307</width>
+         <height>240</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayoutRightTab1">
+        <item>
+         <widget class="QLabel" name="labelRightTabCurrentDirectoryBar1">
+          <property name="text">
+           <string>C:Users</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="treeWidgetRightFilePanel1">
+          <column>
+           <property name="text">
+            <string notr="true">1</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelRightFileStatusBar1">
+          <property name="text">
+           <string>Selected 0 B of 13.2 MB, files: 0 of 12, folders: 0 of 5</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tabRight2">
+      <attribute name="title">
+       <string>Tab 2</string>
+      </attribute>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -590,7 +726,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1252</width>
+     <width>1838</width>
      <height>26</height>
     </rect>
    </property>
@@ -598,25 +734,25 @@
     <property name="title">
      <string>Files</string>
     </property>
-    <addaction name="actionCreate_Symbolic_Link"/>
-    <addaction name="actionCreate_Hard_Link"/>
-    <addaction name="actionCreate_Directory"/>
-    <addaction name="actionCreate_Shortcut"/>
+    <addaction name="actionCreateSymbolicLink"/>
+    <addaction name="actionCreateHardLink"/>
+    <addaction name="actionCreateDirectory"/>
+    <addaction name="actionCreateShortcut"/>
     <addaction name="separator"/>
-    <addaction name="actionChange_Attributes"/>
-    <addaction name="actionShow_File_Properties"/>
-    <addaction name="actionEdit_Comment"/>
-    <addaction name="actionCalculate_Occupied_Space"/>
-    <addaction name="actionCompare_by_Contents"/>
-    <addaction name="actionMulti_Rename_Tool"/>
+    <addaction name="actionChangeAttributes"/>
+    <addaction name="actionShowFileProperties"/>
+    <addaction name="actionEditComment"/>
+    <addaction name="actionCalculateOccupiedSpace"/>
+    <addaction name="actionCompareByContents"/>
+    <addaction name="actionMultiRenameTool"/>
     <addaction name="separator"/>
-    <addaction name="actionPack_Files"/>
-    <addaction name="actionExtract_Files"/>
-    <addaction name="actionTest_Archive_s"/>
-    <addaction name="actionSplit_File"/>
-    <addaction name="actionCombine_Files"/>
-    <addaction name="actionCalculate_Checksum"/>
-    <addaction name="actionVerify_Checksum"/>
+    <addaction name="actionPackFiles"/>
+    <addaction name="actionExtractFiles"/>
+    <addaction name="actionTestArchive"/>
+    <addaction name="actionSplitFile"/>
+    <addaction name="actionCombineFiles"/>
+    <addaction name="actionCalculateChecksum"/>
+    <addaction name="actionVerifyChecksum"/>
     <addaction name="separator"/>
     <addaction name="actionWipe"/>
     <addaction name="actionDelete"/>
@@ -626,57 +762,57 @@
     <property name="title">
      <string>Mark</string>
     </property>
-    <addaction name="actionSelect_a_Group"/>
-    <addaction name="actionUnselect_a_Group"/>
-    <addaction name="actionSelect_All"/>
-    <addaction name="actionUnselect_All"/>
-    <addaction name="actionInvert_Selection"/>
-    <addaction name="actionSelect_All_with_the_Same_Extension"/>
-    <addaction name="actionUnselect_All_with_the_Same_Extension"/>
+    <addaction name="actionSelectGroup"/>
+    <addaction name="actionUnselectGroup"/>
+    <addaction name="actionSelectAll"/>
+    <addaction name="actionUnselectAll"/>
+    <addaction name="actionInvertSelection"/>
+    <addaction name="actionSelectAllWithTheSameExtension"/>
+    <addaction name="actionUnselectAllWithTheSameExtension"/>
     <addaction name="separator"/>
-    <addaction name="actionSave_Selection"/>
-    <addaction name="actionRestore_Selection"/>
-    <addaction name="actionSave_Selection_to_File"/>
-    <addaction name="actionLoad_Selection_from_File"/>
-    <addaction name="actionLoad_Selection_from_Clipboard"/>
+    <addaction name="actionSaveSelection"/>
+    <addaction name="actionRestoreSelection"/>
+    <addaction name="actionSaveSelectionToFile"/>
+    <addaction name="actionLoadSelectionFromFile"/>
+    <addaction name="actionLoadSelectionFromClipboard"/>
     <addaction name="separator"/>
-    <addaction name="actionCopy_Filename_s_to_Clipboard"/>
-    <addaction name="actionCopy_Filename_s_with_Full_Path"/>
-    <addaction name="actionCopy_all_shown_columns"/>
+    <addaction name="actionCopyFilenameToClipboard"/>
+    <addaction name="actionCopyFilenameWithFullPath"/>
+    <addaction name="actionCopyAllShownColumns"/>
     <addaction name="separator"/>
-    <addaction name="actionCompare_Directories"/>
+    <addaction name="actionCompareDirectories"/>
    </widget>
    <widget class="QMenu" name="menuSearch">
     <property name="title">
      <string>Commands</string>
     </property>
     <addaction name="actionSearch"/>
-    <addaction name="actionNew_search_instance"/>
-    <addaction name="actionView_current_search_instances"/>
-    <addaction name="actionDirectory_Hotlist"/>
-    <addaction name="actionSynchronize_dirs"/>
+    <addaction name="actionNewSearchInstance"/>
+    <addaction name="actionViewCurrentSearchInstances"/>
+    <addaction name="actionDirectoryHotlist"/>
+    <addaction name="actionSynchronizeDirs"/>
     <addaction name="separator"/>
-    <addaction name="actionRun_Terminal"/>
-    <addaction name="actionExecute_internal_command"/>
+    <addaction name="actionRunTerminal"/>
+    <addaction name="actionExecuteInternalCommand"/>
     <addaction name="separator"/>
-    <addaction name="actionFlat_view"/>
-    <addaction name="actionOpen_VFS_List"/>
-    <addaction name="actionSwap_Panels"/>
-    <addaction name="actionTarget_Source"/>
+    <addaction name="actionFlatView"/>
+    <addaction name="actionOpenVFSList"/>
+    <addaction name="actionSwapPanels"/>
+    <addaction name="actionTargetSource"/>
     <addaction name="separator"/>
-    <addaction name="actionShow_Occupied_Space"/>
+    <addaction name="actionShowOccupiedSpace"/>
    </widget>
    <widget class="QMenu" name="menuNetwork">
     <property name="title">
      <string>Network</string>
     </property>
-    <addaction name="actionNetwork_Connect"/>
-    <addaction name="actionNetwork_Disconnect"/>
+    <addaction name="actionNetworkConnect"/>
+    <addaction name="actionNetworkDisconnect"/>
     <addaction name="separator"/>
-    <addaction name="actionMap_Network_Drive"/>
-    <addaction name="actionDisconnect_Network_Drive"/>
+    <addaction name="actionMapNetworkDrive"/>
+    <addaction name="actionDisconnectNetworkDrive"/>
     <addaction name="separator"/>
-    <addaction name="actionCopy_names_with_UNC_path"/>
+    <addaction name="actionCopyNamesWithUNCPath"/>
    </widget>
    <widget class="QMenu" name="menuTabs">
     <property name="title">
@@ -688,89 +824,89 @@
      </property>
      <addaction name="actionNormal"/>
      <addaction name="actionLocked"/>
-     <addaction name="actionLocked_with_Directory_Changes_Allowed"/>
-     <addaction name="actionLocked_with_Directories_Opened_in_New_Tabs"/>
+     <addaction name="actionLockedWithDirectoryChangesAllowed"/>
+     <addaction name="actionLockedWithDirectoriesOpenedInNewTabs"/>
      <addaction name="separator"/>
-     <addaction name="actionSet_all_tabs_to_Normal"/>
-     <addaction name="actionSet_all_tabs_to_Locked"/>
-     <addaction name="actionAll_tabs_Locked_with_Dir_Changes_Allowed"/>
-     <addaction name="actionAlltabs_Locked_with_Dir_Opened_in_New_Tabs"/>
+     <addaction name="actionSetAllTabsToNormal"/>
+     <addaction name="actionSetAllTabsToLocked"/>
+     <addaction name="actionAllTabsLockedWithDirChangesAllowed"/>
+     <addaction name="actionAllTabsLockedWithDirOpenedInNewTabs"/>
     </widget>
-    <addaction name="actionNew_Tab"/>
-    <addaction name="actionRename_Tab"/>
-    <addaction name="actionOpen_Folder_in_a_New_Tab"/>
+    <addaction name="actionNewTab"/>
+    <addaction name="actionRenameTab"/>
+    <addaction name="actionOpenFolderInNewTab"/>
     <addaction name="separator"/>
-    <addaction name="actionClose_Tab"/>
-    <addaction name="actionClose_All_Tabs"/>
-    <addaction name="actionClose_Duplicate_Tabs"/>
+    <addaction name="actionCloseTab"/>
+    <addaction name="actionCloseAllTabs"/>
+    <addaction name="actionCloseDuplicateTabs"/>
     <addaction name="separator"/>
     <addaction name="menuTab_Options"/>
     <addaction name="separator"/>
-    <addaction name="actionSwitch_to_Next_Tab"/>
-    <addaction name="actionSwitch_to_Previous_Tab"/>
+    <addaction name="actionSwitchToNextTab"/>
+    <addaction name="actionSwitchToPreviousTab"/>
     <addaction name="separator"/>
-    <addaction name="actionSave_Tabs_to_File"/>
-    <addaction name="actionLoad_Tabs_from_File"/>
-    <addaction name="actionSave_current_tabs_to_a_New_FavoriteTabs"/>
-    <addaction name="actionLoad_tabs_from_Favorite_Tabs"/>
+    <addaction name="actionSaveTabsToFile"/>
+    <addaction name="actionLoadTabsFromFile"/>
+    <addaction name="actionSaveCurrentTabsToNewFavoriteTabs"/>
+    <addaction name="actionLoadTabsFromFavoriteTabs"/>
     <addaction name="separator"/>
-    <addaction name="actionConfiguration_of_folder_tabs"/>
-    <addaction name="actionConfiguration_of_Favorite_Tabs"/>
+    <addaction name="actionConfigurationOfFolderTabs"/>
+    <addaction name="actionConfigurationOfFavoriteTabs"/>
    </widget>
    <widget class="QMenu" name="menuFavorities">
     <property name="title">
      <string>Favorities</string>
     </property>
-    <addaction name="actionSave_current_tabs_to_a_New_Favorite_Tabs"/>
-    <addaction name="actionResave_on_the_last_Favorite_Tabs_loaded"/>
-    <addaction name="actionRelopad_the_last_Favorite_Tabs_loaded"/>
-    <addaction name="actionConfiguration_of_Favorite_Tabs_2"/>
+    <addaction name="actionSaveCurrentTabsToNewFavoriteTabs2"/>
+    <addaction name="actionResaveOnTheLastFavoriteTabsLoaded"/>
+    <addaction name="actionRelopadTheLastFavoriteTabsLoaded"/>
+    <addaction name="actionConfigurationOfFavoriteTabs2"/>
    </widget>
    <widget class="QMenu" name="menuShow">
     <property name="title">
      <string>Show</string>
     </property>
-    <addaction name="actionBrief_view"/>
+    <addaction name="actionBriefView"/>
     <addaction name="actionFull"/>
     <addaction name="actionThumbnails"/>
     <addaction name="separator"/>
-    <addaction name="actionQuick_View_Panel"/>
-    <addaction name="actionTree_View_Panel"/>
-    <addaction name="actionSort_by_Name"/>
-    <addaction name="actionSort_by_Extension"/>
-    <addaction name="actionSort_by_Size"/>
-    <addaction name="actionSort_by_Date"/>
-    <addaction name="actionSort_by_Attributes"/>
+    <addaction name="actionQuickViewPanel"/>
+    <addaction name="actionTreeViewPanel"/>
+    <addaction name="actionSortByName"/>
+    <addaction name="actionSortByExtension"/>
+    <addaction name="actionSortBySize"/>
+    <addaction name="actionSortByDate"/>
+    <addaction name="actionSortByAttributes"/>
     <addaction name="separator"/>
-    <addaction name="actionReverse_Order"/>
+    <addaction name="actionReverseOrder"/>
     <addaction name="actionRefresh"/>
     <addaction name="separator"/>
-    <addaction name="actionShow_Hidden_System_Files"/>
+    <addaction name="actionShowHiddenSystemFiles"/>
     <addaction name="separator"/>
-    <addaction name="actionHorizontal_Panels_Mode"/>
+    <addaction name="actionHorizontalPanelsMode"/>
     <addaction name="separator"/>
-    <addaction name="actionOperations_Viewer"/>
+    <addaction name="actionOperationsViewer"/>
    </widget>
    <widget class="QMenu" name="menuConfiguration">
     <property name="title">
      <string>Configuration</string>
     </property>
     <addaction name="actionOptions"/>
-    <addaction name="actionConfiguration_of_Directory_Hotlist"/>
-    <addaction name="actionConfiguration_of_Favorite_Tabs_4"/>
-    <addaction name="actionConfiguration_of_File_Associations"/>
-    <addaction name="actionConfiguration_of_folder_tabs_2"/>
-    <addaction name="actionConfiguration_of_Archivers"/>
+    <addaction name="actionConfigurationOfDirectoryHotlist"/>
+    <addaction name="actionConfigurationOfFavoriteTabs4"/>
+    <addaction name="actionConfigurationOfFileAssociations"/>
+    <addaction name="actionConfigurationOfFolderTabs2"/>
+    <addaction name="actionConfigurationOfArchivers"/>
     <addaction name="separator"/>
-    <addaction name="actionSave_Position"/>
-    <addaction name="actionSave_Settings"/>
+    <addaction name="actionSavePosition"/>
+    <addaction name="actionSaveSettings"/>
    </widget>
    <widget class="QMenu" name="menuContents">
     <property name="title">
      <string>Contents</string>
     </property>
     <addaction name="actionKeyboard"/>
-    <addaction name="actionVisit_Double_Commander_Website"/>
+    <addaction name="actionVisitDoubleCommanderWebsite"/>
     <addaction name="separator"/>
     <addaction name="actionAbout"/>
    </widget>
@@ -795,42 +931,42 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionTB_Refresh"/>
-   <addaction name="actionTB_Run_Terminal"/>
-   <addaction name="actionTB_Options"/>
+   <addaction name="actionTBRefresh"/>
+   <addaction name="actionTBRunTerminal"/>
+   <addaction name="actionTBOptions"/>
    <addaction name="separator"/>
-   <addaction name="actionTB_Brief_view"/>
-   <addaction name="actionTB_Columns_View"/>
-   <addaction name="actionTB_Thumbnails"/>
+   <addaction name="actionTBBriefView"/>
+   <addaction name="actionTBColumnsView"/>
+   <addaction name="actionTBThumbnails"/>
    <addaction name="separator"/>
-   <addaction name="actionTBFlat_view"/>
+   <addaction name="actionTBFlatView"/>
    <addaction name="separator"/>
-   <addaction name="actionTB_Goto_Previous_entry_in_history"/>
-   <addaction name="actionTB_Goto_Previous_entry_in_history_2"/>
+   <addaction name="actionTBGotoPreviousEntryInHistory"/>
+   <addaction name="actionTBGotoPreviousEntryInHistory2"/>
    <addaction name="separator"/>
-   <addaction name="actionTB_Select_a_Group"/>
-   <addaction name="actionTB_Unselect_a_Group"/>
-   <addaction name="actionTB_Invert_Selection"/>
+   <addaction name="actionTBSelectGroup"/>
+   <addaction name="actionTBUnselectGroup"/>
+   <addaction name="actionTBInvertSelection"/>
    <addaction name="separator"/>
-   <addaction name="actionTB_Pack_Files"/>
-   <addaction name="actionTB_Extract_Files"/>
+   <addaction name="actionTBPackFiles"/>
+   <addaction name="actionTBExtractFiles"/>
    <addaction name="separator"/>
-   <addaction name="actionTB_Search"/>
-   <addaction name="actionTB_Multi_Rename_Tool"/>
-   <addaction name="actionTB_Synchronize_dirs"/>
-   <addaction name="actionTB_Copy_Filename_s_with_Full_Path"/>
+   <addaction name="actionTBSearch"/>
+   <addaction name="actionTBMultiRenameTool"/>
+   <addaction name="actionTBSynchronizeDirs"/>
+   <addaction name="actionTBCopyFilenameWithFullPath"/>
   </widget>
-  <action name="actionCreate_Symbolic_Link">
+  <action name="actionCreateSymbolicLink">
    <property name="text">
     <string>Create Symbolic Link...</string>
    </property>
   </action>
-  <action name="actionCreate_Hard_Link">
+  <action name="actionCreateHardLink">
    <property name="text">
     <string>Create Hard Link...</string>
    </property>
   </action>
-  <action name="actionCreate_Directory">
+  <action name="actionCreateDirectory">
    <property name="text">
     <string>Create Directory</string>
    </property>
@@ -838,17 +974,17 @@
     <string>F7</string>
    </property>
   </action>
-  <action name="actionCreate_Shortcut">
+  <action name="actionCreateShortcut">
    <property name="text">
     <string>Create Shortcut...</string>
    </property>
   </action>
-  <action name="actionChange_Attributes">
+  <action name="actionChangeAttributes">
    <property name="text">
     <string>Change Attributes...</string>
    </property>
   </action>
-  <action name="actionShow_File_Properties">
+  <action name="actionShowFileProperties">
    <property name="text">
     <string>Show File Properties</string>
    </property>
@@ -856,12 +992,12 @@
     <string>Alt+Return</string>
    </property>
   </action>
-  <action name="actionEdit_Comment">
+  <action name="actionEditComment">
    <property name="text">
     <string>Edit Comment...</string>
    </property>
   </action>
-  <action name="actionCalculate_Occupied_Space">
+  <action name="actionCalculateOccupiedSpace">
    <property name="text">
     <string>Calculate Occupied Space</string>
    </property>
@@ -869,12 +1005,12 @@
     <string>Ctrl+L</string>
    </property>
   </action>
-  <action name="actionCompare_by_Contents">
+  <action name="actionCompareByContents">
    <property name="text">
     <string>Compare by Contents</string>
    </property>
   </action>
-  <action name="actionMulti_Rename_Tool">
+  <action name="actionMultiRenameTool">
    <property name="text">
     <string>Multi-Rename Tool</string>
    </property>
@@ -882,7 +1018,7 @@
     <string>Ctrl+M</string>
    </property>
   </action>
-  <action name="actionPack_Files">
+  <action name="actionPackFiles">
    <property name="text">
     <string>Pack Files...</string>
    </property>
@@ -890,7 +1026,7 @@
     <string>Alt+F5</string>
    </property>
   </action>
-  <action name="actionExtract_Files">
+  <action name="actionExtractFiles">
    <property name="text">
     <string>Extract Files...</string>
    </property>
@@ -898,7 +1034,7 @@
     <string>Alt+F9</string>
    </property>
   </action>
-  <action name="actionTest_Archive_s">
+  <action name="actionTestArchive">
    <property name="text">
     <string>Test Archive(s)</string>
    </property>
@@ -906,22 +1042,22 @@
     <string>Alt+Shift+F9</string>
    </property>
   </action>
-  <action name="actionSplit_File">
+  <action name="actionSplitFile">
    <property name="text">
     <string>Split File...</string>
    </property>
   </action>
-  <action name="actionCombine_Files">
+  <action name="actionCombineFiles">
    <property name="text">
     <string>Combine Files...</string>
    </property>
   </action>
-  <action name="actionCalculate_Checksum">
+  <action name="actionCalculateChecksum">
    <property name="text">
     <string>Calculate Checksum...</string>
    </property>
   </action>
-  <action name="actionVerify_Checksum">
+  <action name="actionVerifyChecksum">
    <property name="text">
     <string>Verify Checksum...</string>
    </property>
@@ -947,67 +1083,67 @@
     <string>Alt+X</string>
    </property>
   </action>
-  <action name="actionSelect_a_Group">
+  <action name="actionSelectGroup">
    <property name="text">
     <string>Select  a Group...</string>
    </property>
   </action>
-  <action name="actionUnselect_a_Group">
+  <action name="actionUnselectGroup">
    <property name="text">
     <string>Unselect a Group...</string>
    </property>
   </action>
-  <action name="actionSelect_All">
+  <action name="actionSelectAll">
    <property name="text">
     <string>Select All</string>
    </property>
   </action>
-  <action name="actionUnselect_All">
+  <action name="actionUnselectAll">
    <property name="text">
     <string>Unselect All</string>
    </property>
   </action>
-  <action name="actionInvert_Selection">
+  <action name="actionInvertSelection">
    <property name="text">
     <string>Invert Selection</string>
    </property>
   </action>
-  <action name="actionSelect_All_with_the_Same_Extension">
+  <action name="actionSelectAllWithTheSameExtension">
    <property name="text">
     <string>Select All with the Same Extension</string>
    </property>
   </action>
-  <action name="actionUnselect_All_with_the_Same_Extension">
+  <action name="actionUnselectAllWithTheSameExtension">
    <property name="text">
     <string>Unselect All with the Same Extension</string>
    </property>
   </action>
-  <action name="actionSave_Selection">
+  <action name="actionSaveSelection">
    <property name="text">
     <string>Save Selection</string>
    </property>
   </action>
-  <action name="actionRestore_Selection">
+  <action name="actionRestoreSelection">
    <property name="text">
     <string>Restore Selection</string>
    </property>
   </action>
-  <action name="actionSave_Selection_to_File">
+  <action name="actionSaveSelectionToFile">
    <property name="text">
     <string>Save Selection to File...</string>
    </property>
   </action>
-  <action name="actionLoad_Selection_from_File">
+  <action name="actionLoadSelectionFromFile">
    <property name="text">
     <string>Load Selection from File...</string>
    </property>
   </action>
-  <action name="actionLoad_Selection_from_Clipboard">
+  <action name="actionLoadSelectionFromClipboard">
    <property name="text">
     <string>Load Selection from Clipboard</string>
    </property>
   </action>
-  <action name="actionCopy_Filename_s_to_Clipboard">
+  <action name="actionCopyFilenameToClipboard">
    <property name="text">
     <string>Copy Filename(s) to Clipboard</string>
    </property>
@@ -1015,7 +1151,7 @@
     <string>Ctrl+Shift+X</string>
    </property>
   </action>
-  <action name="actionCopy_Filename_s_with_Full_Path">
+  <action name="actionCopyFilenameWithFullPath">
    <property name="text">
     <string>Copy Filename(s) with Full Path</string>
    </property>
@@ -1023,12 +1159,12 @@
     <string>Ctrl+Shift+C</string>
    </property>
   </action>
-  <action name="actionCopy_all_shown_columns">
+  <action name="actionCopyAllShownColumns">
    <property name="text">
     <string>Copy all shown columns</string>
    </property>
   </action>
-  <action name="actionCompare_Directories">
+  <action name="actionCompareDirectories">
    <property name="text">
     <string>Compare Directories</string>
    </property>
@@ -1041,7 +1177,7 @@
     <string>Alt+F7</string>
    </property>
   </action>
-  <action name="actionNew_search_instance">
+  <action name="actionNewSearchInstance">
    <property name="text">
     <string>New search instance...</string>
    </property>
@@ -1049,12 +1185,12 @@
     <string>Ctrl+Shift+F7</string>
    </property>
   </action>
-  <action name="actionView_current_search_instances">
+  <action name="actionViewCurrentSearchInstances">
    <property name="text">
     <string>View current search instances</string>
    </property>
   </action>
-  <action name="actionDirectory_Hotlist">
+  <action name="actionDirectoryHotlist">
    <property name="text">
     <string>Directory Hotlist</string>
    </property>
@@ -1062,12 +1198,12 @@
     <string>Ctrl+D</string>
    </property>
   </action>
-  <action name="actionSynchronize_dirs">
+  <action name="actionSynchronizeDirs">
    <property name="text">
     <string>Synchronize dirs...</string>
    </property>
   </action>
-  <action name="actionRun_Terminal">
+  <action name="actionRunTerminal">
    <property name="text">
     <string>Run Terminal</string>
    </property>
@@ -1075,7 +1211,7 @@
     <string>F9</string>
    </property>
   </action>
-  <action name="actionExecute_internal_command">
+  <action name="actionExecuteInternalCommand">
    <property name="text">
     <string>Execute internal command...</string>
    </property>
@@ -1083,7 +1219,7 @@
     <string>Shift+F12</string>
    </property>
   </action>
-  <action name="actionFlat_view">
+  <action name="actionFlatView">
    <property name="text">
     <string>Flat view</string>
    </property>
@@ -1091,12 +1227,12 @@
     <string>Ctrl+B</string>
    </property>
   </action>
-  <action name="actionOpen_VFS_List">
+  <action name="actionOpenVFSList">
    <property name="text">
     <string>Open VFS List</string>
    </property>
   </action>
-  <action name="actionSwap_Panels">
+  <action name="actionSwapPanels">
    <property name="text">
     <string>Swap Panels</string>
    </property>
@@ -1104,7 +1240,7 @@
     <string>Ctrl+U</string>
    </property>
   </action>
-  <action name="actionTarget_Source">
+  <action name="actionTargetSource">
    <property name="text">
     <string>Target = Source</string>
    </property>
@@ -1112,7 +1248,7 @@
     <string>Alt+Z</string>
    </property>
   </action>
-  <action name="actionShow_Occupied_Space">
+  <action name="actionShowOccupiedSpace">
    <property name="text">
     <string>Show Occupied Space</string>
    </property>
@@ -1120,32 +1256,32 @@
     <string>Alt+Shift+Return</string>
    </property>
   </action>
-  <action name="actionNetwork_Connect">
+  <action name="actionNetworkConnect">
    <property name="text">
     <string>Network Connect...</string>
    </property>
   </action>
-  <action name="actionNetwork_Disconnect">
+  <action name="actionNetworkDisconnect">
    <property name="text">
     <string>Network Disconnect</string>
    </property>
   </action>
-  <action name="actionMap_Network_Drive">
+  <action name="actionMapNetworkDrive">
    <property name="text">
     <string>Map Network Drive...</string>
    </property>
   </action>
-  <action name="actionDisconnect_Network_Drive">
+  <action name="actionDisconnectNetworkDrive">
    <property name="text">
     <string>Disconnect Network Drive...</string>
    </property>
   </action>
-  <action name="actionCopy_names_with_UNC_path">
+  <action name="actionCopyNamesWithUNCPath">
    <property name="text">
     <string>Copy_names_with_UNC_path</string>
    </property>
   </action>
-  <action name="actionNew_Tab">
+  <action name="actionNewTab">
    <property name="text">
     <string>New Tab</string>
    </property>
@@ -1153,12 +1289,12 @@
     <string>Ctrl+T</string>
    </property>
   </action>
-  <action name="actionRename_Tab">
+  <action name="actionRenameTab">
    <property name="text">
     <string>Rename Tab</string>
    </property>
   </action>
-  <action name="actionOpen_Folder_in_a_New_Tab">
+  <action name="actionOpenFolderInNewTab">
    <property name="text">
     <string>Open Folder in a New Tab</string>
    </property>
@@ -1166,22 +1302,22 @@
     <string>Ctrl+Up</string>
    </property>
   </action>
-  <action name="actionClose_Tab">
+  <action name="actionCloseTab">
    <property name="text">
     <string>Close Tab</string>
    </property>
   </action>
-  <action name="actionClose_All_Tabs">
+  <action name="actionCloseAllTabs">
    <property name="text">
     <string>Close All Tabs</string>
    </property>
   </action>
-  <action name="actionClose_Duplicate_Tabs">
+  <action name="actionCloseDuplicateTabs">
    <property name="text">
     <string>Close Duplicate Tabs</string>
    </property>
   </action>
-  <action name="actionSwitch_to_Next_Tab">
+  <action name="actionSwitchToNextTab">
    <property name="text">
     <string>Switch to Next Tab</string>
    </property>
@@ -1189,7 +1325,7 @@
     <string>Ctrl+Tab</string>
    </property>
   </action>
-  <action name="actionSwitch_to_Previous_Tab">
+  <action name="actionSwitchToPreviousTab">
    <property name="text">
     <string>Switch to Previous Tab</string>
    </property>
@@ -1197,32 +1333,32 @@
     <string>Ctrl+Shift+Tab</string>
    </property>
   </action>
-  <action name="actionSave_Tabs_to_File">
+  <action name="actionSaveTabsToFile">
    <property name="text">
     <string>Save Tabs to File</string>
    </property>
   </action>
-  <action name="actionLoad_Tabs_from_File">
+  <action name="actionLoadTabsFromFile">
    <property name="text">
     <string>Load Tabs from File</string>
    </property>
   </action>
-  <action name="actionSave_current_tabs_to_a_New_FavoriteTabs">
+  <action name="actionSaveCurrentTabsToNewFavoriteTabs">
    <property name="text">
     <string>Save current tabs to a New FavoriteTabs</string>
    </property>
   </action>
-  <action name="actionLoad_tabs_from_Favorite_Tabs">
+  <action name="actionLoadTabsFromFavoriteTabs">
    <property name="text">
     <string>Load tabs from Favorite Tabs</string>
    </property>
   </action>
-  <action name="actionConfiguration_of_folder_tabs">
+  <action name="actionConfigurationOfFolderTabs">
    <property name="text">
     <string>Configuration of folder tabs</string>
    </property>
   </action>
-  <action name="actionConfiguration_of_Favorite_Tabs">
+  <action name="actionConfigurationOfFavoriteTabs">
    <property name="text">
     <string>Configuration of Favorite Tabs</string>
    </property>
@@ -1237,57 +1373,57 @@
     <string>Locked</string>
    </property>
   </action>
-  <action name="actionLocked_with_Directory_Changes_Allowed">
+  <action name="actionLockedWithDirectoryChangesAllowed">
    <property name="text">
     <string>Locked with Directory Changes Allowed</string>
    </property>
   </action>
-  <action name="actionLocked_with_Directories_Opened_in_New_Tabs">
+  <action name="actionLockedWithDirectoriesOpenedInNewTabs">
    <property name="text">
     <string>Locked with Directories Opened in New Tabs</string>
    </property>
   </action>
-  <action name="actionSet_all_tabs_to_Normal">
+  <action name="actionSetAllTabsToNormal">
    <property name="text">
     <string>Set all tabs to Normal</string>
    </property>
   </action>
-  <action name="actionSet_all_tabs_to_Locked">
+  <action name="actionSetAllTabsToLocked">
    <property name="text">
     <string>Set all tabs to Locked</string>
    </property>
   </action>
-  <action name="actionAll_tabs_Locked_with_Dir_Changes_Allowed">
+  <action name="actionAllTabsLockedWithDirChangesAllowed">
    <property name="text">
     <string>All tabs Locked with Dir Changes Allowed</string>
    </property>
   </action>
-  <action name="actionAlltabs_Locked_with_Dir_Opened_in_New_Tabs">
+  <action name="actionAllTabsLockedWithDirOpenedInNewTabs">
    <property name="text">
     <string>Alltabs Locked with Dir Opened in New Tabs</string>
    </property>
   </action>
-  <action name="actionSave_current_tabs_to_a_New_Favorite_Tabs">
+  <action name="actionSaveCurrentTabsToNewFavoriteTabs2">
    <property name="text">
     <string>Save current tabs to a New Favorite Tabs</string>
    </property>
   </action>
-  <action name="actionResave_on_the_last_Favorite_Tabs_loaded">
+  <action name="actionResaveOnTheLastFavoriteTabsLoaded">
    <property name="text">
     <string>Resave on the last Favorite Tabs loaded</string>
    </property>
   </action>
-  <action name="actionRelopad_the_last_Favorite_Tabs_loaded">
+  <action name="actionRelopadTheLastFavoriteTabsLoaded">
    <property name="text">
     <string>Relopad the last Favorite Tabs loaded</string>
    </property>
   </action>
-  <action name="actionConfiguration_of_Favorite_Tabs_2">
+  <action name="actionConfigurationOfFavoriteTabs2">
    <property name="text">
     <string>Configuration of Favorite Tabs</string>
    </property>
   </action>
-  <action name="actionBrief_view">
+  <action name="actionBriefView">
    <property name="text">
     <string>Brief view</string>
    </property>
@@ -1311,7 +1447,7 @@
     <string>Ctrl+Shift+F1</string>
    </property>
   </action>
-  <action name="actionQuick_View_Panel">
+  <action name="actionQuickViewPanel">
    <property name="text">
     <string>Quick View Panel</string>
    </property>
@@ -1319,7 +1455,7 @@
     <string>Ctrl+Q</string>
    </property>
   </action>
-  <action name="actionTree_View_Panel">
+  <action name="actionTreeViewPanel">
    <property name="text">
     <string>Tree View Panel</string>
    </property>
@@ -1327,7 +1463,7 @@
     <string>Ctrl+Shift+F8</string>
    </property>
   </action>
-  <action name="actionSort_by_Name">
+  <action name="actionSortByName">
    <property name="text">
     <string>Sort by Name</string>
    </property>
@@ -1335,7 +1471,7 @@
     <string>Ctrl+F3</string>
    </property>
   </action>
-  <action name="actionSort_by_Extension">
+  <action name="actionSortByExtension">
    <property name="text">
     <string>Sort by Extension</string>
    </property>
@@ -1343,7 +1479,7 @@
     <string>Ctrl+F4</string>
    </property>
   </action>
-  <action name="actionSort_by_Size">
+  <action name="actionSortBySize">
    <property name="text">
     <string>Sort by Size</string>
    </property>
@@ -1351,7 +1487,7 @@
     <string>Ctrl+F6</string>
    </property>
   </action>
-  <action name="actionSort_by_Date">
+  <action name="actionSortByDate">
    <property name="text">
     <string>Sort by Date</string>
    </property>
@@ -1359,12 +1495,12 @@
     <string>Ctrl+F5</string>
    </property>
   </action>
-  <action name="actionSort_by_Attributes">
+  <action name="actionSortByAttributes">
    <property name="text">
     <string>Sort by Attributes</string>
    </property>
   </action>
-  <action name="actionReverse_Order">
+  <action name="actionReverseOrder">
    <property name="text">
     <string>Reverse Order</string>
    </property>
@@ -1377,7 +1513,7 @@
     <string>Ctrl+R</string>
    </property>
   </action>
-  <action name="actionShow_Hidden_System_Files">
+  <action name="actionShowHiddenSystemFiles">
    <property name="text">
     <string>Show Hidden/System Files</string>
    </property>
@@ -1385,7 +1521,7 @@
     <string>Ctrl+.</string>
    </property>
   </action>
-  <action name="actionHorizontal_Panels_Mode">
+  <action name="actionHorizontalPanelsMode">
    <property name="text">
     <string>Horizontal Panels Mode</string>
    </property>
@@ -1393,7 +1529,7 @@
     <string>Ctrl+Shift+H</string>
    </property>
   </action>
-  <action name="actionOperations_Viewer">
+  <action name="actionOperationsViewer">
    <property name="text">
     <string>Operations Viewer</string>
    </property>
@@ -1426,7 +1562,7 @@
     <string>Options...</string>
    </property>
   </action>
-  <action name="actionConfiguration_of_Directory_Hotlist">
+  <action name="actionConfigurationOfDirectoryHotlist">
    <property name="text">
     <string>Configuration of Directory Hotlist</string>
    </property>
@@ -1434,32 +1570,32 @@
     <string>Ctrl+Shift+D</string>
    </property>
   </action>
-  <action name="actionConfiguration_of_Favorite_Tabs_4">
+  <action name="actionConfigurationOfFavoriteTabs4">
    <property name="text">
     <string>Configuration of Favorite Tabs</string>
    </property>
   </action>
-  <action name="actionConfiguration_of_File_Associations">
+  <action name="actionConfigurationOfFileAssociations">
    <property name="text">
     <string>Configuration of File Associations</string>
    </property>
   </action>
-  <action name="actionConfiguration_of_folder_tabs_2">
+  <action name="actionConfigurationOfFolderTabs2">
    <property name="text">
     <string>Configuration of folder tabs</string>
    </property>
   </action>
-  <action name="actionConfiguration_of_Archivers">
+  <action name="actionConfigurationOfArchivers">
    <property name="text">
     <string>Configuration of Archivers</string>
    </property>
   </action>
-  <action name="actionSave_Position">
+  <action name="actionSavePosition">
    <property name="text">
     <string>Save Position</string>
    </property>
   </action>
-  <action name="actionSave_Settings">
+  <action name="actionSaveSettings">
    <property name="text">
     <string>Save Settings</string>
    </property>
@@ -1469,7 +1605,7 @@
     <string>Keyboard</string>
    </property>
   </action>
-  <action name="actionVisit_Double_Commander_Website">
+  <action name="actionVisitDoubleCommanderWebsite">
    <property name="text">
     <string>Visit Double Commander Website</string>
    </property>
@@ -1482,7 +1618,7 @@
     <string>F1</string>
    </property>
   </action>
-  <action name="actionTB_Refresh">
+  <action name="actionTBRefresh">
    <property name="icon">
     <iconset>
      <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png</normaloff>
@@ -1495,7 +1631,7 @@
     <string>Ctrl+R</string>
    </property>
   </action>
-  <action name="actionTB_Run_Terminal">
+  <action name="actionTBRunTerminal">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_runterm.png</normalon>
@@ -1508,7 +1644,7 @@
     <string>F9</string>
    </property>
   </action>
-  <action name="actionTB_Options">
+  <action name="actionTBOptions">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_options.png</normalon>
@@ -1518,7 +1654,7 @@
     <string>Options...</string>
    </property>
   </action>
-  <action name="actionTB_Brief_view">
+  <action name="actionTBBriefView">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -1534,7 +1670,7 @@
     <string>Ctrl+F1</string>
    </property>
   </action>
-  <action name="actionTB_Columns_View">
+  <action name="actionTBColumnsView">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -1553,7 +1689,7 @@
     <string>Ctrl+F2</string>
    </property>
   </action>
-  <action name="actionTB_Thumbnails">
+  <action name="actionTBThumbnails">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -1569,7 +1705,7 @@
     <string>Ctrl+Shift+F1</string>
    </property>
   </action>
-  <action name="actionTBFlat_view">
+  <action name="actionTBFlatView">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -1585,7 +1721,7 @@
     <string>Ctrl+B</string>
    </property>
   </action>
-  <action name="actionTB_Goto_Previous_entry_in_history">
+  <action name="actionTBGotoPreviousEntryInHistory">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_viewhistoryprev.png</normalon>
@@ -1601,7 +1737,7 @@
     <string>Alt+Left</string>
    </property>
   </action>
-  <action name="actionTB_Goto_Previous_entry_in_history_2">
+  <action name="actionTBGotoPreviousEntryInHistory2">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_viewhistorynext.png</normalon>
@@ -1617,7 +1753,7 @@
     <string>Alt+Right</string>
    </property>
   </action>
-  <action name="actionTB_Select_a_Group">
+  <action name="actionTBSelectGroup">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png</normalon>
@@ -1627,7 +1763,7 @@
     <string>Select  a Group...</string>
    </property>
   </action>
-  <action name="actionTB_Unselect_a_Group">
+  <action name="actionTBUnselectGroup">
    <property name="icon">
     <iconset>
      <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markminus.png</normaloff>
@@ -1640,7 +1776,7 @@
     <string>Unselect  a Group</string>
    </property>
   </action>
-  <action name="actionTB_Invert_Selection">
+  <action name="actionTBInvertSelection">
    <property name="icon">
     <iconset>
      <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markinvert.png</normaloff>
@@ -1653,7 +1789,7 @@
     <string>Invert Selection</string>
    </property>
   </action>
-  <action name="actionTB_Pack_Files">
+  <action name="actionTBPackFiles">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_packfiles.png</normalon>
@@ -1669,7 +1805,7 @@
     <string>Alt+F5</string>
    </property>
   </action>
-  <action name="actionTB_Extract_Files">
+  <action name="actionTBExtractFiles">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_extractfiles.png</normalon>
@@ -1685,7 +1821,7 @@
     <string>Alt+F9</string>
    </property>
   </action>
-  <action name="actionTB_Search">
+  <action name="actionTBSearch">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_search.png</normalon>
@@ -1701,7 +1837,7 @@
     <string>Alt+F7</string>
    </property>
   </action>
-  <action name="actionTB_Multi_Rename_Tool">
+  <action name="actionTBMultiRenameTool">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_multirename.png</normalon>
@@ -1717,7 +1853,7 @@
     <string>Ctrl+M</string>
    </property>
   </action>
-  <action name="actionTB_Synchronize_dirs">
+  <action name="actionTBSynchronizeDirs">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_syncdirs.png</normalon>
@@ -1730,7 +1866,7 @@
     <string>Synchronize dirs...</string>
    </property>
   </action>
-  <action name="actionTB_Copy_Filename_s_with_Full_Path">
+  <action name="actionTBCopyFilenameWithFullPath">
    <property name="icon">
     <iconset>
      <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_copyfullnamestoclip.png</normalon>

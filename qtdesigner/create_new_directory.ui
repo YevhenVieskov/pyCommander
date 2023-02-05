@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateNewDirectory</class>
+ <widget class="QDialog" name="CreateNewDirectory">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>512</width>
+    <height>256</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>512</width>
+    <height>254</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>512</width>
+    <height>256</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>512</width>
+    <height>256</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Create symbolic link</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetDefaultConstraint</enum>
+   </property>
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="1">
+      <widget class="QLabel" name="labelInputNewDirectoryName">
+       <property name="text">
+        <string>Input new directory name:</string>
+       </property>
+       <property name="buddy">
+        <cstring>lineInputNewDirectoryName</cstring>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineInputNewDirectoryName"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="QCheckBox" name="checkBoxExtendedSyntax">
+       <property name="text">
+        <string>Extended syntax</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lineInputNewDirectoryName</tabstop>
+  <tabstop>checkBoxExtendedSyntax</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>CreateNewDirectory</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>229</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>CreateNewDirectory</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>297</x>
+     <y>336</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>create_symbolic_link()</slot>
+ </slots>
+</ui>

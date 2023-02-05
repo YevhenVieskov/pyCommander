@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PackFiles</class>
+ <widget class="QDialog" name="PackFiles">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>768</width>
+    <height>320</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>768</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>768</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>768</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Pack file(s)</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3" columnstretch="2,0">
+   <property name="horizontalSpacing">
+    <number>10</number>
+   </property>
+   <item row="1" column="0" colspan="2">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <layout class="QVBoxLayout" name="verticalLayoutPacker">
+     <item>
+      <widget class="QGroupBox" name="groupBoxArchiveType">
+       <property name="title">
+        <string>Packer</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <property name="horizontalSpacing">
+         <number>5</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QRadioButton" name="radioButtonZip">
+          <property name="text">
+           <string>zip</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QRadioButton" name="radioButtonTbz">
+          <property name="text">
+           <string>tbz</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QRadioButton" name="radioButtonGz">
+          <property name="text">
+           <string>gz</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QRadioButton" name="radioButtonTgz">
+          <property name="text">
+           <string>tgz</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QRadioButton" name="radioButton7z">
+          <property name="text">
+           <string>7z</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QRadioButton" name="radioButtonLzma">
+          <property name="text">
+           <string>lzma</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QRadioButton" name="radioButtonBz2">
+          <property name="text">
+           <string>bz2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QRadioButton" name="radioButtonTar">
+          <property name="text">
+           <string>tar</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QRadioButton" name="radioButtonTlz">
+          <property name="text">
+           <string>tlz</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayoutArchiveExtension">
+       <property name="spacing">
+        <number>7</number>
+       </property>
+       <property name="leftMargin">
+        <number>10</number>
+       </property>
+       <property name="rightMargin">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QCheckBox" name="checkBoxChooseExtension">
+         <property name="text">
+          <string>=&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboBoxArchiveExt">
+         <item>
+          <property name="text">
+           <string>xz</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>zst</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>txz</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>zipx</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>wim</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>rar</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>txz</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonConfigure">
+       <property name="text">
+        <string>Configure</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="1">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayoutPackFiles">
+     <item>
+      <widget class="QLabel" name="labelPackFileToFile">
+       <property name="text">
+        <string>Pack file(s) to the file:</string>
+       </property>
+       <property name="buddy">
+        <cstring>lineEditFileName</cstring>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayoutPath">
+       <item>
+        <widget class="QLineEdit" name="lineEditFileName"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_changedirtoroot.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_changedirtoroot.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBoxAlsoPackNames">
+       <property name="text">
+        <string>Also pack path names (only recursed)</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBoxMultipleDiskArchive">
+       <property name="text">
+        <string>Multiple disk archive</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBoxMoveToArchive">
+       <property name="text">
+        <string>Move to archive</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBoxCreateSelfExtractArchive">
+       <property name="text">
+        <string>Create self extracting archive</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBoxEncrypt">
+       <property name="text">
+        <string>Encrypt</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBoxPutInTarArchiveFirst">
+       <property name="text">
+        <string>Put in the TAR archive first</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="checkBoxCreateSeparateArchive">
+       <property name="text">
+        <string>Create separate archives, one per selected file/dir</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>lineEditFileName</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>checkBoxAlsoPackNames</tabstop>
+  <tabstop>checkBoxMultipleDiskArchive</tabstop>
+  <tabstop>checkBoxMoveToArchive</tabstop>
+  <tabstop>checkBoxCreateSelfExtractArchive</tabstop>
+  <tabstop>checkBoxEncrypt</tabstop>
+  <tabstop>checkBoxPutInTarArchiveFirst</tabstop>
+  <tabstop>checkBoxCreateSeparateArchive</tabstop>
+  <tabstop>radioButtonZip</tabstop>
+  <tabstop>radioButton7z</tabstop>
+  <tabstop>radioButtonGz</tabstop>
+  <tabstop>radioButtonBz2</tabstop>
+  <tabstop>radioButtonTbz</tabstop>
+  <tabstop>radioButtonTar</tabstop>
+  <tabstop>radioButtonTgz</tabstop>
+  <tabstop>radioButtonLzma</tabstop>
+  <tabstop>radioButtonTlz</tabstop>
+  <tabstop>checkBoxChooseExtension</tabstop>
+  <tabstop>comboBoxArchiveExt</tabstop>
+  <tabstop>pushButtonConfigure</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>PackFiles</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>756</x>
+     <y>306</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>PackFiles</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>756</x>
+     <y>306</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBoxChooseExtension</sender>
+   <signal>clicked()</signal>
+   <receiver>comboBoxArchiveExt</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>590</x>
+     <y>181</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>688</x>
+     <y>177</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>create_symbolic_link()</slot>
+ </slots>
+</ui>
