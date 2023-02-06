@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Splitter</class>
+ <widget class="QDialog" name="Splitter">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>576</width>
+    <height>320</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>576</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>576</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>576</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Splitter</string>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1,4,1">
+   <property name="spacing">
+    <number>7</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Split the file to directory:</string>
+     </property>
+     <property name="buddy">
+      <cstring>lineEditSplitTheFileToDirectory</cstring>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayoutSplitTheFileToDirectory">
+     <item>
+      <widget class="QLineEdit" name="lineEditSplitTheFileToDirectory"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonOpenFolder">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_changedirtoroot.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_changedirtoroot.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButtonSettings">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/mr-pathtools.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/mr-pathtools.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBoxSizeAndNumberOfParts">
+     <property name="title">
+      <string>Size and number of parts</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="rightMargin">
+       <number>200</number>
+      </property>
+      <item>
+       <widget class="QComboBox" name="comboBoxSizeAndNumberOfParts">
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>Automatic</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>1457664B - 3.5&quot; High Density 1.44M</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>1213952B - 5.25&quot; High Density 1.2M</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>730112B - 3.5&quot; Double Density 720K</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>362496B - 5.25&quot; Double Density 360K</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>98078KB - ZIP 100MB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>650MB - CD 650MB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>700MB - CD 700MB</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>4482MB - DVD+R</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QRadioButton" name="radioButtonBytes">
+          <property name="text">
+           <string>Bytes</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButtonKilobytes">
+          <property name="text">
+           <string>Kilobytes</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButtonMegabytes">
+          <property name="text">
+           <string>Megabytes</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="radioButtonGigabytes">
+          <property name="text">
+           <string>Gigabytes</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayoutNumbersOfPart" stretch="0,0">
+        <property name="spacing">
+         <number>7</number>
+        </property>
+        <property name="rightMargin">
+         <number>50</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="labelNumberOfParts">
+          <property name="text">
+           <string>Number of parts</string>
+          </property>
+          <property name="buddy">
+           <cstring>lineEditNumberOfParts</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEditNumberOfParts"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBoxRequireCR32">
+        <property name="text">
+         <string>Require a CR32 verification file</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>Splitter</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>Splitter</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

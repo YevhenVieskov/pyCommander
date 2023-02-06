@@ -34,171 +34,115 @@
   <property name="modal">
    <bool>true</bool>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>290</x>
-     <y>280</y>
-     <width>211</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labelExtractFilesMatchingFileMask">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>191</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Extract files matching file mask:</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labelEditToTheDirectory">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>50</y>
-     <width>121</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>To the directory:</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="checkBoxUnpackEachArchiveToSeparateSubdir">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>110</y>
-     <width>391</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Unpack each arcive to a separate subdir (name of the archive)</string>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="checkBoxUnpackPathNamesIfStoredWithFiles">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>140</y>
-     <width>251</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Unpack path names if stored with files</string>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="checkBoxOverwriteExistingFiles">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>170</y>
-     <width>171</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Overwrite existing files</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="labelPassword">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>220</y>
-     <width>171</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Password for encrypted files:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEditToTheDirectory">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>50</y>
-     <width>271</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEditPassword">
-   <property name="geometry">
-    <rect>
-     <x>232</x>
-     <y>220</y>
-     <width>261</width>
-     <height>22</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBoxExtractFilesMatchingFileMask">
-   <property name="geometry">
-    <rect>
-     <x>200</x>
-     <y>20</y>
-     <width>351</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="editable">
-    <bool>true</bool>
-   </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <property name="text">
-     <string>*.*</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelExtractFilesMatchingFileMask">
+         <property name="text">
+          <string>Extract files matching file mask:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="comboBoxExtractFilesMatchingFileMask">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+         <item>
+          <property name="text">
+           <string>*.*</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelEditToTheDirectory">
+         <property name="text">
+          <string>To the directory:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLineEdit" name="lineEditToTheDirectory"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonOpenDirectory">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_switchignorelist.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_switchignorelist.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QCheckBox" name="checkBoxUnpackEachArchiveToSeparateSubdir">
+         <property name="text">
+          <string>Unpack each arcive to a separate subdir (name of the archive)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QCheckBox" name="checkBoxUnpackPathNamesIfStoredWithFiles">
+         <property name="text">
+          <string>Unpack path names if stored with files</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0" colspan="2">
+        <widget class="QCheckBox" name="checkBoxOverwriteExistingFiles">
+         <property name="text">
+          <string>Overwrite existing files</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="labelPassword">
+           <property name="text">
+            <string>Password for encrypted files:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEditPassword"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDialogButtonBox" name="buttonBox">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="standardButtons">
+        <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
-  </widget>
-  <widget class="QPushButton" name="pushButtonOpenDirectory">
-   <property name="geometry">
-    <rect>
-     <x>480</x>
-     <y>50</y>
-     <width>61</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_switchignorelist.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_switchignorelist.png</iconset>
-   </property>
-  </widget>
-  <widget class="Line" name="line">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>260</y>
-     <width>551</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-  </widget>
+  </layout>
  </widget>
  <resources/>
  <connections>
