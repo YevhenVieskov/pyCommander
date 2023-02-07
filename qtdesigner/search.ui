@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Standard">
        <attribute name="title">
@@ -336,7 +336,7 @@
         <property name="title">
          <string>Files</string>
         </property>
-        <widget class="QLabel" name="labelExcludeSubdirectories_2">
+        <widget class="QLabel" name="labelExcludeFiles">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -349,7 +349,7 @@
           <string>Exclude files</string>
          </property>
         </widget>
-        <widget class="QCheckBox" name="checkBoxSelectedDirectoriesAndFiles_2">
+        <widget class="QCheckBox" name="checkBoxSearchForPartOfFileName">
          <property name="geometry">
           <rect>
            <x>370</x>
@@ -362,7 +362,7 @@
           <string>Search for part of file name</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEditStartInDirectory_2">
+        <widget class="QLineEdit" name="lineEditFileMask">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -372,7 +372,7 @@
           </rect>
          </property>
         </widget>
-        <widget class="QCheckBox" name="checkBoxOpenedTabs_2">
+        <widget class="QCheckBox" name="checkBoxSearchInArchives">
          <property name="geometry">
           <rect>
            <x>200</x>
@@ -385,7 +385,7 @@
           <string>Search in archives</string>
          </property>
         </widget>
-        <widget class="QComboBox" name="comboBoxExcludeSubdirectories_2">
+        <widget class="QComboBox" name="comboBoxExcludeFiles">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -401,7 +401,7 @@
           <string/>
          </property>
         </widget>
-        <widget class="QLabel" name="labelStartInDirectory_2">
+        <widget class="QLabel" name="labelFileMask">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -414,7 +414,7 @@
           <string>File mask</string>
          </property>
         </widget>
-        <widget class="QCheckBox" name="checkBoxFollowSymlinks_2">
+        <widget class="QCheckBox" name="checkBoxRegularExpression">
          <property name="geometry">
           <rect>
            <x>620</x>
@@ -440,7 +440,7 @@
         <property name="title">
          <string>Find Data</string>
         </property>
-        <widget class="QCheckBox" name="checkBox">
+        <widget class="QCheckBox" name="checkBoxFindTextInFile">
          <property name="geometry">
           <rect>
            <x>20</x>
@@ -453,7 +453,7 @@
           <string>Find text in file</string>
          </property>
         </widget>
-        <widget class="QCheckBox" name="checkBox_2">
+        <widget class="QCheckBox" name="checkBoxReplaceBy">
          <property name="geometry">
           <rect>
            <x>20</x>
@@ -466,7 +466,7 @@
           <string>Replace by</string>
          </property>
         </widget>
-        <widget class="QCheckBox" name="checkBox_3">
+        <widget class="QCheckBox" name="checkBoxFindFilesNotContainingText">
          <property name="geometry">
           <rect>
            <x>20</x>
@@ -479,7 +479,7 @@
           <string>Find files NOT containing the text</string>
          </property>
         </widget>
-        <widget class="QCheckBox" name="checkBox_4">
+        <widget class="QCheckBox" name="checkBoxCaseSensitive">
          <property name="geometry">
           <rect>
            <x>260</x>
@@ -492,7 +492,7 @@
           <string>Case sensitive</string>
          </property>
         </widget>
-        <widget class="QCheckBox" name="checkBox_5">
+        <widget class="QCheckBox" name="checkBoxRegularExpressionFindData">
          <property name="geometry">
           <rect>
            <x>420</x>
@@ -505,7 +505,7 @@
           <string>Regular expression</string>
          </property>
         </widget>
-        <widget class="QCheckBox" name="checkBox_6">
+        <widget class="QCheckBox" name="checkBoxOfficeXML">
          <property name="geometry">
           <rect>
            <x>580</x>
@@ -518,7 +518,7 @@
           <string>Office XML</string>
          </property>
         </widget>
-        <widget class="QCheckBox" name="checkBox_7">
+        <widget class="QCheckBox" name="checkBoxHexadecimal">
          <property name="geometry">
           <rect>
            <x>420</x>
@@ -531,7 +531,7 @@
           <string>Hexadecimal</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="lineEditFindTextInFile">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -541,7 +541,7 @@
           </rect>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QLineEdit" name="lineEditReplaceBy">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -551,7 +551,7 @@
           </rect>
          </property>
         </widget>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="labelEncoding">
          <property name="geometry">
           <rect>
            <x>30</x>
@@ -564,7 +564,7 @@
           <string>Encoding:</string>
          </property>
         </widget>
-        <widget class="QComboBox" name="comboBox">
+        <widget class="QComboBox" name="comboBoxEncoding">
          <property name="geometry">
           <rect>
            <x>160</x>
@@ -650,77 +650,77 @@
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>cp866</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>cp874</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>cp932</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>cp936</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>cp949</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>cp950</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>ISO-8859-1</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>ISO-8859-2</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>ISO-8859-15</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>KOI8-R</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>KOI8-U</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>KOI8-RU</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>Macintosh</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>UTF-16LE</string>
           </property>
          </item>
          <item>
           <property name="text">
-           <string>New Item</string>
+           <string>UTF-16BE</string>
           </property>
          </item>
         </widget>
@@ -730,21 +730,641 @@
        <attribute name="title">
         <string>Advanced</string>
        </attribute>
+       <widget class="QCheckBox" name="checkBoxNotOlderThan">
+        <property name="geometry">
+         <rect>
+          <x>19</x>
+          <y>67</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Not older than:</string>
+        </property>
+       </widget>
+       <widget class="QSpinBox" name="spinBoxNotOlderThan">
+        <property name="geometry">
+         <rect>
+          <x>19</x>
+          <y>102</y>
+          <width>40</width>
+          <height>24</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxNotOlderThan">
+        <property name="geometry">
+         <rect>
+          <x>153</x>
+          <y>103</y>
+          <width>88</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Second(s)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Minute(s)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Hour(s)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Day(s)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Week(s)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Month(s)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Year(s)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Second(s)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Second(s)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Second(s)</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxSizeFrom">
+        <property name="geometry">
+         <rect>
+          <x>19</x>
+          <y>142</y>
+          <width>87</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Size from:</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxSizeTo">
+        <property name="geometry">
+         <rect>
+          <x>153</x>
+          <y>142</y>
+          <width>71</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Size to:</string>
+        </property>
+       </widget>
+       <widget class="QComboBox" name="comboBoxSizeTo">
+        <property name="geometry">
+         <rect>
+          <x>287</x>
+          <y>141</y>
+          <width>73</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <item>
+         <property name="text">
+          <string>Bytes</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Kilobytes</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Megabytes</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Gigabytes</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Terabytes</string>
+         </property>
+        </item>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxDateFrom">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>190</y>
+          <width>89</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Date from:</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxDateTo">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>190</y>
+          <width>73</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Date to:</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxTimeFrom">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>190</y>
+          <width>92</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Time from:</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxTimeTo">
+        <property name="geometry">
+         <rect>
+          <x>420</x>
+          <y>190</y>
+          <width>76</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Time to:</string>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEditFrom">
+        <property name="geometry">
+         <rect>
+          <x>19</x>
+          <y>213</y>
+          <width>92</width>
+          <height>24</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEditDateTo">
+        <property name="geometry">
+         <rect>
+          <x>153</x>
+          <y>213</y>
+          <width>92</width>
+          <height>24</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTimeEdit" name="timeEditTimeFrom">
+        <property name="geometry">
+         <rect>
+          <x>287</x>
+          <y>213</y>
+          <width>81</width>
+          <height>24</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTimeEdit" name="timeEditTimeTo">
+        <property name="geometry">
+         <rect>
+          <x>421</x>
+          <y>213</y>
+          <width>81</width>
+          <height>24</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="Line" name="lineDateAttribute">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>260</y>
+          <width>541</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="Line" name="lineAttributesFind">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>350</y>
+          <width>501</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxFindDuplicateFiles">
+        <property name="geometry">
+         <rect>
+          <x>31</x>
+          <y>381</y>
+          <width>138</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Find duplicate files:</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxSameName">
+        <property name="geometry">
+         <rect>
+          <x>51</x>
+          <y>411</y>
+          <width>94</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>same name</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxSameSize">
+        <property name="geometry">
+         <rect>
+          <x>152</x>
+          <y>411</y>
+          <width>84</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>same size</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxSameHash">
+        <property name="geometry">
+         <rect>
+          <x>243</x>
+          <y>411</y>
+          <width>89</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>same hash</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBoxSomeContent">
+        <property name="geometry">
+         <rect>
+          <x>339</x>
+          <y>411</y>
+          <width>104</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>some content</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>31</x>
+          <y>280</y>
+          <width>341</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QLabel" name="labelAttribute">
+           <property name="text">
+            <string>Attributes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>31</x>
+          <y>310</y>
+          <width>339</width>
+          <height>30</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLineEdit" name="lineEditAttributes"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonAdd">
+           <property name="text">
+            <string>Add</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonHelp">
+           <property name="text">
+            <string>Help</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="Plugins">
        <attribute name="title">
         <string>Plugins</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <item>
+           <widget class="QCheckBox" name="checkBoxUseSearchPlugin">
+            <property name="text">
+             <string>Use search plugin:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBoxUseSearchPlugin"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QCheckBox" name="checkBoxUseContentPlugin">
+            <property name="text">
+             <string>Use content plugins, combine with:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButtonAnd">
+            <property name="text">
+             <string>AND (all match)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButtonOr">
+            <property name="text">
+             <string>OR (any match)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidgetPlugin">
+          <column>
+           <property name="text">
+            <string>Plugin</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Field</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Operator</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Value</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonMoreRules">
+            <property name="text">
+             <string>More rules</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonLessRules">
+            <property name="text">
+             <string>Less rules</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="LoadSave">
        <attribute name="title">
         <string>Load/Save</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelPreviousSearches">
+            <property name="text">
+             <string>Previous searches:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QTextBrowser" name="textBrowserPrevious"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonLoad">
+            <property name="text">
+             <string>Load</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonSave">
+            <property name="text">
+             <string>Save</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonSaveWithStartInDirectory">
+            <property name="text">
+             <string>Save with &quot;Start in directory&quot;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonDelete">
+            <property name="text">
+             <string>Delete</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="Results">
        <attribute name="title">
         <string>Results</string>
        </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QGridLayout" name="gridLayout" columnstretch="1,0">
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelScanning">
+            <property name="text">
+             <string>Scanning: Finished</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="labelScannedTimeOfScan">
+            <property name="text">
+             <string>Scanned:550, Time of scan: 00:00:00.005</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLabel" name="labelFound">
+            <property name="text">
+             <string>Found:0</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QTextBrowser" name="textBrowserResult"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonView">
+            <property name="text">
+             <string>View</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonEdit">
+            <property name="text">
+             <string>Edit</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonGoToFile">
+            <property name="text">
+             <string>Go to file</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonFeedToListbox">
+            <property name="text">
+             <string>Feed to listbox</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
