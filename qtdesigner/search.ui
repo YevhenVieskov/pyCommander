@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1197</width>
-    <height>805</height>
+    <width>1151</width>
+    <height>681</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="Standard">
        <attribute name="title">
@@ -38,10 +38,13 @@
                <property name="text">
                 <string>Start in directory</string>
                </property>
+               <property name="buddy">
+                <cstring>lineEditStartInDirectory</cstring>
+               </property>
               </widget>
              </item>
              <item>
-              <spacer name="horizontalSpacer_6">
+              <spacer name="horizontalSpacerStartInDirectory">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
@@ -97,12 +100,18 @@
                <property name="text">
                 <string>Exclude subdirectories</string>
                </property>
+               <property name="buddy">
+                <cstring>comboBoxExcludeSubdirectories</cstring>
+               </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="labelSearchSubdirectories">
                <property name="text">
                 <string>Search subdirectories</string>
+               </property>
+               <property name="buddy">
+                <cstring>comboBoxSearchSubdirectories</cstring>
                </property>
               </widget>
              </item>
@@ -340,6 +349,9 @@
                <property name="text">
                 <string>File mask</string>
                </property>
+               <property name="buddy">
+                <cstring>lineEditFileMask</cstring>
+               </property>
               </widget>
              </item>
              <item>
@@ -388,6 +400,9 @@
             <widget class="QLabel" name="labelExcludeFiles">
              <property name="text">
               <string>Exclude files</string>
+             </property>
+             <property name="buddy">
+              <cstring>comboBoxExcludeFiles</cstring>
              </property>
             </widget>
            </item>
@@ -498,6 +513,9 @@
               <widget class="QLabel" name="labelEncoding">
                <property name="text">
                 <string>Encoding:</string>
+               </property>
+               <property name="buddy">
+                <cstring>comboBoxEncoding</cstring>
                </property>
               </widget>
              </item>
@@ -694,7 +712,7 @@
          </spacer>
         </item>
         <item row="3" column="0">
-         <spacer name="verticalSpacerAllGroupBoxes">
+         <spacer name="verticalSpacerStandardTab">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -714,7 +732,7 @@
        </attribute>
        <layout class="QGridLayout" name="gridLayout_6">
         <item row="0" column="0">
-         <layout class="QGridLayout" name="gridLayout_5">
+         <layout class="QGridLayout" name="gridLayoutDate">
           <item row="0" column="0">
            <widget class="QCheckBox" name="checkBoxNotOlderThan">
             <property name="text">
@@ -865,13 +883,13 @@
          </layout>
         </item>
         <item row="0" column="1">
-         <spacer name="horizontalSpacer_11">
+         <spacer name="horizontalSpacerDate">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>515</width>
+            <width>604</width>
             <height>20</height>
            </size>
           </property>
@@ -885,29 +903,32 @@
          </widget>
         </item>
         <item row="1" column="1" rowspan="2">
-         <spacer name="horizontalSpacer_12">
+         <spacer name="horizontalSpacerHorizontalLine1">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>515</width>
+            <width>604</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
         <item row="2" column="0" rowspan="2">
-         <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <layout class="QHBoxLayout" name="horizontalLayoutAttributes">
           <item>
            <widget class="QLabel" name="labelAttribute">
             <property name="text">
              <string>Attributes</string>
             </property>
+            <property name="buddy">
+             <cstring>lineEditAttributes</cstring>
+            </property>
            </widget>
           </item>
           <item>
-           <spacer name="horizontalSpacer_4">
+           <spacer name="horizontalSpacerAttributesIntermal">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -922,20 +943,20 @@
          </layout>
         </item>
         <item row="3" column="1" rowspan="2">
-         <spacer name="horizontalSpacer_14">
+         <spacer name="horizontalSpacerAttributes">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>515</width>
+            <width>604</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
         <item row="4" column="0" rowspan="2">
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <layout class="QHBoxLayout" name="horizontalLayoutAttributesButtons">
           <item>
            <widget class="QLineEdit" name="lineEditAttributes"/>
           </item>
@@ -956,26 +977,26 @@
          </layout>
         </item>
         <item row="5" column="1">
-         <spacer name="horizontalSpacer_15">
+         <spacer name="horizontalSpacerAttributesButton">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>515</width>
+            <width>604</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
         <item row="6" column="1" rowspan="2">
-         <spacer name="horizontalSpacer_13">
+         <spacer name="horizontalSpacerHorisontalLine2">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>515</width>
+            <width>604</width>
             <height>20</height>
            </size>
           </property>
@@ -989,7 +1010,7 @@
          </widget>
         </item>
         <item row="8" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_16">
+         <layout class="QHBoxLayout" name="horizontalLayoutFindDuplicateFiles">
           <item>
            <widget class="QCheckBox" name="checkBoxFindDuplicateFiles">
             <property name="text">
@@ -998,7 +1019,7 @@
            </widget>
           </item>
           <item>
-           <spacer name="horizontalSpacer_10">
+           <spacer name="horizontalSpacerFindDuplicateFilesInternal">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -1013,20 +1034,20 @@
          </layout>
         </item>
         <item row="8" column="1">
-         <spacer name="horizontalSpacer_16">
+         <spacer name="horizontalSpacerFindDuplicateFiles">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>515</width>
+            <width>604</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
         <item row="9" column="0">
-         <layout class="QHBoxLayout" name="horizontalLayout_17">
+         <layout class="QHBoxLayout" name="horizontalLayoutCheckBoxes">
           <item>
            <widget class="QCheckBox" name="checkBoxSameName">
             <property name="text">
@@ -1058,20 +1079,20 @@
          </layout>
         </item>
         <item row="9" column="1">
-         <spacer name="horizontalSpacer_17">
+         <spacer name="horizontalSpacerCheckBoxesDuplicateFiles">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>515</width>
+            <width>604</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
         </item>
         <item row="10" column="0">
-         <spacer name="verticalSpacer_4">
+         <spacer name="verticalSpacerAdvancedTab">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -1091,7 +1112,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <layout class="QHBoxLayout" name="horizontalLayoutUseSearchPlugin">
           <item>
            <widget class="QCheckBox" name="checkBoxUseSearchPlugin">
             <property name="text">
@@ -1105,7 +1126,7 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <layout class="QHBoxLayout" name="horizontalLayoutUseContentPlugin">
           <item>
            <widget class="QCheckBox" name="checkBoxUseContentPlugin">
             <property name="text">
@@ -1154,9 +1175,9 @@
          </widget>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <layout class="QHBoxLayout" name="horizontalLayoutButtonsPluginTab">
           <item>
-           <spacer name="horizontalSpacer_3">
+           <spacer name="horizontalSpacerButtons">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -1192,7 +1213,7 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
-         <layout class="QGridLayout" name="gridLayout_2">
+         <layout class="QGridLayout" name="gridLayoutPreviousSearches">
           <item row="0" column="0">
            <widget class="QLabel" name="labelPreviousSearches">
             <property name="text">
@@ -1206,9 +1227,9 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <layout class="QHBoxLayout" name="horizontalLayoutButtonsLoadSaveTab">
           <item>
-           <spacer name="horizontalSpacer_2">
+           <spacer name="horizontalSpacerLoadSaveTab">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -1286,9 +1307,9 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <layout class="QHBoxLayout" name="horizontalLayoutButtonsResultsTab">
           <item>
-           <spacer name="horizontalSpacer">
+           <spacer name="horizontalSpacerResultsTab">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -1413,7 +1434,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1197</width>
+     <width>1151</width>
      <height>26</height>
     </rect>
    </property>
