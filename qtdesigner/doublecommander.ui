@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>972</width>
-    <height>834</height>
+    <width>1396</width>
+    <height>629</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -32,6 +32,9 @@
    <property name="enabled">
     <bool>true</bool>
    </property>
+   <property name="mouseTracking">
+    <bool>true</bool>
+   </property>
    <layout class="QGridLayout" name="gridLayout" rowstretch="1,0,1,9,2" rowminimumheight="32,0,32,0,64">
     <property name="sizeConstraint">
      <enum>QLayout::SetMaximumSize</enum>
@@ -40,6 +43,9 @@
      <layout class="QHBoxLayout" name="horizontalLayoutLeftButtonBar" stretch="0,0,0">
       <property name="spacing">
        <number>7</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetFixedSize</enum>
       </property>
       <property name="bottomMargin">
        <number>0</number>
@@ -149,6 +155,9 @@
     </item>
     <item row="0" column="1">
      <layout class="QHBoxLayout" name="horizontalLayoutRightButtonBar">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetFixedSize</enum>
+      </property>
       <item>
        <widget class="QPushButton" name="pushButtonRightDrive1">
         <property name="sizePolicy">
@@ -263,6 +272,9 @@
      <layout class="QHBoxLayout" name="horizontalLayoutLeftDrivesList">
       <property name="spacing">
        <number>7</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetFixedSize</enum>
       </property>
       <property name="bottomMargin">
        <number>0</number>
@@ -511,6 +523,9 @@
     </item>
     <item row="2" column="1">
      <layout class="QHBoxLayout" name="horizontalLayoutRightDrivesList">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetFixedSize</enum>
+      </property>
       <item>
        <widget class="QComboBox" name="comboBoxRightDrives">
         <item>
@@ -759,8 +774,20 @@
        <enum>Qt::Horizontal</enum>
       </property>
       <widget class="QTabWidget" name="tabWidgetLeftPanel">
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="acceptDrops">
+        <bool>true</bool>
+       </property>
        <property name="currentIndex">
         <number>0</number>
+       </property>
+       <property name="tabsClosable">
+        <bool>true</bool>
+       </property>
+       <property name="movable">
+        <bool>true</bool>
        </property>
        <widget class="QWidget" name="tabLeft1">
         <attribute name="title">
@@ -776,11 +803,76 @@
          </item>
          <item>
           <widget class="QTreeWidget" name="treeWidgetLeftFilePanel1">
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
            <column>
             <property name="text">
-             <string notr="true">1</string>
+             <string notr="true">Name</string>
             </property>
            </column>
+           <column>
+            <property name="text">
+             <string>Ext</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Size</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Date</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Attr</string>
+            </property>
+           </column>
+           <item>
+            <property name="text">
+             <string>[..]</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normalon>../pyCommander/pixmaps/dctheme/24x24/actions/go-up.png</normalon>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>[algorithms]</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normalon>../pyCommander/pixmaps/dctheme/24x24/places/folder.png</normalon>
+             </iconset>
+            </property>
+            <item>
+             <property name="text">
+              <string>Алгоритмы. Вводный курс.pdf</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normalon>../pyCommander/pixmaps/dctheme/24x24/mimetypes/application-pdf.png</normalon>
+              </iconset>
+             </property>
+             <property name="text">
+              <string>pdf</string>
+             </property>
+             <property name="text">
+              <string>13.9 M</string>
+             </property>
+             <property name="text">
+              <string>11/1/2022 21:51:04</string>
+             </property>
+             <property name="text">
+              <string>--a--------</string>
+             </property>
+            </item>
+           </item>
           </widget>
          </item>
          <item>
@@ -799,8 +891,20 @@
        </widget>
       </widget>
       <widget class="QTabWidget" name="tabWidgetRightPanel">
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="acceptDrops">
+        <bool>true</bool>
+       </property>
        <property name="currentIndex">
         <number>0</number>
+       </property>
+       <property name="tabsClosable">
+        <bool>true</bool>
+       </property>
+       <property name="movable">
+        <bool>true</bool>
        </property>
        <widget class="QWidget" name="tabRight1">
         <attribute name="title">
@@ -816,11 +920,79 @@
          </item>
          <item>
           <widget class="QTreeWidget" name="treeWidgetRightFilePanel1">
+           <property name="mouseTracking">
+            <bool>true</bool>
+           </property>
            <column>
             <property name="text">
-             <string notr="true">1</string>
+             <string>Name</string>
             </property>
            </column>
+           <column>
+            <property name="text">
+             <string>Ext</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Size</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Date</string>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Attr</string>
+            </property>
+           </column>
+           <item>
+            <property name="text">
+             <string>[..]</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normalon>../pyCommander/pixmaps/dctheme/24x24/actions/go-up.png</normalon>
+             </iconset>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>[algorithms]</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normalon>../pyCommander/pixmaps/dctheme/24x24/places/folder.png</normalon>
+             </iconset>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <item>
+             <property name="text">
+              <string>Алгоритмы. Вводный курс.pdf</string>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normalon>../pyCommander/pixmaps/dctheme/24x24/mimetypes/application-pdf.png</normalon>
+              </iconset>
+             </property>
+             <property name="text">
+              <string>pdf</string>
+             </property>
+             <property name="text">
+              <string>13.9 M</string>
+             </property>
+             <property name="text">
+              <string>11/1/22022 21:51:04</string>
+             </property>
+             <property name="text">
+              <string>--a----------</string>
+             </property>
+            </item>
+           </item>
           </widget>
          </item>
          <item>
@@ -844,6 +1016,9 @@
      <layout class="QVBoxLayout" name="verticalLayoutBottomBars">
       <item>
        <layout class="QHBoxLayout" name="horizontalLayoutCommandLine">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetFixedSize</enum>
+        </property>
         <item>
          <widget class="QLabel" name="labelPath">
           <property name="text">
@@ -862,6 +1037,9 @@
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayoutFunctionKeyButtonBar">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetFixedSize</enum>
+        </property>
         <item>
          <widget class="QPushButton" name="pushButtonView">
           <property name="text">
@@ -953,7 +1131,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>972</width>
+     <width>1396</width>
      <height>26</height>
     </rect>
    </property>
@@ -2107,6 +2285,37 @@
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>pushButtonLeftVFS</tabstop>
+  <tabstop>pushButtonExit</tabstop>
+  <tabstop>pushButtonRightVFS</tabstop>
+  <tabstop>comboBoxLeftDrives</tabstop>
+  <tabstop>pushButtonLeftDirectoryHotlist</tabstop>
+  <tabstop>pushButtonLeftDrive1</tabstop>
+  <tabstop>pushButtonLeftGotoRootDirectory</tabstop>
+  <tabstop>pushButtonLeftGotoParentDirectory</tabstop>
+  <tabstop>pushButtonLeftGotoHomeDirectory</tabstop>
+  <tabstop>pushButtonLeftRightLeftPanel</tabstop>
+  <tabstop>comboBoxRightDrives</tabstop>
+  <tabstop>pushButtonRightDirectoryHotlist</tabstop>
+  <tabstop>pushButtonRightGotoRootDirectory</tabstop>
+  <tabstop>pushButtonRightGotoParentDirectory</tabstop>
+  <tabstop>pushButtonRightGotoHomeDirectory</tabstop>
+  <tabstop>pushButtonRightRightLeftPanel</tabstop>
+  <tabstop>tabWidgetLeftPanel</tabstop>
+  <tabstop>tabWidgetRightPanel</tabstop>
+  <tabstop>treeWidgetLeftFilePanel1</tabstop>
+  <tabstop>treeWidgetRightFilePanel1</tabstop>
+  <tabstop>pushButtonView</tabstop>
+  <tabstop>pushButtonEdit</tabstop>
+  <tabstop>pushButtonCopy</tabstop>
+  <tabstop>pushButtonRightDrive1</tabstop>
+  <tabstop>comboBoxPath</tabstop>
+  <tabstop>pushButtonMove</tabstop>
+  <tabstop>pushButtonDirectory</tabstop>
+  <tabstop>pushButtonDelete</tabstop>
+  <tabstop>pushButtonTerminal</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
