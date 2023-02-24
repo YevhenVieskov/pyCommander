@@ -4,7 +4,8 @@ Created on Fri Feb 17 22:17:21 2023
 
 @author: Yevhen_Vieskov
 """
-
+from pathlib import Path
+import os
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 w_resize = 1396
@@ -15,6 +16,114 @@ w_max = 480
 
 w_base = 800
 h_base = 600
+
+
+class DriveButton:
+    def __init__(self, object_name = "", 
+                 stretchFactorH = 0, stretchFactorV = 0, 
+                 wmin = 48, hmin = 32, wmax = 48, hmax = 32, 
+                 wbase = 48, hbase = 32, wicon = 16, hicon = 16,
+                 path = "", icon_name = "drive-harddisk.png", 
+                  flat = True,  parent = None):
+        super().__init__(parent)
+        self.object_name = object_name
+        self.stretchFactorH = stretchFactorH
+        self.stretchFactorV = stretchFactorV
+        self.wmin = wmin
+        self.hmin = hmin 
+        self.wmax = wmax
+        self.hmax = hmax 
+        self.wbase = wbase
+        self.hbase = hbase
+        self.wicon = wicon
+        self.hicon = hicon
+        self.path = path
+        self.icon_name = icon_name        
+        self.flat = flat
+        self.parent = parent #self.centralwidget
+        self._initButton()
+        
+    def _initButton(self):
+        self.pushButtonLeftDrive = QtWidgets.QPushButton(parent = self.parent)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(self.stretchFactorH)
+        sizePolicy.setVerticalStretch(self.stretchFactorV)
+        sizePolicy.setHeightForWidth(self.pushButtonLeftDrive1.sizePolicy().hasHeightForWidth())
+        self.pushButtonDrive.setSizePolicy(sizePolicy)
+        self.pushButtonDrive.setMinimumSize(QtCore.QSize(self.wmin, self.hmin))
+        self.pushButtonDrive.setMaximumSize(QtCore.QSize(self.wmax, self.hmax))
+        self.pushButtonDrive.setBaseSize(QtCore.QSize(self.wbase, self.hbase))
+        icon = QtGui.QIcon()
+        full_path = os.path.join(self.path, self.icon_name)
+        icon.addPixmap(QtGui.QPixmap(full_path), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButtonDrive.setIcon(icon)
+        self.pushButtonDrive.setIconSize(QtCore.QSize(self.wicon, self.hicon))
+        self.pushButtonDrive.setFlat(self.flat)
+        self.pushButtonDrive.setObjectName(self.object_name)
+        
+
+class DrivesButtonBar:
+    """Drives button bar"""
+    def __init__(self, objectName = "horizontalLayoutButtonBar",
+                 leftMargin = -1, topMargin = -1, 
+                 rightMargin = -1, bottomMargin = 0, layoutSpacing = 7,
+                 stretchFactorH = 0, stretchFactorV = 0,
+                 wmin = 48, hmin = 32, wmax = 48, hmax = 32, 
+                 wbase = 48,  hbase = 32,  wicon = 16,  hicon = 16,
+                 wspacer = 40, hspacer = 20, path, parent):
+        self.objectName = objectName
+        self.leftMargin = leftMargin
+        self.topMargin = topMargin
+        self.rightMargin = rightMargin
+        self.bottomMargin = bottomMargin
+        self.layoutSpacing = layoutSpacing
+        self.stretchFactorH = stretchFactorH
+        self.stretchFactorV = stretchFactorV
+        self.wmin = wmin
+        self.hmin = hmin
+        self.wmax = wmax
+        self.hmax = hmax 
+        self.wbase = wbase
+        self.hbase = hbase
+        self.wicon = wicon
+        self.hicon = hicon
+        self.wspacer = wspacer
+        self.hspacer = hspacer
+        self.path = ""
+        self.parent = parent
+        self.icons_list = ["camera-photo.png", "drive-harddisk.png", "drive-optical.png",
+                           "drive-removable-media.png", "drive-removable-media-usb.png",
+                           "drive-virtual.png", "media-flash.png", "media-floppy.png",
+                           "media-optical.png", "network-wired.png"]
+        self.drives_dict = {"C:\\" : "fixed"} 
+        self.pushButtonDrive = []
+        self._initDrivesButtonBar()
+
+
+    def _initDrivesButtonBar(self):
+        self.horizontalLayoutButtonBar = QtWidgets.QHBoxLayout()
+        self.horizontalLayoutButtonBar.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
+        self.horizontalLayoutButtonBar.setContentsMargins(self.leftMargin, 
+             self.topMargin, self.rightMargin, self.bottomMargin)
+        self.horizontalLayoutButtonBar.setSpacing(self.layoutSpacing)
+        self.horizontalLayoutButtonBar.setObjectName(self.objectName)
+        n = len(self.drives_dict)
+        n1 = n+1
+        for i in range(n):
+            iname = "drive-harddisk.png"
+            if(i == n1):
+                iname = "drive-virtual.png"  
+            button = DrivesButtonBar( object_name = f"pushButtonDrive{i}",                          
+                     path = self.path, icon_name = iname, 
+                            parent = self.parent)
+            self.pushButtonDrive.append(button)
+            self.horizontalLayoutButtonBar.addWidget(button)        
+        #VFS       
+        spacerItem = QtWidgets.QSpacerItem(self.wspacer, self.hspacer, 
+                QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayoutButtonBar.addItem(spacerItem)
+        
+       
 
 
 
@@ -143,7 +252,18 @@ class Window(QtWidgets.QMainWindow):
         menuTabs.addAction(self.actionCloseTab)
         menuTabs.addAction(self.actionCloseDuplicateTabs)
         menuTabs.addSeparator()
-        menuTabs.addAction(self.actionTabOptions)
+        menuTabOption = menuTabs.addMenu("Tab Option")
+        menuTabOption.addAction(self.actionNormal) 
+        menuTabOption.addAction(self.actionLocked)
+        menuTabOption.addAction(self.actionLockedWithDirectoryChangesAllowed)
+        menuTabOption.addAction(self.actionLockedWithDirectoriesOpenedInNewTabs)
+        menuTabOption.addSeparator()
+        menuTabOption.addAction(self.actionSetAllTabsToNormal) 
+        menuTabOption.addAction(self.actionSetAllTabsToLocked)
+        menuTabOption.addAction(self.actionAllTabsLockedWithDirChangesAllowed)
+        menuTabOption.addAction(self.actionAllTabsLockedWithDirOpenedInNewTabs)
+       
+        
         menuTabs.addSeparator()
         menuTabs.addAction(self.actionSwitchToNextTab)
         menuTabs.addAction(self.actionSwitchToPreviousTab)
@@ -228,7 +348,7 @@ class Window(QtWidgets.QMainWindow):
         toolBar = QtWidgets.QToolBar()
         toolBar.setObjectName("toolBar")
         self.addToolBar(QtCore.Qt.TopToolBarArea, toolBar)
-        #toolBar.setWindowTitle(_translate("self", "toolBar"))
+        
         
     def _createActions(self):    
         self.actionCreateSymbolicLink = QtWidgets.QAction(self)
@@ -876,112 +996,461 @@ class Window(QtWidgets.QMainWindow):
         self.actionAbout.setText("&About")
         self.actionAbout.setShortcut("")
         self.actionAbout.setStatusTip("")
+        #C:/Users/Yevhen_Vieskov/pyCommander/pyCommander/pixmaps/dctheme/16x16/actions/application-exit.png
         
+        path_abs = os.path.dirname(__file__)
+        path_pixmap = "pixmaps/dctheme/16x16/actions"
+        path = os.path.join(path_abs, path_pixmap)
         self.actionTBRefresh = QtWidgets.QAction(self)
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon5.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBRefresh.setIcon(icon5)
+        icon_refresh = QtGui.QIcon()
+        icon_refresh.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_refresh.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon_refresh.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_refresh.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBRefresh.setIcon(icon_refresh)
         self.actionTBRefresh.setObjectName("actionTBRefresh")
         self.actionTBRunTerminal = QtWidgets.QAction(self)
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_runterm.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBRunTerminal.setIcon(icon6)
+        icon_runterm = QtGui.QIcon()
+        icon_runterm.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_runterm.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBRunTerminal.setIcon(icon_runterm)
         self.actionTBRunTerminal.setObjectName("actionTBRunTerminal")
         self.actionTBOptions = QtWidgets.QAction(self)
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_options.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBOptions.setIcon(icon7)
+        icon_options = QtGui.QIcon()
+        icon_options.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_options.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBOptions.setIcon(icon_options)
         self.actionTBOptions.setObjectName("actionTBOptions")
         self.actionTBBriefView = QtWidgets.QAction(self)
         self.actionTBBriefView.setCheckable(True)
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon8.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBBriefView.setIcon(icon8)
+        icon_briefview = QtGui.QIcon()
+        icon_briefview.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_briefview.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon_briefview.addPixmap(QtGui.QPixmap("cm_briefview.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBBriefView.setIcon(icon_briefview)
         self.actionTBBriefView.setObjectName("actionTBBriefView")
         self.actionTBColumnsView = QtWidgets.QAction(self)
         self.actionTBColumnsView.setCheckable(True)
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_columnsview.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBColumnsView.setIcon(icon9)
+        icon_columnsview = QtGui.QIcon()
+        icon_columnsview.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_columnsview.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBColumnsView.setIcon(icon_columnsview)
         self.actionTBColumnsView.setObjectName("actionTBColumnsView")
         self.actionTBThumbnails = QtWidgets.QAction(self)
         self.actionTBThumbnails.setCheckable(True)
-        icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_thumbnailsview.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBThumbnails.setIcon(icon10)
+        icon_thumbnailsview = QtGui.QIcon()
+        icon_thumbnailsview.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_thumbnailsview.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBThumbnails.setIcon(icon_thumbnailsview)
         self.actionTBThumbnails.setObjectName("actionTBThumbnails")
         self.actionTBFlatView = QtWidgets.QAction(self)
         self.actionTBFlatView.setCheckable(True)
-        icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_flatview.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBFlatView.setIcon(icon11)
+        icon_flatview = QtGui.QIcon()
+        icon_flatview.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_flatview.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBFlatView.setIcon(icon_flatview)
         self.actionTBFlatView.setObjectName("actionTBFlatView")
         self.actionTBGotoPreviousEntryInHistory = QtWidgets.QAction(self)
-        icon12 = QtGui.QIcon()
-        icon12.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_viewhistoryprev.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBGotoPreviousEntryInHistory.setIcon(icon12)
+        icon_viewhistoryprev = QtGui.QIcon()
+        icon_viewhistoryprev.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_viewhistoryprev.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBGotoPreviousEntryInHistory.setIcon(icon_viewhistoryprev)
         self.actionTBGotoPreviousEntryInHistory.setObjectName("actionTBGotoPreviousEntryInHistory")
         self.actionTBGotoPreviousEntryInHistory2 = QtWidgets.QAction(self)
-        icon13 = QtGui.QIcon()
-        icon13.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_viewhistorynext.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBGotoPreviousEntryInHistory2.setIcon(icon13)
+        icon_viewhistorynext = QtGui.QIcon()
+        icon_viewhistorynext.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_viewhistorynext.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBGotoPreviousEntryInHistory2.setIcon(icon_viewhistorynext)
         self.actionTBGotoPreviousEntryInHistory2.setObjectName("actionTBGotoPreviousEntryInHistory2")
         self.actionTBSelectGroup = QtWidgets.QAction(self)
-        icon14 = QtGui.QIcon()
-        icon14.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBSelectGroup.setIcon(icon14)
+        icon_markplus = QtGui.QIcon()
+        icon_markplus.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_markplus.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBSelectGroup.setIcon(icon_markplus)
         self.actionTBSelectGroup.setObjectName("actionTBSelectGroup")
         self.actionTBUnselectGroup = QtWidgets.QAction(self)
-        icon15 = QtGui.QIcon()
-        icon15.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_markminus.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon15.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBUnselectGroup.setIcon(icon15)
+        icon_markminus = QtGui.QIcon()
+        icon_markminus.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_markminus.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon_markminus.addPixmap(QtGui.QPixmap(os.path.join(path,"cm_markplus.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBUnselectGroup.setIcon(icon_markminus)
         self.actionTBUnselectGroup.setObjectName("actionTBUnselectGroup")
         self.actionTBInvertSelection = QtWidgets.QAction(self)
-        icon16 = QtGui.QIcon()
-        icon16.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_markinvert.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        icon16.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBInvertSelection.setIcon(icon16)
+        icon_markinvert = QtGui.QIcon()
+        icon_markinvert.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_markinvert.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon_markinvert.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_markplus.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBInvertSelection.setIcon(icon_markinvert)
         self.actionTBInvertSelection.setObjectName("actionTBInvertSelection")
         self.actionTBPackFiles = QtWidgets.QAction(self)
-        icon17 = QtGui.QIcon()
-        icon17.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_packfiles.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBPackFiles.setIcon(icon17)
+        icon_packfiles = QtGui.QIcon()
+        icon_packfiles.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_packfiles.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBPackFiles.setIcon(icon_packfiles)
         self.actionTBPackFiles.setObjectName("actionTBPackFiles")
         self.actionTBExtractFiles = QtWidgets.QAction(self)
-        icon18 = QtGui.QIcon()
-        icon18.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_extractfiles.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBExtractFiles.setIcon(icon18)
+        icon_extractfiles = QtGui.QIcon()
+        icon_extractfiles.addPixmap(QtGui.QPixmap(os.path.join(path,"cm_extractfiles.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBExtractFiles.setIcon(icon_extractfiles)
         self.actionTBExtractFiles.setObjectName("actionTBExtractFiles")
         self.actionTBSearch = QtWidgets.QAction(self)
-        icon19 = QtGui.QIcon()
-        icon19.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_search.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBSearch.setIcon(icon19)
+        icon_search = QtGui.QIcon()
+        icon_search.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_search.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBSearch.setIcon(icon_search)
         self.actionTBSearch.setObjectName("actionTBSearch")
         self.actionTBMultiRenameTool = QtWidgets.QAction(self)
-        icon20 = QtGui.QIcon()
-        icon20.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_multirename.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBMultiRenameTool.setIcon(icon20)
+        icon_multirename = QtGui.QIcon()
+        icon_multirename.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_multirename.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBMultiRenameTool.setIcon(icon_multirename)
         self.actionTBMultiRenameTool.setObjectName("actionTBMultiRenameTool")
         self.actionTBSynchronizeDirs = QtWidgets.QAction(self)
-        icon21 = QtGui.QIcon()
-        icon21.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_syncdirs.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBSynchronizeDirs.setIcon(icon21)
+        icon_syncdirs = QtGui.QIcon()
+        icon_syncdirs.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_syncdirs.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBSynchronizeDirs.setIcon(icon_syncdirs)
         self.actionTBSynchronizeDirs.setObjectName("actionTBSynchronizeDirs")
         self.actionTBCopyFilenameWithFullPath = QtWidgets.QAction(self)
-        icon22 = QtGui.QIcon()
-        icon22.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/16x16/actions/cm_copyfullnamestoclip.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.actionTBCopyFilenameWithFullPath.setIcon(icon22)
+        icon_copyfullnamestoclip = QtGui.QIcon()
+        icon_copyfullnamestoclip.addPixmap(QtGui.QPixmap(os.path.join(path, "cm_copyfullnamestoclip.png")), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.actionTBCopyFilenameWithFullPath.setIcon(icon_copyfullnamestoclip)
         self.actionTBCopyFilenameWithFullPath.setObjectName("actionTBCopyFilenameWithFullPath")
+    
+    def _connectActions(self):
+        self.actionCreateSymbolicLink.triggered.connect(self.create_symbolic_link)
+        self.actionCreateHardLink.triggered.connect(self.create_hard_link)
+        self.actionCreateDirectory.triggered.connect(self.create_directory)
+        self.actionCreateShortcut.triggered.connect(self.create_shortcut)
+        self.actionChangeAttributes.triggered.connect(self.change_attributes)
+        self.actionShowFileProperties.triggered.connect(self.show_file_properties)
+        self.actionEditComment.triggered.connect(self.edit_comment)
+        self.actionCalculateOccupiedSpace.triggered.connect(self.calculate_occupied_space)
+        self.actionCompareByContents.triggered.connect(self.compare_by_contents)
+        self.actionMultiRenameTool.triggered.connect(self.multi_rename_tool)
+        self.actionPackFiles.triggered.connect(self.pack_files)
+        self.actionExtractFiles.triggered.connect(self.extract_files)
+        self.actionTestArchive.triggered.connect(self.test_archive)
+        self.actionSplitFile.triggered.connect(self.split_file)
+        self.actionCombineFiles.triggered.connect(self.combine_file)
+        self.actionCalculateChecksum.triggered.connect(self.calculate_checksaum)
+        self.actionVerifyChecksum.triggered.connect(self.verify_checksum)
+        self.actionWipe.triggered.connect(self.wipe)
+        self.actionDelete.triggered.connect(self.pc_delete)
+        self.actionExit.triggered.connect(self.pc_exit)
         
+        self.actionSelectGroup.triggered.connect(self.select_group)
+        self.actionUnselectGroup.triggered.connect(self.unselect_group)
+        self.actionSelectAll.triggered.connect(self.select_all)
+        self.actionUnselectAll.triggered.connect(self.unselect_all)
+        self.actionInvertSelection.triggered.connect(self.invert_selection)
+        self.actionSelectAllWithTheSameExtension.triggered.connect(self.select_all_with_the_same_extension)        
+        self.actionSaveSelection.triggered.connect(self.save_selection)
+        self.actionRestoreSelection.triggered.connect(self.restore_selection)
+        self.actionSaveSelectionToFile.triggered.connect(self.save_selection_to_file)
+        self.actionLoadSelectionFromFile.triggered.connect(self.load_selection_from_file)
+        self.actionLoadSelectionFromClipboard.triggered.connect(self.load_selection_from_clipboard)        
+        self.actionCopyFilenameToClipboard.triggered.connect(self.copy_filename_to_clipboard)
+        self.actionCopyFilenameWithFullPath.triggered.connect(self.copy_filename_with_full_path)
+        self.actionCopyAllShownColumns.triggered.connect(self.copy_all_shown_columns)        
+        self.actionCompareDirectories.triggered.connect(self.compare_directories)
+        
+        self.actionSearch.triggered.connect(self.search)
+        self.actionNewSearchInstance.triggered.connect(self.search_instance)
+        self.actionViewCurrentSearchInstances.triggered.connect(self.current_search_instances)
+        self.actionDirectoryHotlist.triggered.connect(self.directory_hot_list)
+        self.actionSynchronizeDirs.triggered.connect(self.synchronize_dirs)       
+        self.actionRunTerminal.triggered.connect(self.run_terminal)
+        self.actionExecuteInternalCommand.triggered.connect(self.execute_internal_command)        
+        self.actionFlatView.triggered.connect(self.flat_view)
+        self.actionOpenVFSList.triggered.connect(self.open_vfs_list)
+        self.actionSwapPanels.triggered.connect(self.swap_panels)
+        self.actionTargetSource.triggered.connect(self.target_source)        
+        self.actionShowOccupiedSpace.triggered.connect(self.show_occupied_space)
+        
+        self.actionNetworkConnect.triggered.connect(self.network_connect)
+        self.actionNetworkDisconnect.triggered.connect(self.network_disconnect)       
+        self.actionMapNetworkDrive.triggered.connect(self.map_network_drive)
+        self.actionDisconnectNetworkDrive.triggered.connect(self.disconnect_network_drive)      
+        self.actionCopyNamesWithUNCPath.triggered.connect(self.copy_names_with_uncpath)
+        
+        self.actionNewTab.triggered.connect(self.new_tab)
+        self.actionRenameTab.triggered.connect(self.rename_tab)
+        self.actionOpenFolderInNewTab.triggered.connect(self.open_folder_in_new_tab)       
+        self.actionCloseTab.triggered.connect(self.close_tab)        
+        self.actionCloseDuplicateTabs.triggered.connect(self.close_duplicated_tab)
+        normal
+       self.actionNormal.triggered.connect(self.normal) 
+       self.actionLocked.triggered.connect(self.locked)
+       self.actionLockedWithDirectoryChangesAllowed.triggered.connect(self.locked_with_directory_changes_allowed)
+       self.actionLockedWithDirectoriesOpenedInNewTabs.triggered.connect(self.locked_with_directories_opened_in_new_tabs)       
+       self.actionSetAllTabsToNormal.triggered.connect(self.set_all_tabs_to_normal) 
+       self.actionSetAllTabsToLocked.triggered.connect(self.set_all_tabs_to_locked)
+       self.actionAllTabsLockedWithDirChangesAllowed.triggered.connect(self.all_tabs_locked_with_dir_changes_allowed)
+       self.actionAllTabsLockedWithDirOpenedInNewTabs.triggered.connect(self.all_tabs_locked_with_dir_opened_in_new_tabs)
+       
+       self.actionSwitchToNextTab.triggered.connect(self.switch_to_next_tab)
+       self.actionSwitchToPreviousTab.triggered.connect(self.switch_to_previous_tab)
+        
+       self.actionSaveTabsToFile.triggered.connect(self.save_tabs_to_file)
+       self.actionLoadTabsFromFile.triggered.connect(self.load_tabs_from_file)
+       self.actionSaveCurrentTabsToNewFavoriteTabs.triggered.connect(self.save_current_tabs_to_new_favorite_tabs)
+       self.actionLoadTabsFromFavoriteTabs.triggered.connect(self.load_tabs_from_favorite_tabs)
+        
+       self.actionConfigurationOfFolderTabs.triggered.connect(self.configuration_of_folder_tabs)
+       self.actionConfigurationOfFavoriteTabs.triggered.connect(self.configuration_of_favorite_tabs)       
+       
+       self.actionSaveCurrentTabsToNewFavoriteTabs.triggered.connect(self.save_current_tabs_to_new_favorite_tabs)
+       self.actionResaveOnTheLastFavoriteTabsLoaded.triggered.connect(self.resave_on_the_last_favorite_tabs_loaded)
+       self.actionRelopadTheLastFavoriteTabsLoaded.triggered.connect(self.relopad_the_last_favorite_tabs_loaded)
+       self.actionConfigurationOfFavoriteTabs.triggered.connect(self.configuration_of_favorite_tabs)
+    
+       self.actionBriefView.triggered.connect(self.brief_view)
+       self.actionFull.triggered.connect(self.full)
+       self.actionThumbnails.triggered.connect(self.thumbnails)        
+       self.actionQuickViewPanel.triggered.connect(self.quick_view_panel)
+       self.actionTreeViewPanel.triggered.connect(self.tree_view_panel)        
+       self.actionSortByName.triggered.connect(self.sort_by_name)
+       self.actionSortByExtension.triggered.connect(self.sort_by_extension)
+       self.actionSortBySize.triggered.connect(self.sort_by_size)
+       self.actionSortByDate.triggered.connect(self.sort_by_date)
+       self.actionSortByAttributes.triggered.connect(self.sort_by_attributes)        
+       self.actionReverseOrder.triggered.connect(self.reverse_order)
+       self.actionRefresh.triggered.connect(self.refresh)        
+       self.actionShowHiddenSystemFiles.triggered.connect(self.show_hidden_system_files)        
+       self.actionHorizontalPanelsMode.triggered.connect(self.horizontal_panels_mode)       
+       self.actionOperationsViewer.triggered.connect(self.operations_viewer)
+       
+       self.actionOptionsTriggered.connect(self.options_triggered)        
+       self.actionConfigurationOfDirectoryHotlist.triggered.connect(self.configuration_of_directory_hotlist)
+       self.actionConfigurationOfFileAssociations.triggered.connect(self.configuration_of_file_associations)
+       self.actionConfigurationOfArchivers.triggered.connect(self.configuration_of_archivers)
+       self.actionSavePosition.triggered.connect(self.save_position)
+       self.actionSaveSettings.triggered.connect(self.save_settings)
+       
+       self.actionContents.triggered.connect(self.contents)
+       self.actionKeyboard.triggered.connect(self.keyboard)
+       self.actionVisitDoubleCommanderWebsite.triggered.connect(self.visit_double_commander_website)    
+       self.actionAbout.triggered.connect(self.about)
+  
+    
     def _createToolBars(self):
+        self.toolBar = QtWidgets.QToolBar(self)
+        self.toolBar.setObjectName("mainToolBar")
+        self.toolBar.setIconSize(QtCore.QSize(16,16))
+        self.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
+        self.toolBar.addAction(self.actionTBRefresh)
+        self.toolBar.addAction(self.actionTBRunTerminal)
+        self.toolBar.addAction(self.actionTBOptions)
+        self.toolBar.addSeparator()
+        self.toolBar.addAction(self.actionTBBriefView)
+        self.toolBar.addAction(self.actionTBColumnsView)
+        self.toolBar.addAction(self.actionTBThumbnails)
+        self.toolBar.addSeparator()
+        self.toolBar.addAction(self.actionTBFlatView)
+        self.toolBar.addSeparator()
+        self.toolBar.addAction(self.actionTBGotoPreviousEntryInHistory)
+        self.toolBar.addAction(self.actionTBGotoPreviousEntryInHistory2)
+        self.toolBar.addSeparator()
+        self.toolBar.addAction(self.actionTBSelectGroup)
+        self.toolBar.addAction(self.actionTBUnselectGroup)
+        self.toolBar.addAction(self.actionTBInvertSelection)
+        self.toolBar.addSeparator()
+        self.toolBar.addAction(self.actionTBPackFiles)
+        self.toolBar.addAction(self.actionTBExtractFiles)
+        self.toolBar.addSeparator()
+        self.toolBar.addAction(self.actionTBSearch)
+        self.toolBar.addAction(self.actionTBMultiRenameTool)
+        self.toolBar.addAction(self.actionTBSynchronizeDirs)
+        self.toolBar.addAction(self.actionTBCopyFilenameWithFullPath)
+        
+
+    def create_symbolic_link():
+        pass
+    def create_hard_link():
+        pass
+    def create_directory():
+        pass
+    def create_shortcut():
+        pass
+    def change_attributes():
+        pass
+    def show_file_properties():
+        pass
+    def edit_comment():
+        pass
+    def calculate_occupied_space():
+        pass
+    def compare_by_contents():
+        pass
+    def multi_rename_tool():
+        pass
+    def pack_files():
+        pass
+    def extract_files():
+        pass
+    def test_archive():
+        pass
+    def split_file():
+        pass
+    def combine_file():
+        pass
+    def calculate_checksaum():
+        pass
+    def verify_checksum():
+        pass
+    def wipe():
+        pass
+    def pc_delete():
+        pass
+    def pc_exit():
+        pass
+    
+    def select_group():
+        pass
+    def unselect_group():
+        pass
+    def select_all():
+        pass
+    def unselect_all():
+        pass
+    def invert_selection():
+        pass
+    def select_all_with_the_same_extension():
+        pass
+    def restore_selection():
+        pass
+    def save_selection_to_file():
+        pass
+    def load_selection_from_file():
+        pass
+    def load_selection_from_clipboard():
+        pass
+    def copy_filename_to_clipboard():
+        pass
+    def copy_filename_with_full_path():
+        pass
+    def copy_all_shown_columns():
+        pass
+    def compare_directories(): 
+        pass
+    
+    def search():
+        pass
+    def search_instance():
+        pass
+    def current_search_instances():
+        pass
+    def directory_hot_list():
+        pass
+    def synchronize_dirs():
+        pass
+    def run_terminal():
+        pass
+    def execute_internal_command():
+        pass
+    def flat_view():
+        pass
+    def open_vfs_list():
+        pass
+    def swap_panels():
+        pass
+    def target_source():
+        pass
+    def show_occupied_space():
         pass
 
-
-
-
-
-
+    def network_connect():
+        pass
+    def network_disconnect():
+        pass
+    def map_network_drive():
+        pass
+    def disconnect_network_drive():
+        pass
+    def copy_names_with_uncpath():
+        pass
+    def new_tab():
+        pass
+    def rename_tab():
+        pass
+    def open_folder_in_new_tab():
+        pass
+    def close_tab():
+        pass
+    def close_duplicated_tab():
+        pass
+    def normal():
+        pass
+    def locked():
+        pass
+    def locked_with_directory_changes_allowed():
+        pass
+    def locked_with_directories_opened_in_new_tabs():
+        pass
+    def set_all_tabs_to_normal():
+        pass
+    def set_all_tabs_to_locked():
+        pass
+    def all_tabs_locked_with_dir_changes_allowed():
+        pass
+    def all_tabs_locked_with_dir_opened_in_new_tabs():
+        pass
+    def switch_to_next_tab():
+        pass
+    def switch_to_previous_tab():
+        pass
+    def save_tabs_to_file():
+        pass
+    def load_tabs_from_file():
+        pass
+    def save_current_tabs_to_new_favorite_tabs():
+        pass
+    def load_tabs_from_favorite_tabs():
+        pass
+    def configuration_of_folder_tabs():
+        pass
+    def configuration_of_favorite_tabs():
+        pass
+    def save_current_tabs_to_new_favorite_tabs():
+        pass
+    def resave_on_the_last_favorite_tabs_loaded():
+        pass
+    def relopad_the_last_favorite_tabs_loaded():
+        pass
+    def configuration_of_favorite_tabs():
+        pass
+   def brief_view():
+       pass
+   def full():
+       pass
+   def thumbnails():
+       pass
+   def quick_view_panel():
+       pass
+   def tree_view_panel():
+       pass
+   def sort_by_name():
+       pass
+   def sort_by_extension():
+       pass
+   def sort_by_size():
+       pass
+   def sort_by_date():
+       pass
+   def sort_by_attributes():
+       pass
+-  def reverse_order():
+       pass
+   def refresh():
+       pass
+   def show_hidden_system_files():
+       pass
+   def horizontal_panels_mode():
+       pass
+   def operations_viewer():
+       pass
+   def options_triggered():
+       pass
+   def configuration_of_directory_hotlist():
+       pass
+   def configuration_of_file_associations():
+       pass
+   def configuration_of_archivers():
+       pass
+   def save_position():
+       pass
+   def save_settings():
+       pass
+   def contents():
+       pass
+   def keyboard():
+       pass
+   def visit_double_commander_website():
+       pass
+   def about():
+       pass
 

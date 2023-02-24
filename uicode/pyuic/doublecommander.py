@@ -25,6 +25,7 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setSizeConstraint(QtWidgets.QLayout.SetMaximumSize)
         self.gridLayout.setObjectName("gridLayout")
+        
         self.horizontalLayoutLeftButtonBar = QtWidgets.QHBoxLayout()
         self.horizontalLayoutLeftButtonBar.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
         self.horizontalLayoutLeftButtonBar.setContentsMargins(-1, -1, -1, 0)
@@ -64,7 +65,9 @@ class Ui_MainWindow(object):
         self.horizontalLayoutLeftButtonBar.addWidget(self.pushButtonLeftVFS)
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayoutLeftButtonBar.addItem(spacerItem)
+        
         self.gridLayout.addLayout(self.horizontalLayoutLeftButtonBar, 0, 0, 1, 1)
+        
         self.horizontalLayoutRightButtonBar = QtWidgets.QHBoxLayout()
         self.horizontalLayoutRightButtonBar.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
         self.horizontalLayoutRightButtonBar.setObjectName("horizontalLayoutRightButtonBar")
