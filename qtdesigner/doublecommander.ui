@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1396</width>
-    <height>629</height>
+    <width>932</width>
+    <height>652</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -81,7 +81,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</iconset>
+          <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</normaloff>
+          <normalon>../pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -125,7 +126,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</iconset>
+          <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</normaloff>
+          <normalon>../pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -189,7 +191,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</iconset>
+          <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</normaloff>
+          <normalon>../pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -233,7 +236,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</iconset>
+          <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</normaloff>
+          <normalon>../pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -287,7 +291,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</iconset>
+           <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</iconset>
          </property>
         </item>
         <item>
@@ -296,7 +300,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</iconset>
+           <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</iconset>
          </property>
         </item>
        </widget>
@@ -534,7 +538,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</iconset>
+           <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-harddisk.png</iconset>
          </property>
         </item>
         <item>
@@ -543,7 +547,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</normaloff>../pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</iconset>
+           <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/devices/drive-virtual.png</iconset>
          </property>
         </item>
        </widget>
@@ -837,7 +841,7 @@
             </property>
             <property name="icon">
              <iconset>
-              <normalon>../pyCommander/pixmaps/dctheme/24x24/actions/go-up.png</normalon>
+              <normalon>../../.designer/pyCommander/pixmaps/dctheme/24x24/actions/go-up.png</normalon>
              </iconset>
             </property>
            </item>
@@ -847,7 +851,7 @@
             </property>
             <property name="icon">
              <iconset>
-              <normalon>../pyCommander/pixmaps/dctheme/24x24/places/folder.png</normalon>
+              <normalon>../../.designer/pyCommander/pixmaps/dctheme/24x24/places/folder.png</normalon>
              </iconset>
             </property>
             <item>
@@ -856,7 +860,7 @@
              </property>
              <property name="icon">
               <iconset>
-               <normalon>../pyCommander/pixmaps/dctheme/24x24/mimetypes/application-pdf.png</normalon>
+               <normalon>../../.designer/pyCommander/pixmaps/dctheme/24x24/mimetypes/application-pdf.png</normalon>
               </iconset>
              </property>
              <property name="text">
@@ -954,7 +958,7 @@
             </property>
             <property name="icon">
              <iconset>
-              <normalon>../pyCommander/pixmaps/dctheme/24x24/actions/go-up.png</normalon>
+              <normalon>../../.designer/pyCommander/pixmaps/dctheme/24x24/actions/go-up.png</normalon>
              </iconset>
             </property>
            </item>
@@ -964,7 +968,7 @@
             </property>
             <property name="icon">
              <iconset>
-              <normalon>../pyCommander/pixmaps/dctheme/24x24/places/folder.png</normalon>
+              <normalon>../../.designer/pyCommander/pixmaps/dctheme/24x24/places/folder.png</normalon>
              </iconset>
             </property>
             <property name="text">
@@ -976,7 +980,7 @@
              </property>
              <property name="icon">
               <iconset>
-               <normalon>../pyCommander/pixmaps/dctheme/24x24/mimetypes/application-pdf.png</normalon>
+               <normalon>../../.designer/pyCommander/pixmaps/dctheme/24x24/mimetypes/application-pdf.png</normalon>
               </iconset>
              </property>
              <property name="text">
@@ -1131,7 +1135,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1396</width>
+     <width>932</width>
      <height>26</height>
     </rect>
    </property>
@@ -2026,8 +2030,8 @@
   <action name="actionTBRefresh">
    <property name="icon">
     <iconset>
-     <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png</normaloff>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png</normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png</iconset>
+     <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png</normaloff>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png</normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_refresh.png</iconset>
    </property>
    <property name="text">
     <string>Refresh</string>
@@ -2039,7 +2043,7 @@
   <action name="actionTBRunTerminal">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_runterm.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_runterm.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2052,7 +2056,7 @@
   <action name="actionTBOptions">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_options.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_options.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2065,8 +2069,8 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png</normaloff>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png</normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png</iconset>
+     <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png</normaloff>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png</normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_briefview.png</iconset>
    </property>
    <property name="text">
     <string>Brief view</string>
@@ -2081,7 +2085,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_columnsview.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_columnsview.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2100,7 +2104,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_thumbnailsview.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_thumbnailsview.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2116,7 +2120,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_flatview.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_flatview.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2129,7 +2133,7 @@
   <action name="actionTBGotoPreviousEntryInHistory">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_viewhistoryprev.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_viewhistoryprev.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2145,7 +2149,7 @@
   <action name="actionTBGotoPreviousEntryInHistory2">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_viewhistorynext.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_viewhistorynext.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2161,7 +2165,7 @@
   <action name="actionTBSelectGroup">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2171,8 +2175,8 @@
   <action name="actionTBUnselectGroup">
    <property name="icon">
     <iconset>
-     <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markminus.png</normaloff>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png</normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markminus.png</iconset>
+     <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_markminus.png</normaloff>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png</normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_markminus.png</iconset>
    </property>
    <property name="text">
     <string>Unselect  a Group...</string>
@@ -2184,8 +2188,8 @@
   <action name="actionTBInvertSelection">
    <property name="icon">
     <iconset>
-     <normaloff>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markinvert.png</normaloff>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png</normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_markinvert.png</iconset>
+     <normaloff>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_markinvert.png</normaloff>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_markplus.png</normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_markinvert.png</iconset>
    </property>
    <property name="text">
     <string>Unelect  a Group...</string>
@@ -2197,7 +2201,7 @@
   <action name="actionTBPackFiles">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_packfiles.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_packfiles.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2213,7 +2217,7 @@
   <action name="actionTBExtractFiles">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_extractfiles.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_extractfiles.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2229,7 +2233,7 @@
   <action name="actionTBSearch">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_search.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_search.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2245,7 +2249,7 @@
   <action name="actionTBMultiRenameTool">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_multirename.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_multirename.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2261,7 +2265,7 @@
   <action name="actionTBSynchronizeDirs">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_syncdirs.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_syncdirs.png</normalon>
     </iconset>
    </property>
    <property name="text">
@@ -2274,7 +2278,7 @@
   <action name="actionTBCopyFilenameWithFullPath">
    <property name="icon">
     <iconset>
-     <normalon>../pyCommander/pixmaps/dctheme/16x16/actions/cm_copyfullnamestoclip.png</normalon>
+     <normalon>../../.designer/pyCommander/pixmaps/dctheme/16x16/actions/cm_copyfullnamestoclip.png</normalon>
     </iconset>
    </property>
    <property name="text">

@@ -66,7 +66,7 @@ class Ui_MainWindow(object):
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.horizontalLayoutLeftButtonBar.addItem(spacerItem)
         
-        self.gridLayout.addLayout(self.horizontalLayoutLeftButtonBar, 0, 0, 1, 1)
+        
         
         self.horizontalLayoutRightButtonBar = QtWidgets.QHBoxLayout()
         self.horizontalLayoutRightButtonBar.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)

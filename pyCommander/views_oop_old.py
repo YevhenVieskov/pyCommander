@@ -17,73 +17,144 @@ w_max = 480
 w_base = 800
 h_base = 600
 
+class Color(QtWidgets.QWidget):
 
-def pushButtonDrive(objectName = "", text = "",
-             stretchFactorH = 0, stretchFactorV = 0, 
-             wmin = 48, hmin = 32, wmax = 48, hmax = 32, 
-             wbase = 48, hbase = 32, wicon = 16, hicon = 16,
-             path = "", iconName = "drive-harddisk.png", 
-             flat = True):
-    pushButton = QtWidgets.QPushButton()
-    sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
-    sizePolicy.setHorizontalStretch(stretchFactorH)
-    sizePolicy.setVerticalStretch(stretchFactorV)
-    sizePolicy.setHeightForWidth(pushButton.sizePolicy().hasHeightForWidth())
-    pushButton.setSizePolicy(sizePolicy)
-    pushButton.setMinimumSize(QtCore.QSize(wmin, hmin))
-    pushButton.setMaximumSize(QtCore.QSize(wmax, hmax))
-    pushButton.setBaseSize(QtCore.QSize(wbase, hbase))
-    icon = QtGui.QIcon()
-    full_path = os.path.join(path, iconName)
-    icon.addPixmap(QtGui.QPixmap(full_path), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-    icon.addPixmap(QtGui.QPixmap(full_path), QtGui.QIcon.Normal, QtGui.QIcon.On)
-    pushButton.setIcon(icon)
-    pushButton.setIconSize(QtCore.QSize(wicon, hicon))
-    pushButton.setFlat(flat)
-    pushButton.setText(text)
-    pushButton.setObjectName(objectName)   
-    return pushButton
+    def __init__(self, color):
+        super(Color, self).__init__()
+        self.setAutoFillBackground(True)
 
+        palette = self.palette()
+        palette.setColor(QtGui.QPalette.Window, QtGui.QColor(color))
+        self.setPalette(palette)
 
+class DriveButton(QtWidgets.QWidget):
+    def __init__(self, objectName = "", text = "",
+                 stretchFactorH = 0, stretchFactorV = 0, 
+                 wmin = 48, hmin = 32, wmax = 48, hmax = 32, 
+                 wbase = 48, hbase = 32, wicon = 16, hicon = 16,
+                 path = "", iconName = "drive-harddisk.png", 
+                  flat = True,  parent = None):
+        super().__init__()
+        self.objectName = objectName
+        self.text = text
+        self.stretchFactorH = stretchFactorH
+        self.stretchFactorV = stretchFactorV
+        self.wmin = wmin
+        self.hmin = hmin 
+        self.wmax = wmax
+        self.hmax = hmax 
+        self.wbase = wbase
+        self.hbase = hbase
+        self.wicon = wicon
+        self.hicon = hicon
+        self.path = path
+        self.iconName = iconName        
+        self.flat = flat
+        self.parent = parent #self.centralwidget
+        self._initButton()
+        
+    def _initButton(self):
+        self.pushButtonDrive = QtWidgets.QPushButton(parent = self.parent)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(self.stretchFactorH)
+        sizePolicy.setVerticalStretch(self.stretchFactorV)
+        sizePolicy.setHeightForWidth(self.pushButtonDrive.sizePolicy().hasHeightForWidth())
+        self.pushButtonDrive.setSizePolicy(sizePolicy)
+        self.pushButtonDrive.setMinimumSize(QtCore.QSize(self.wmin, self.hmin))
+        self.pushButtonDrive.setMaximumSize(QtCore.QSize(self.wmax, self.hmax))
+        self.pushButtonDrive.setBaseSize(QtCore.QSize(self.wbase, self.hbase))
+        icon = QtGui.QIcon()
+        full_path = os.path.join(self.path, self.iconName)
+        icon.addPixmap(QtGui.QPixmap(full_path), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap(full_path), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.pushButtonDrive.setIcon(icon)
+        self.pushButtonDrive.setIconSize(QtCore.QSize(self.wicon, self.hicon))
+        self.pushButtonDrive.setFlat(self.flat)
+        self.pushButtonDrive.setText(self.text)
+        self.pushButtonDrive.setObjectName(self.objectName)
+        
 
-def initDrivesButtonBar(objectName = "horizontalLayoutButtonBar",
+class DrivesButtonBar(QtWidgets.QWidget):
+    """Drives button bar"""
+    def __init__(self, objectName = "horizontalLayoutButtonBar",
                  leftMargin = -1, topMargin = -1, 
                  rightMargin = -1, bottomMargin = 0, layoutSpacing = 7,
                  stretchFactorH = 0, stretchFactorV = 0,
                  wmin = 48, hmin = 32, wmax = 48, hmax = 32, 
                  wbase = 48,  hbase = 32,  wicon = 16,  hicon = 16,
-                 wspacer = 40, hspacer = 20, path = ""):
-    horizontalLayoutButtonBar = QtWidgets.QHBoxLayout()         
-    horizontalLayoutButtonBar.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
-    horizontalLayoutButtonBar.setContentsMargins(leftMargin, 
-             topMargin, rightMargin, bottomMargin)
-    horizontalLayoutButtonBar.setSpacing(layoutSpacing)
-    horizontalLayoutButtonBar.setObjectName(objectName)         
+                 wspacer = 40, hspacer = 20, path = "", parent = None):
+        super().__init__(self, parent)
+        self.objectName = objectName
+        self.leftMargin = leftMargin
+        self.topMargin = topMargin
+        self.rightMargin = rightMargin
+        self.bottomMargin = bottomMargin
+        self.layoutSpacing = layoutSpacing
+        self.stretchFactorH = stretchFactorH
+        self.stretchFactorV = stretchFactorV
+        self.wmin = wmin
+        self.hmin = hmin
+        self.wmax = wmax
+        self.hmax = hmax 
+        self.wbase = wbase
+        self.hbase = hbase
+        self.wicon = wicon
+        self.hicon = hicon
+        self.wspacer = wspacer
+        self.hspacer = hspacer
+        self.path = ""
+        self.parent = parent
+        self.icons_list = ["camera-photo.png", "drive-harddisk.png", "drive-optical.png",
+                           "drive-removable-media.png", "drive-removable-media-usb.png",
+                           "drive-virtual.png", "media-flash.png", "media-floppy.png",
+                           "media-optical.png", "network-wired.png"]
+        self.drives_dict = {"C:\\" : "fixed"} 
+        self.pushButtonDrive = []
+        self._initDrivesButtonBar()
+
+
+    def _initDrivesButtonBar(self):
+        self.horizontalLayoutButtonBar = QtWidgets.QHBoxLayout()         
+        self.horizontalLayoutButtonBar.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
+        self.horizontalLayoutButtonBar.setContentsMargins(self.leftMargin, 
+             self.topMargin, self.rightMargin, self.bottomMargin)
+        self.horizontalLayoutButtonBar.setSpacing(self.layoutSpacing)
+        self.horizontalLayoutButtonBar.setObjectName(self.objectName)
         
-    path_abs = os.path.dirname(__file__)
-    path_pixmap = "pixmaps/dctheme/16x16/devices"
-    path_full = os.path.join(path_abs, path_pixmap)
         
-    iname1 = os.path.join(path_full, "drive-harddisk.png")
-    iname2 = os.path.join(path_full, "drive-virtual.png" ) 
-    button1 = pushButtonDrive(objectName = "pushButtonDrive1",  text = "C" ,                       
-                 path = path, iconName = iname1)
-                        
-    button2 = pushButtonDrive(objectName = "pushButtonDrive2", text = "\/\/" ,                        
-                 path = path, iconName = iname2)
-                       
-    horizontalLayoutButtonBar.addWidget(button1)  
-    horizontalLayoutButtonBar.addWidget(button2) 
-        #horizontalLayoutButtonBar.addWidget(Color("black"))  
-        #horizontalLayoutButtonBar.addWidget(Color("magenta"))
-    spacerItem = QtWidgets.QSpacerItem(wspacer, hspacer, 
+        path_abs = os.path.dirname(__file__)
+        path_pixmap = "pixmaps/dctheme/16x16/devices"
+        path = os.path.join(path_abs, path_pixmap)
+        '''n = len(self.drives_dict)
+        n1 = n+1
+        for i in range(n):
+            iname = os.path.join(path, "drive-harddisk.png")
+            text = list(self.drives_dict.items())[i][0]
+            if(i == n1):
+                iname = os.path.join(path, "drive-virtual.png" ) 
+                text = "VFS"
+            button = DriveButton(objectName = f"pushButtonDrive{i}",                          
+                     path = self.path, iconName = iname, 
+                            parent = self.parent)
+            self.pushButtonDrive.append(button)'''
+        #self.horizontalLayoutButtonBar.addWidget(Color("red"))        
+        #VFS   
+        iname1 = os.path.join(path, "drive-harddisk.png")
+        iname2 = os.path.join(path, "drive-virtual.png" ) 
+        button1 = DriveButton(objectName = "pushButtonDrive1",  text = "C" ,                       
+                 path = self.path, iconName = iname1, 
+                        parent = self.parent)
+        button2 = DriveButton(objectName = "pushButtonDrive2", text = "\/\/" ,                        
+                 path = self.path, iconName = iname2, 
+                       parent = self.parent)
+        self.horizontalLayoutButtonBar.addWidget(button1)  
+        self.horizontalLayoutButtonBar.addWidget(button2) 
+        #self.horizontalLayoutButtonBar.addWidget(Color("black"))  
+        #self.horizontalLayoutButtonBar.addWidget(Color("magenta"))
+        spacerItem = QtWidgets.QSpacerItem(self.wspacer, self.hspacer, 
                 QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-    horizontalLayoutButtonBar.addItem(spacerItem)
-    return horizontalLayoutButtonBar   
-    
-        
-
-
+        self.horizontalLayoutButtonBar.addItem(spacerItem)
+        self.setLayout(self.horizontalLayoutButtonBar)
     
        
 class HorizontalLine(QtWidgets.QWidget):
@@ -213,7 +284,39 @@ class DrivesList(QtWidgets.QWidget):
         self.horizontalLayoutDrivesList.addWidget(self.pushButtonRightLeftPanel)
         #self.gridLayout.addLayout(self.horizontalLayoutLeftDrivesList, 2, 0, 1, 1)
         
-      
+'''class HLayout(QtWidgets.QLayout):
+    def __init__(self, color):
+        super().__init__()
+        self.color = color
+        #self.parent = parent
+        self._initHLayout()
+    
+    def _initHLayout(self):
+        self.testLayout =  QtWidgets.QHBoxLayout()
+        #self.setLayout(self.testLayout)
+        self.testLayout.addWidget(Color(self.color)) '''
+        
+class HLayout(QtWidgets.QWidget):
+    def __init__(self, color):
+        super().__init__()
+        self.color = color
+        #self.parent = parent
+        self._initHLayout()
+    
+    def _initHLayout(self):
+        leftMargin = -1; topMargin = -1; 
+        rightMargin = -1; bottomMargin = 0; layoutSpacing = 7;
+        stretchFactorH = 0; stretchFactorV = 0;
+        wmin = 48; hmin = 32; wmax = 48; hmax = 32; 
+        wbase = 48;  hbase = 32;  wicon = 16;  hicon = 16;
+        wspacer = 40; hspacer = 20
+        self.testLayout =  QtWidgets.QHBoxLayout()
+        self.setLayout(self.testLayout)
+        self.testLayout.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
+        self.testLayout.setContentsMargins(leftMargin, 
+             topMargin, rightMargin, bottomMargin)
+        self.testLayout.setSpacing(layoutSpacing)
+        self.testLayout.addWidget(Color(self.color))        
 
 class Window(QtWidgets.QMainWindow):
     """Main Window."""
@@ -236,10 +339,30 @@ class Window(QtWidgets.QMainWindow):
         self._createActions()
         self._createMenuBar()
         self._createToolBars()
-        self.leftDrivesButtonBar = initDrivesButtonBar(objectName = "horizontalLeftLayoutButtonBar")
-        self.rightDrivesButtonBar = initDrivesButtonBar(objectName = "horizontalRightLayoutButtonBar")
-        self.gridLayout.addLayout(self.leftDrivesButtonBar, 0, 0, 1, 1)
-        self.gridLayout.addLayout(self.rightDrivesButtonBar, 0, 1, 1, 1)
+        self.leftDrivesButtonBar = DrivesButtonBar(objectName = "horizontalLayoutLeftButtonBar",  parent = self.centralWidget)
+        self.rightDrivesButtonBar = DrivesButtonBar(objectName = "horizontalLayoutRightButtonBar", parent = self.centralWidget)
+        #self.leftDrivesList = DrivesList(objectName = "leftDrivesList", parent = self.centralWidget)
+        #self.rightDrivesList = DrivesList(objectName = "rightDrivesList", parent = self.centralWidget)
+        
+        self.gridLayout.addWidget(self.leftDrivesButtonBar, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.rightDrivesButtonBar, 0, 1, 1, 1)
+        #self.gridLayout.addWidget(self.leftDrivesList, 2, 0, 1, 1)
+        #self.gridLayout.addWidget(self.rightDrivesList, 2, 1, 1, 1)
+        
+        #self.gridLayout.addWidget(self.leftDrivesButtonBar, 0, 0, 1, 1)
+        #self.gridLayout.addWidget(Color("blue"), 0, 1, 1, 1)
+        #self.gridLayout.addWidget(Color("yellow"), 2, 0, 1, 1)
+        #self.gridLayout.addWidget(Color("green"), 2, 1, 1, 1)
+        
+        
+        '''self.testLayout = HLayout("red")
+        self.testLayout2 = HLayout("blue")
+        self.testLayout3 = HLayout("yellow")
+        self.testLayout4 = HLayout("magenta")
+        self.gridLayout.addWidget(self.testLayout, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.testLayout2, 0, 1, 1, 1)
+        self.gridLayout.addWidget(self.testLayout3, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.testLayout4, 2, 1, 1, 1)'''
         
         
     def _createMenuBar(self):
@@ -1339,11 +1462,7 @@ class Window(QtWidgets.QMainWindow):
         self.toolBar.addAction(self.actionTBMultiRenameTool)
         self.toolBar.addAction(self.actionTBSynchronizeDirs)
         self.toolBar.addAction(self.actionTBCopyFilenameWithFullPath)
-    
-     
-      
-    
-    
+        
 
     def create_symbolic_link():
         pass
