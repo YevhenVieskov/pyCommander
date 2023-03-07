@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>932</width>
-    <height>652</height>
+    <width>1263</width>
+    <height>945</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -45,7 +45,7 @@
        <number>7</number>
       </property>
       <property name="sizeConstraint">
-       <enum>QLayout::SetFixedSize</enum>
+       <enum>QLayout::SetDefaultConstraint</enum>
       </property>
       <property name="bottomMargin">
        <number>0</number>
@@ -1135,7 +1135,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>932</width>
+     <width>1263</width>
      <height>26</height>
     </rect>
    </property>
@@ -1946,22 +1946,22 @@
     <string>Alt+V</string>
    </property>
   </action>
-  <action name="actionSave_current_tabs_to_a_New_Favorite_Tabs_2">
+  <action name="actionSaveCurrentTabsToNewFavoriteTabs3">
    <property name="text">
     <string>Save current tabs to a New Favorite Tabs</string>
    </property>
   </action>
-  <action name="actionResave_on_the_last_Favorite_Tabs_loaded_2">
+  <action name="actionResaveOnLastFavoriteTabsLoaded2">
    <property name="text">
     <string>Resave on the last Favorite Tabs loaded</string>
    </property>
   </action>
-  <action name="actionReload_the_last_Favorite_Tabs_loaded">
+  <action name="actionReloadLastFavoriteTabsLoaded">
    <property name="text">
     <string>Reload the last Favorite Tabs loaded</string>
    </property>
   </action>
-  <action name="actionConfiguration_of_Favorite_Tabs_3">
+  <action name="actionConfigurationOfFavoriteTabs3">
    <property name="text">
     <string>Configuration of Favorite Tabs</string>
    </property>

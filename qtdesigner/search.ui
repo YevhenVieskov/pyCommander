@@ -6,31 +6,31 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1151</width>
-    <height>681</height>
+    <width>1390</width>
+    <height>753</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayoutCentral">
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Standard">
        <attribute name="title">
         <string>Standard</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_4">
+       <layout class="QGridLayout" name="gridLayoutStandard">
         <item row="0" column="0">
          <widget class="QGroupBox" name="groupBoxDirectories">
           <property name="title">
            <string>Directories</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_7">
+          <layout class="QVBoxLayout" name="verticalLayoutDirectories">
            <item>
             <layout class="QHBoxLayout" name="horizontalLayoutStartInDirectoryCheckBoxes">
              <item>
@@ -329,7 +329,7 @@
           <property name="title">
            <string>Files</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_5">
+          <layout class="QVBoxLayout" name="verticalLayoutFiles">
            <item>
             <layout class="QHBoxLayout" name="horizontalLayoutFileMask">
              <item>
@@ -450,7 +450,7 @@
           <property name="title">
            <string>Find Data</string>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout_6">
+          <layout class="QVBoxLayout" name="verticalLayoutFindData">
            <item>
             <layout class="QHBoxLayout" name="horizontalLayoutFindTextInFile">
              <item>
@@ -730,9 +730,18 @@
        <attribute name="title">
         <string>Advanced</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_6">
-        <item row="0" column="0">
-         <layout class="QGridLayout" name="gridLayoutDate">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0" rowspan="2" colspan="2">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="3" column="0">
+           <widget class="QDoubleSpinBox" name="doubleSpinBoxSizeFrom"/>
+          </item>
+          <item row="3" column="1">
+           <widget class="QDoubleSpinBox" name="doubleSpinBoxSizeTo"/>
+          </item>
+          <item row="6" column="1">
+           <widget class="QDateEdit" name="dateEditDateTo"/>
+          </item>
           <item row="0" column="0">
            <widget class="QCheckBox" name="checkBoxNotOlderThan">
             <property name="text">
@@ -740,8 +749,56 @@
             </property>
            </widget>
           </item>
+          <item row="6" column="0">
+           <widget class="QDateEdit" name="dateEditFrom"/>
+          </item>
+          <item row="5" column="3">
+           <widget class="QCheckBox" name="checkBoxTimeTo">
+            <property name="text">
+             <string>Time to:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QCheckBox" name="checkBoxSizeTo">
+            <property name="text">
+             <string>Size to:</string>
+            </property>
+           </widget>
+          </item>
           <item row="1" column="0">
            <widget class="QSpinBox" name="spinBoxNotOlderThan"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QCheckBox" name="checkBoxSizeFrom">
+            <property name="text">
+             <string>Size from:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QCheckBox" name="checkBoxDateTo">
+            <property name="text">
+             <string>Date to:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="2">
+           <widget class="QTimeEdit" name="timeEditTimeFrom"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QCheckBox" name="checkBoxDateFrom">
+            <property name="text">
+             <string>Date from:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="2">
+           <widget class="QCheckBox" name="checkBoxTimeFrom">
+            <property name="text">
+             <string>Time from:</string>
+            </property>
+           </widget>
           </item>
           <item row="1" column="1">
            <widget class="QComboBox" name="comboBoxNotOlderThan">
@@ -797,21 +854,10 @@
             </item>
            </widget>
           </item>
-          <item row="2" column="0">
-           <widget class="QCheckBox" name="checkBoxSizeFrom">
-            <property name="text">
-             <string>Size from:</string>
-            </property>
-           </widget>
+          <item row="6" column="3">
+           <widget class="QTimeEdit" name="timeEditTimeTo"/>
           </item>
-          <item row="2" column="1">
-           <widget class="QCheckBox" name="checkBoxSizeTo">
-            <property name="text">
-             <string>Size to:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="2">
+          <item row="3" column="2">
            <widget class="QComboBox" name="comboBoxSizeTo">
             <item>
              <property name="text">
@@ -840,49 +886,9 @@
             </item>
            </widget>
           </item>
-          <item row="3" column="0">
-           <widget class="QCheckBox" name="checkBoxDateFrom">
-            <property name="text">
-             <string>Date from:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QCheckBox" name="checkBoxDateTo">
-            <property name="text">
-             <string>Date to:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="2">
-           <widget class="QCheckBox" name="checkBoxTimeFrom">
-            <property name="text">
-             <string>Time from:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="3">
-           <widget class="QCheckBox" name="checkBoxTimeTo">
-            <property name="text">
-             <string>Time to:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QDateEdit" name="dateEditFrom"/>
-          </item>
-          <item row="4" column="1">
-           <widget class="QDateEdit" name="dateEditDateTo"/>
-          </item>
-          <item row="4" column="2">
-           <widget class="QTimeEdit" name="timeEditTimeFrom"/>
-          </item>
-          <item row="4" column="3">
-           <widget class="QTimeEdit" name="timeEditTimeTo"/>
-          </item>
          </layout>
         </item>
-        <item row="0" column="1">
+        <item row="0" column="2">
          <spacer name="horizontalSpacerDate">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -895,14 +901,7 @@
           </property>
          </spacer>
         </item>
-        <item row="1" column="0">
-         <widget class="Line" name="lineDateAttribute">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1" rowspan="2">
+        <item row="1" column="2">
          <spacer name="horizontalSpacerHorizontalLine1">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -915,7 +914,14 @@
           </property>
          </spacer>
         </item>
-        <item row="2" column="0" rowspan="2">
+        <item row="2" column="0" colspan="3">
+         <widget class="Line" name="lineDateAttribute">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
          <layout class="QHBoxLayout" name="horizontalLayoutAttributes">
           <item>
            <widget class="QLabel" name="labelAttribute">
@@ -942,7 +948,7 @@
           </item>
          </layout>
         </item>
-        <item row="3" column="1" rowspan="2">
+        <item row="3" column="2">
          <spacer name="horizontalSpacerAttributes">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -955,7 +961,7 @@
           </property>
          </spacer>
         </item>
-        <item row="4" column="0" rowspan="2">
+        <item row="4" column="0">
          <layout class="QHBoxLayout" name="horizontalLayoutAttributesButtons">
           <item>
            <widget class="QLineEdit" name="lineEditAttributes"/>
@@ -976,7 +982,7 @@
           </item>
          </layout>
         </item>
-        <item row="5" column="1">
+        <item row="4" column="2">
          <spacer name="horizontalSpacerAttributesButton">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -989,7 +995,7 @@
           </property>
          </spacer>
         </item>
-        <item row="6" column="1" rowspan="2">
+        <item row="5" column="2">
          <spacer name="horizontalSpacerHorisontalLine2">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -1002,7 +1008,7 @@
           </property>
          </spacer>
         </item>
-        <item row="7" column="0">
+        <item row="6" column="0" colspan="3">
          <widget class="Line" name="lineAttributesFind">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -1033,7 +1039,7 @@
           </item>
          </layout>
         </item>
-        <item row="8" column="1">
+        <item row="8" column="2">
          <spacer name="horizontalSpacerFindDuplicateFiles">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -1078,7 +1084,7 @@
           </item>
          </layout>
         </item>
-        <item row="9" column="1">
+        <item row="9" column="2">
          <spacer name="horizontalSpacerCheckBoxesDuplicateFiles">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -1091,7 +1097,7 @@
           </property>
          </spacer>
         </item>
-        <item row="10" column="0">
+        <item row="10" column="1">
          <spacer name="verticalSpacerAdvancedTab">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -1099,7 +1105,7 @@
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>351</height>
+            <height>273</height>
            </size>
           </property>
          </spacer>
@@ -1110,7 +1116,7 @@
        <attribute name="title">
         <string>Plugins</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
+       <layout class="QVBoxLayout" name="verticalLayoutPlugins">
         <item>
          <layout class="QHBoxLayout" name="horizontalLayoutUseSearchPlugin">
           <item>
@@ -1211,7 +1217,7 @@
        <attribute name="title">
         <string>Load/Save</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <layout class="QVBoxLayout" name="verticalLayoutLoadSave">
         <item>
          <layout class="QGridLayout" name="gridLayoutPreviousSearches">
           <item row="0" column="0">
@@ -1277,7 +1283,7 @@
        <attribute name="title">
         <string>Results</string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayoutResults">
         <item>
          <layout class="QGridLayout" name="gridLayout" columnstretch="1,0">
           <item row="0" column="0">
@@ -1434,7 +1440,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1151</width>
+     <width>1390</width>
      <height>26</height>
     </rect>
    </property>
