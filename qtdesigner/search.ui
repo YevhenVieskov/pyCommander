@@ -87,7 +87,12 @@
              <item>
               <widget class="QPushButton" name="pushButtonFileOpen">
                <property name="text">
-                <string>PushButton</string>
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normalon>../pyCommander/pixmaps/dctheme/16x16/places/folder.png</normalon>
+                </iconset>
                </property>
               </widget>
              </item>
