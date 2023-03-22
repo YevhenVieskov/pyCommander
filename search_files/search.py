@@ -2,7 +2,7 @@
 from PyQt5 import QtWidgets, QtGui, QtCore
 from PyQt5.QtCore import pyqtSlot
 from ui_search import Ui_MainWindow
-
+#https://stackoverflow.com/questions/16981921/relative-imports-in-python-3
 
 class SearchWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -109,7 +109,7 @@ class SearchWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButtonStart.clicked.connect(self.button_start_clicked)
         self.pushButtonCancel.clicked.connect(self.button_cancel_clicked)
         self.pushButtonClose.clicked.connect(self.button_close_clicked)
-        self.pushButtonNewSearch.clicked.connect(self.button_search_clicked)
+        self.pushButtonNewSearch.clicked.connect(self.button_new_search_clicked)
         self.pushButtonLastSearch.clicked.connect(self.button_last_search_clicked)
         self.pushButtonAdd.clicked.connect(self.button_add_clicked)
         self.pushButtonHelp.clicked.connect(self.button_help_clicked)
@@ -246,48 +246,77 @@ class SearchWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def combobox_text_changed(self, s):
         print(s)
-
-    def button_start_clicked(self, button):
+    
+    @pyqtSlot()
+    def button_start_clicked(self):
         print("The button was pressed!")
         
-        
-    def  button_cancel_clicked(self):
+    @pyqtSlot()    
+    def button_cancel_clicked(self):
         pass
     
-    def  button_close_clicked(self):
+    @pyqtSlot()
+    def button_close_clicked(self):
         pass
     
-    def  button_search_clicked(self):
+    @pyqtSlot()
+    def button_new_search_clicked(self):
         pass
     
-    def  button_last_search_clicked(self):
+    @pyqtSlot()
+    def button_last_search_clicked(self):
         pass
     
-    def  button_add_clicked(self):
+    @pyqtSlot()
+    def button_add_clicked(self):
         pass
     
-    def  button_help_clicked(self):
+    @pyqtSlot()
+    def button_help_clicked(self):
         pass
     
-    def  button_more_rules_clicked(self):
+    @pyqtSlot()
+    def button_more_rules_clicked(self):
         pass
     
-    def  button_less_rules_clicked(self):
+    @pyqtSlot()
+    def button_less_rules_clicked(self):
         pass
     
-    def  button_load_clicked(self):
+    @pyqtSlot()
+    def button_load_clicked(self):
         pass
     
-    def  button_save_clicked(self):
+    @pyqtSlot()
+    def button_save_clicked(self):
         pass
     
-    def  button_save_with_start_in_directory_clicked(self):
+    @pyqtSlot()
+    def button_save_with_start_in_directory_clicked(self):
         pass
     
-    def  button_delete_clicked(self):
+    @pyqtSlot()
+    def button_delete_clicked(self):
         pass     
-      
+    
+    @pyqtSlot()    
     def button_file_open_clicked(self):
+        pass
+    
+    @pyqtSlot()    
+    def button_view_clicked(self):
+        pass
+       
+    @pyqtSlot()    
+    def button_edit_clicked(self):
+        pass
+    
+    @pyqtSlot()    
+    def button_goto_file_clicked(self):
+        pass
+    
+    @pyqtSlot()    
+    def button_feed_to_listbox_clicked(self):
         pass
     
     def checkbox_opened_tabs_toggled(self):
@@ -373,9 +402,9 @@ class SearchWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         
 #mock functions for unit tests
 
-@pyqtSlot()
-def on_click(self):
-    print('button clicked')
+    @pyqtSlot()
+    def on_click(self):
+        print('PyQt5 button click')
  
 
 if __name__ == "__main__":

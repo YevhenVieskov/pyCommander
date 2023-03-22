@@ -635,7 +635,7 @@ class Ui_MainWindow(object):
         self.checkBoxOpenedTabs.setText(_translate("MainWindow", "Opened tabs"))
         self.checkBoxSelectedDirectoriesAndFiles.setText(_translate("MainWindow", "Selected directories and files"))
         self.checkBoxFollowSymlinks.setText(_translate("MainWindow", "Follow symlinks"))
-        self.pushButtonFileOpen.setText(_translate("MainWindow", "PushButton"))
+        self.pushButtonFileOpen.setText(_translate("MainWindow", "Open"))
         self.labelExcludeSubdirectories.setText(_translate("MainWindow", "Exclude subdirectories"))
         self.labelSearchSubdirectories.setText(_translate("MainWindow", "Search subdirectories"))
         self.comboBoxSearchSubdirectories.setItemText(0, _translate("MainWindow", "all (unlimited depth)"))
