@@ -346,8 +346,8 @@ class Window(QtWidgets.QMainWindow):
         
         self.gridLayout.addWidget(self.leftDrivesButtonBar, 0, 0, 1, 1)
         self.gridLayout.addWidget(self.rightDrivesButtonBar, 0, 1, 1, 1)
-        #self.gridLayout.addWidget(self.leftDrivesList, 2, 0, 1, 1)
-        #self.gridLayout.addWidget(self.rightDrivesList, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.leftDrivesList, 2, 0, 1, 1)
+        self.gridLayout.addWidget(self.rightDrivesList, 2, 1, 1, 1)
         
         #self.gridLayout.addWidget(self.leftDrivesButtonBar, 0, 0, 1, 1)
         #self.gridLayout.addWidget(Color("blue"), 0, 1, 1, 1)

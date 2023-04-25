@@ -5,7 +5,7 @@ Created on Sat Mar  4 19:11:08 2023
 @author: Yevhen_Vieskov
 """
 
-from PySide2.QtWidgets import *
+from PyQt5.QtWidgets import *
 import sys
 
 

@@ -33,6 +33,7 @@ from unittest.mock import patch as patch
 from PyQt5.QtWidgets import QWidget, QApplication
 from PyQt5.QtTest import QTest, QSignalSpy
 from PyQt5.QtCore import Qt
+from PyQt5 import QtCore
 #import search_files.search as search
 from search_files.search import SearchWindow
 
@@ -43,7 +44,8 @@ from search_files.search import SearchWindow
 #path = 'C:/Users/Yevhen_Vieskov/pyCommander/search_files/search.py'
 #os.environ['PATH'] += ':'+path
 
-
+dstart = QtCore.QDate(2020, 6, 10)
+dend = QtCore.QDate(2020, 7, 10)
 
 class SearchWidgetTest(unittest.TestCase):
     @classmethod
@@ -200,20 +202,32 @@ class SearchWidgetTest(unittest.TestCase):
         self.assertEqual(self.form.pushButtonGoToFile.text(), "Go to file")
         self.form.pushButtonFeedToListbox.click()
         self.assertEqual(self.form.pushButtonFeedToListbox.text(), "Feed to listbox")
+               
         
-        
-        
-'''
-    def test_PushButton(self):
-        (self.ui.pushButtonStart.clicked.connect(self.button_start_clicked))
-        self.assertEqual(self.ui.bloodTextEdit.placeholderText(), "")
-        self.assertEqual(self.ui.renalTextEdit.placeholderText(), "")
-        self.assertEqual(self.ui.liverTextEdit.placeholderText(), "")
-        self.assertEqual(self.ui.thyroidTextEdit.placeholderText(), "")
-        self.assertEqual(self.ui.electrolyteTextEdit.placeholderText(), "")
-        self.assertEqual(self.ui.lipidTextEdit.placeholderText(), "")
 
-'''
+    def setFormToZero(self):
+        '''Set all ingredients to zero in preparation for setting just one
+        to a nonzero value.
+        '''        
+        self.form.spinBoxNotOlderThan.setValue(0)
+        self.form.doubleSpinBoxSizeFrom.setValue(0.0)
+        self.form.doubleSpinBoxSizeTo.setValue(0.0)
+       
+        self.form.dateEditDateFrom.setDate(dstart)
+        self.form.dateEditDateTo.setDate(dend)
+        
+        self.form.lineEditFindTextInFile.setText("text")
+        self.form.lineEditReplaceBy.setText("text")
+        self.form.lineEditAttributes.setText("text")
+        
+        
+        
+        
+        
+        
+        
+
+
 
 
 # ==============================================================================

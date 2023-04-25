@@ -65,20 +65,25 @@ class SearchWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.checkBoxUseContentPlugin.toggled.connect(
             self.checkbox_content_plugin_toggled)      
         
-        '''self.comboBoxExcludeSubdirectories
-        self.comboBoxExcludeSubdirectories
-        self.comboBoxSearchSubdirectories
-        self.comboBoxSearchSubdirectories
-        self.comboBoxExcludeFiles
-        self.comboBoxExcludeFiles
+        self.comboBoxExcludeSubdirectories.currentText()
+        self.comboBoxExcludeSubdirectories.lineEdit().editingFinished.connect(self.cb_ex_subdir_get_path)
+        
+        #baseUrl = QUrl("file:/home/user/")
+        #c_validator = Validator(combo.lineEdit())
+        #combo.setValidator(c_validator)
+        ''' self.comboBoxExcludeSubdirectories.connect()
+        self.comboBoxSearchSubdirectories.connect()
+        self.comboBoxSearchSubdirectories.connect()
+        self.comboBoxExcludeFiles.connect()
+        self.comboBoxExcludeFiles.connect()
         self.comboBoxEncoding.currentIndexChanged.connect(
             self.combobox_index_changed)
         self.comboBoxEncoding.currentTextChanged.connect(
             self.combobox_text_changed)
-        self.comboBoxNotOlderThan
-        self.comboBoxNotOlderThan
-        self.comboBoxSizeTo
-        self.comboBoxSizeTo'''
+        self.comboBoxNotOlderThan.connect()
+        self.comboBoxNotOlderThan.connect()
+        self.comboBoxSizeTo.connect()
+        self.comboBoxSizeTo.connect()'''
         
         #self.lineEditStartInDirectory.text()
         #e2 = QLineEdit()
@@ -102,8 +107,7 @@ class SearchWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.timeEditTimeFrom
         self.timeEditTimeTo'''
         
-        #QDoubleValidator, QIntValidator, QRegExpValidator,
-        
+        #QDoubleValidator, QIntValidator, QRegExpValidator,        
         #qlabel.setText(text)
 
         self.pushButtonStart.clicked.connect(self.button_start_clicked)
@@ -120,6 +124,8 @@ class SearchWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.pushButtonSaveWithStartInDirectory.clicked.connect(self.button_save_with_start_in_directory_clicked)
         self.pushButtonDelete.clicked.connect(self.button_delete_clicked)
         self.pushButtonFileOpen.clicked.connect(self.button_file_open_clicked)
+        
+        
     
     
     
@@ -158,75 +164,99 @@ class SearchWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.actionConfigurationOfHotKeys.triggered.connect(
             self.configuration_hot_keys)
 
-    def new_search():
+    @pyqtSlot()
+    def new_search(self):
+        pass
+   
+    @pyqtSlot()
+    def new_search_clear_filters(self):
         pass
 
-    def new_search_clear_filters():
+    @pyqtSlot()
+    def last_search(self):
+        pass
+    
+    @pyqtSlot()
+    def start(self):
+        pass
+    
+    @pyqtSlot()
+    def cancel(self):
+        pass
+    
+    @pyqtSlot()
+    def close(self):
+        pass
+    
+    @pyqtSlot()
+    def cancel_search_close_window(self):
+        pass
+    
+    @pyqtSlot()    
+    def cancel_search_close_free_memory(self):
+        pass
+    
+    @pyqtSlot()
+    def all_others_cancel_close_free_memory(self):
+        pass
+    
+    @pyqtSlot()
+    def all_searches_cancel_close_free_memory(self):
+        pass
+    
+    @pyqtSlot()
+    def goto_page_standard(self):
+        pass
+    
+    @pyqtSlot()
+    def goto_page_advanced(self):
+        pass
+    
+    @pyqtSlot()
+    def goto_page_plugins(self):
+        pass
+    
+    @pyqtSlot()
+    def goto_page_loadsave(self):
+        pass
+    
+    @pyqtSlot()
+    def goto_page_results(self):
+        pass
+    
+    @pyqtSlot()
+    def new_search_instance(self):
+        pass
+    
+    @pyqtSlot()
+    def current_search_instance(self):
+        pass
+    
+    @pyqtSlot()
+    def view(self):
         pass
 
-    def last_search():
+    @pyqtSlot()
+    def edit(self):
         pass
-
-    def start():
+    
+    @pyqtSlot()
+    def feed_to_listbox(self):
         pass
-
-    def cancel():
+    
+    @pyqtSlot()
+    def goto_file(self):
         pass
-
-    def close():
+    
+    @pyqtSlot()
+    def configuration_searches(self):
         pass
-
-    def cancel_search_close_window():
+    
+    @pyqtSlot()
+    def configuration_hot_keys(self):
         pass
-
-    def cancel_search_close_free_memory():
-        pass
-
-    def all_others_cancel_close_free_memory():
-        pass
-
-    def all_searches_cancel_close_free_memory():
-        pass
-
-    def goto_page_standard():
-        pass
-
-    def goto_page_advanced():
-        pass
-
-    def goto_page_plugins():
-        pass
-
-    def goto_page_loadsave():
-        pass
-
-    def goto_page_results():
-        pass
-
-    def new_search_instance():
-        pass
-
-    def current_search_instance():
-        pass
-
-    def view():
-        pass
-
-    def edit():
-        pass
-
-    def feed_to_listbox():
-        pass
-
-    def goto_file():
-        pass
-
-    def configuration_searches():
-        pass
-
-    def configuration_hot_keys():
-        pass
-
+    
+    @pyqtSlot()
     def checkbox_opened_tabs_toggled(self):
 
         selected = []
@@ -236,14 +266,22 @@ class SearchWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         if self.checkBoxSelectedDirectoriesAndFiles.isChecked():
             selected.append("Sparrowhawk")
-
+    
+    @pyqtSlot()
+    def cb_ex_subdir_get_path(self):
+        pass
+    
+    
+    @pyqtSlot()
     def combobox_encoding_changed(self):
         text = self.ui.comboBoxEncoding.currentText()
         print(text)
-
+    
+    @pyqtSlot()
     def combobox_index_changed(self, i):
         print(i)
-
+    
+    @pyqtSlot()
     def combobox_text_changed(self, s):
         print(s)
     
@@ -319,84 +357,111 @@ class SearchWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def button_feed_to_listbox_clicked(self):
         pass
     
+    @pyqtSlot()
     def checkbox_opened_tabs_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_selected_directory_and_files_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_follow_symlinks_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_search_in_archives_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_search_for_part_of_file_name_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_regular_expression_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_find_text_in_file_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_replace_by_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_find_files_not_containing_text_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_case_sensitive_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_regular_expression_find_data_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_office_xml_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_hexadecimal_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_not_older_than_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_size_from_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_size_to_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_date_from_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_date_to_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_time_from_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_time_to_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_find_duplicate_files_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_same_name_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_same_size_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_same_hash_toggled(self):
         pass       
-
+    
+    @pyqtSlot()
     def checkbox_some_content_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_use_search_plugin_toggled(self):
         pass
-
+    
+    @pyqtSlot()
     def checkbox_content_plugin_toggled(self):
         pass
         
