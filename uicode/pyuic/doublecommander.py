@@ -261,6 +261,7 @@ class Ui_MainWindow(object):
         self.pushButtonRightRightLeftPanel.setObjectName("pushButtonRightRightLeftPanel")
         self.horizontalLayoutRightDrivesList.addWidget(self.pushButtonRightRightLeftPanel)
         self.gridLayout.addLayout(self.horizontalLayoutRightDrivesList, 2, 1, 1, 1)
+        ##
         self.splitter = QtWidgets.QSplitter(self.centralwidget)
         self.splitter.setOrientation(QtCore.Qt.Horizontal)
         self.splitter.setObjectName("splitter")
