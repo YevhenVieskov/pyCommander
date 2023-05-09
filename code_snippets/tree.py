@@ -18,7 +18,7 @@ class FileSystemView(QWidget):
 		self.setGeometry(300, 300, appWidth, appHeight)
 		
 		self.model = QFileSystemModel()
-		self.model.setRootPath(dir_path)
+		self.model.setRootPath(dir_path) #QtCore.QDir.currentPath()        
 		self.tree =  QTreeView()
 		self.tree.setModel(self.model)
 		self.tree.setRootIndex(self.model.index(dirPath))
@@ -30,7 +30,7 @@ class FileSystemView(QWidget):
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
-	dirPath = r'C:'
+	dirPath = r''
 	demo = FileSystemView(dirPath)
 	demo.show()
 	sys.exit(app.exec_())

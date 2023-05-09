@@ -253,48 +253,45 @@ class DrivesListBar:
                          flat=True, text="<", parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonRightLeftPanel)
+        
+   
+      
+    
+class FileSystemTab: 
     
     
-class FileSystemView: 
-    
-    
-    def __init__(self, pwidget=None):
-         self.pwidget = pwidget
-         self.tabWidgetLeftPanel = QtWidgets.QTabWidget(self.splitter)
-         self.tabWidgetLeftPanel.setMouseTracking(True)
-         self.tabWidgetLeftPanel.setAcceptDrops(True)
-         self.tabWidgetLeftPanel.setTabsClosable(True)
-         self.tabWidgetLeftPanel.setMovable(True)
-         self.tabWidgetLeftPanel.setObjectName("tabWidgetLeftPanel")
-         self.tabLeft1 = QtWidgets.QWidget()
-         self.tabLeft1.setObjectName("tabLeft1")
-         self.verticalLayout = QtWidgets.QVBoxLayout(self.tabLeft1)
-         self.verticalLayout.setObjectName("verticalLayout")
-         self.labelLeftTabCurrentDirectoryBar1 = QtWidgets.QLabel(self.tabLeft1)
-         self.labelLeftTabCurrentDirectoryBar1.setObjectName("labelLeftTabCurrentDirectoryBar1")
-         self.verticalLayout.addWidget(self.labelLeftTabCurrentDirectoryBar1)
-         self.treeWidgetLeftFilePanel1 = QtWidgets.QTreeWidget(self.tabLeft1)
-         self.treeWidgetLeftFilePanel1.setMouseTracking(True)
-         self.treeWidgetLeftFilePanel1.setObjectName("treeWidgetLeftFilePanel1")
-         self.treeWidgetLeftFilePanel1.headerItem().setText(0, "Name")
-         item_0 = QtWidgets.QTreeWidgetItem(self.treeWidgetLeftFilePanel1)
-         icon2 = QtGui.QIcon()
-         icon2.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/24x24/actions/go-up.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-         item_0.setIcon(0, icon2)
-         item_0 = QtWidgets.QTreeWidgetItem(self.treeWidgetLeftFilePanel1)
-         icon3 = QtGui.QIcon()
-         icon3.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/24x24/places/folder.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-         item_0.setIcon(0, icon3)
-         item_1 = QtWidgets.QTreeWidgetItem(item_0)
-         icon4 = QtGui.QIcon()
-         icon4.addPixmap(QtGui.QPixmap("../pyCommander/pixmaps/dctheme/24x24/mimetypes/application-pdf.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-         item_1.setIcon(0, icon4)
-         self.verticalLayout.addWidget(self.treeWidgetLeftFilePanel1)
-         self.labelLeftFileStatusBar1 = QtWidgets.QLabel(self.tabLeft1)
-         self.labelLeftFileStatusBar1.setObjectName("labelLeftFileStatusBar1")
-         self.verticalLayout.addWidget(self.labelLeftFileStatusBar1)
-         self.tabWidgetLeftPanel.addTab(self.tabLeft1, "")
-         self.tabLeft2 = QtWidgets.QWidget()
+    def __init__(self, parent):
+         #self.pwidget = pwidget
+         self.tabWidgetPanel = QtWidgets.QTabWidget(parent = parent)
+         self.tabWidgetPanel.setMouseTracking(True)
+         self.tabWidgetPanel.setAcceptDrops(True)
+         self.tabWidgetPanel.setTabsClosable(True)
+         self.tabWidgetPanel.setMovable(True)
+         self.tabWidgetPanel.setObjectName("tabWidgetPanel")
+         self.tab1 = QtWidgets.QWidget()
+         self.tab1.setObjectName("tab1")
+         self.verticalLayout = QtWidgets.QVBoxLayout()
+         self.verticalLayout.setObjectName("verticalLayout")        
+         self.labelTabCurrentDirectoryBar = QtWidgets.QLabel()
+         self.labelTabCurrentDirectoryBar.setObjectName("labelLeftTabCurrentDirectoryBar1")
+         dir_path = r''
+         self.model = QtWidgets.QFileSystemModel()
+         self.model.setRootPath(dir_path)
+         self.tree = QtWidgets.QTreeView()
+         self.tree.setModel(self.model)
+         self.tree.setAnimated(True)
+         self.tree.setIndentation(20)
+         self.tree.setSortingEnabled(True)
+         self.tree.setMouseTracking(True)
+         #self.treeWidgetFilePanel = FileSystemView()
+         self.verticalLayout.addWidget(self.labelTabCurrentDirectoryBar)
+         self.verticalLayout.addWidget(self.tree)
+         self.tab1.setLayout(self.verticalLayout)
+         self.tabWidgetPanel.addTab(self.tab1, "Tab 1")
+         
+         
+         
+
      
            
         
@@ -338,8 +335,13 @@ class Window(QtWidgets.QMainWindow):
         self.splitter = QtWidgets.QSplitter(self.centralWidget)
         self.splitter.setOrientation(QtCore.Qt.Horizontal)
         self.splitter.setObjectName("splitter")
-        self.tabWidgetLeftPanel = Color("magenta", self.splitter)
-        self.tabWidgetRightPanel = Color("cyan", self.splitter)
+        #self.tabWidgetLeftPanel = Color("magenta", self.splitter)
+        #self.tabWidgetRightPanel = Color("cyan", self.splitter)
+        
+        self.tabWidgetLeftPanel = FileSystemTab(parent = self.splitter)
+        self.tabWidgetRightPanel = FileSystemTab(parent = self.splitter)
+        
+        
         self.gridLayout.addWidget(self.splitter, 3, 0, 1, 2)
         self.verticalLayoutBottomBars = Color("black")
         self.gridLayout.addWidget(self.verticalLayoutBottomBars, 4, 0, 1, 2)
