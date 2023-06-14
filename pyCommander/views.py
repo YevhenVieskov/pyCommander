@@ -155,7 +155,7 @@ class DrivesButtonBar:
     
     def __init__(self, pwidget=None):
         self.pwidget = pwidget
-        self.layerDrivesButtonBar = HLayout()        
+        self.layerDrivesButtonBar = HLayout(hmin = 16, hmax = 16, hbase = 16)       
         self._setButtons()
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.layerDrivesButtonBar.addItem(spacerItem)
@@ -173,13 +173,15 @@ class DrivesButtonBar:
         iname1 = os.path.join(path_full, "drive-harddisk.png")
         iname2 = os.path.join(path_full, "drive-virtual.png")
 
-        button1 = DriveButton(objectName="pushButtonDrive1",  text="C",
-                                   path=path_full, iconName=iname1, 
-                                   parent = self.pwidget)
+        button1 = DriveButton(objectName="pushButtonDrive1",                              
+                              hmin=16, hmax=16, hbase=16, 
+                              text="C",  path=path_full, iconName=iname1, 
+                              parent = self.pwidget)
         
-        button2 = DriveButton(objectName="pushButtonDrive2", text="//",
-                                   path=path_full, iconName=iname2, 
-                                   parent = self.pwidget)
+        button2 = DriveButton(objectName="pushButtonDrive2", 
+                                hmin=16, hmax=16, hbase=16,
+                                text="//",  path=path_full, iconName=iname2, 
+                                parent = self.pwidget)
 
         self.layerDrivesButtonBar.addWidget(button1)
         self.layerDrivesButtonBar.addWidget(button2)
@@ -216,40 +218,40 @@ class DrivesListBar:
     def _setButtons(self):
         self.pushButtonDirectoryHotlist = DriveButton (
             objectName="pushButtonDirectoryHotlist", stretchFactorH=0,
-                         stretchFactorV=0,  wmin=32, hmin=32, wmax=32,
-                         hmax=32, wbase=32,  hbase=32,  wicon=32,  hicon=32,
+                         stretchFactorV=0,  wmin=16, hmin=16, wmax=16,
+                         hmax=16, wbase=16,  hbase=16,  wicon=16,  hicon=16,
                          flat=True, text="*",  parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonDirectoryHotlist)
         
         self.pushButtonGotoRootDirectory = DriveButton (
             objectName="pushButtonGotoRootDirectory", stretchFactorH=0,
-                         stretchFactorV=0,  wmin=32, hmin=32, wmax=32,
-                         hmax=32, wbase=32,  hbase=32,  wicon=32,  hicon=32,
+                         stretchFactorV=0,  wmin=16, hmin=16, wmax=16,
+                         hmax=16, wbase=16,  hbase=16,  wicon=16,  hicon=16,
                          flat=True, text="\\", parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonGotoRootDirectory)
         
         self.pushButtonGotoParentDirectory = DriveButton (
             objectName="pushButtonGotoParentDirectory", stretchFactorH=0,
-                         stretchFactorV=0,  wmin=32, hmin=32, wmax=32,
-                         hmax=32, wbase=32,  hbase=32,  wicon=32,  hicon=32,
+                         stretchFactorV=0,  wmin=16, hmin=16, wmax=16,
+                         hmax=16, wbase=16,  hbase=16,  wicon=16,  hicon=16,
                          flat=True, text="..", parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonGotoParentDirectory)
         
         self.pushButtonGotoHomeDirectory = DriveButton (
             objectName="pushButtonGotoHomeDirectory", stretchFactorH=0,
-                         stretchFactorV=0,  wmin=32, hmin=32, wmax=32,
-                         hmax=32, wbase=32,  hbase=32,  wicon=32,  hicon=32,
+                         stretchFactorV=0,  wmin=16, hmin=16, wmax=16,
+                         hmax=16, wbase=16,  hbase=16,  wicon=16,  hicon=16,
                          flat=True, text="~", parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonGotoHomeDirectory)
         
         self.pushButtonRightLeftPanel = DriveButton (
             objectName="pushButtonGotoRightLeftPanel", stretchFactorH=0,
-                         stretchFactorV=0,  wmin=32, hmin=32, wmax=32,
-                         hmax=32, wbase=32,  hbase=32,  wicon=32,  hicon=32,
+                         stretchFactorV=0,  wmin=16, hmin=16, wmax=16,
+                         hmax=16, wbase=16,  hbase=16,  wicon=16,  hicon=16,
                          flat=True, text="<", parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonRightLeftPanel)
@@ -261,39 +263,35 @@ class FileSystemTab:
     
     
     def __init__(self, parent):
-         #self.pwidget = pwidget
-         self.tabWidgetPanel = QtWidgets.QTabWidget(parent = parent)
-         self.tabWidgetPanel.setMouseTracking(True)
-         self.tabWidgetPanel.setAcceptDrops(True)
-         self.tabWidgetPanel.setTabsClosable(True)
-         self.tabWidgetPanel.setMovable(True)
-         self.tabWidgetPanel.setObjectName("tabWidgetPanel")
-         self.tab1 = QtWidgets.QWidget()
-         self.tab1.setObjectName("tab1")
-         self.verticalLayout = QtWidgets.QVBoxLayout()
-         self.verticalLayout.setObjectName("verticalLayout")        
-         self.labelTabCurrentDirectoryBar = QtWidgets.QLabel()
-         self.labelTabCurrentDirectoryBar.setObjectName("labelLeftTabCurrentDirectoryBar1")
-         dir_path = r''
-         self.model = QtWidgets.QFileSystemModel()
-         self.model.setRootPath(dir_path)
-         self.tree = QtWidgets.QTreeView()
-         self.tree.setModel(self.model)
-         self.tree.setAnimated(True)
-         self.tree.setIndentation(20)
-         self.tree.setSortingEnabled(True)
-         self.tree.setMouseTracking(True)
-         #self.treeWidgetFilePanel = FileSystemView()
-         self.verticalLayout.addWidget(self.labelTabCurrentDirectoryBar)
-         self.verticalLayout.addWidget(self.tree)
-         self.tab1.setLayout(self.verticalLayout)
-         self.tabWidgetPanel.addTab(self.tab1, "Tab 1")
+        #self.pwidget = pwidget
+        self.tabWidgetPanel = QtWidgets.QTabWidget(parent = parent)
+        self.tabWidgetPanel.setMouseTracking(True)
+        self.tabWidgetPanel.setAcceptDrops(True)
+        self.tabWidgetPanel.setTabsClosable(True)
+        self.tabWidgetPanel.setMovable(True)
+        self.tabWidgetPanel.setObjectName("tabWidgetPanel")
+        self.tab1 = QtWidgets.QWidget()
+        self.tab1.setObjectName("tab1")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")        
+        self.labelTabCurrentDirectoryBar = QtWidgets.QLabel()
+        self.labelTabCurrentDirectoryBar.setObjectName("labelLeftTabCurrentDirectoryBar1")
+        dir_path = r''
+        self.model = QtWidgets.QFileSystemModel()
+        self.model.setRootPath(dir_path)
+        self.tree = QtWidgets.QTreeView()
+        self.tree.setModel(self.model)
+        self.tree.setAnimated(True)
+        self.tree.setIndentation(20)
+        self.tree.setSortingEnabled(True)
+        self.tree.setMouseTracking(True)
+        #self.treeWidgetFilePanel = FileSystemView()
+        self.verticalLayout.addWidget(self.labelTabCurrentDirectoryBar)
+        self.verticalLayout.addWidget(self.tree)
+        self.tab1.setLayout(self.verticalLayout)
+        self.tabWidgetPanel.addTab(self.tab1, "Tab 1")
          
-         
-         
-
-     
-           
+       
         
 
 class Window(QtWidgets.QMainWindow):
@@ -340,11 +338,82 @@ class Window(QtWidgets.QMainWindow):
         
         self.tabWidgetLeftPanel = FileSystemTab(parent = self.splitter)
         self.tabWidgetRightPanel = FileSystemTab(parent = self.splitter)
-        
-        
+                
         self.gridLayout.addWidget(self.splitter, 3, 0, 1, 2)
-        self.verticalLayoutBottomBars = Color("black")
-        self.gridLayout.addWidget(self.verticalLayoutBottomBars, 4, 0, 1, 2)
+        
+        self.verticalLayoutBottomBars = QtWidgets.QVBoxLayout()
+        self.verticalLayoutBottomBars.setObjectName("verticalLayoutBottomBars")
+        self.horizontalLayoutCommandLine = QtWidgets.QHBoxLayout()
+        self.horizontalLayoutCommandLine.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
+        self.horizontalLayoutCommandLine.setObjectName("horizontalLayoutCommandLine")
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.MinimumExpanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayoutCommandLine.addItem(spacerItem)
+        self.labelPath = QtWidgets.QLabel(self.centralWidget)
+        self.labelPath.setObjectName("labelPath")
+        self.labelPath.setText("C:")
+        self.horizontalLayoutCommandLine.addWidget(self.labelPath)
+        self.comboBoxPath = QtWidgets.QComboBox(self.centralWidget)
+        self.comboBoxPath.setEditable(True)
+        self.comboBoxPath.setObjectName("comboBoxPath")
+        self.horizontalLayoutCommandLine.addWidget(self.comboBoxPath)
+        self.verticalLayoutBottomBars.addLayout(self.horizontalLayoutCommandLine)
+        
+        self.horizontalLayoutFunctionKeyButtonBar = QtWidgets.QHBoxLayout()
+        self.horizontalLayoutFunctionKeyButtonBar.setSizeConstraint(QtWidgets.QLayout.SetFixedSize)
+        self.horizontalLayoutFunctionKeyButtonBar.setObjectName("horizontalLayoutFunctionKeyButtonBar")
+        
+        self.pushButtonView = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButtonView.setText("View F3")
+        self.pushButtonView.setFlat(True)
+        self.pushButtonView.setObjectName("pushButtonView")        
+        self.horizontalLayoutFunctionKeyButtonBar.addWidget(self.pushButtonView)
+        
+        self.pushButtonEdit = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButtonEdit.setText("Edit F4")
+        self.pushButtonEdit.setFlat(True)
+        self.pushButtonEdit.setObjectName("pushButtonEdit")        
+        self.horizontalLayoutFunctionKeyButtonBar.addWidget(self.pushButtonEdit)
+        
+        self.pushButtonCopy = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButtonCopy.setText("Copy F5")
+        self.pushButtonCopy.setFlat(True)
+        self.pushButtonCopy.setObjectName("pushButtonCopy")        
+        self.horizontalLayoutFunctionKeyButtonBar.addWidget(self.pushButtonCopy)
+        
+        self.pushButtonMove = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButtonMove.setText("Move F6")
+        self.pushButtonMove.setFlat(True)
+        self.pushButtonMove.setObjectName("pushButtonMove")        
+        self.horizontalLayoutFunctionKeyButtonBar.addWidget(self.pushButtonMove)
+        
+        self.pushButtonDirectory = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButtonDirectory.setText("Directory F7")
+        self.pushButtonDirectory.setFlat(True)
+        self.pushButtonDirectory.setObjectName("pushButtonDirectory")        
+        self.horizontalLayoutFunctionKeyButtonBar.addWidget(self.pushButtonDirectory)
+        
+        self.pushButtonDelete = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButtonDelete.setText("Delete F8")
+        self.pushButtonDelete.setFlat(True)
+        self.pushButtonDelete.setObjectName("pushButtonDelete")
+        self.horizontalLayoutFunctionKeyButtonBar.addWidget(self.pushButtonDelete)
+        
+        self.pushButtonTerminal = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButtonTerminal.setText("Terminal F9")
+        self.pushButtonTerminal.setFlat(True)
+        self.pushButtonTerminal.setObjectName("pushButtonTerminal")        
+        self.horizontalLayoutFunctionKeyButtonBar.addWidget(self.pushButtonTerminal)
+        
+        self.pushButtonExit = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButtonExit.setText("Exit Alt+X")
+        self.pushButtonExit.setFlat(True)
+        self.pushButtonExit.setObjectName("pushButtonExit")        
+        self.horizontalLayoutFunctionKeyButtonBar.addWidget(self.pushButtonExit)
+        
+        self.verticalLayoutBottomBars.addLayout(self.horizontalLayoutFunctionKeyButtonBar)
+        self.gridLayout.addLayout(self.verticalLayoutBottomBars, 4, 0, 1, 2)
+        #self.gridLayout.addWidget(self.verticalLayoutBottomBars, 4, 0, 1, 2)
+        
         self.gridLayout.setRowMinimumHeight(0, 32)
         self.gridLayout.setRowMinimumHeight(2, 32)
         self.gridLayout.setRowMinimumHeight(4, 64)
