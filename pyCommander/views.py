@@ -18,7 +18,7 @@ w_base = 800
 h_base = 600
 
 
-#stub class
+# stub class
 class Color(QtWidgets.QWidget):
 
     def __init__(self, color, parent=None):
@@ -43,14 +43,13 @@ class HorizontalLine(QtWidgets.QWidget):
         self.line.setObjectName(self.objectName)
 
 
-
 class ComboBoxDrives(QtWidgets.QComboBox):
-    def __init__(self, objectName="comboBoxDrives", parent = None):
-        super().__init__(parent = parent)
-        self.objectName = objectName        
+    def __init__(self, objectName="comboBoxDrives", parent=None):
+        super().__init__(parent=parent)
+        self.objectName = objectName
         self._initComboBoxDrives()
 
-    def _initComboBoxDrives(self):        
+    def _initComboBoxDrives(self):
         self.setObjectName("comboBoxDrives")
         self.drives_dict = {"C:\\": "fixed"}
         path_abs = os.path.dirname(__file__)
@@ -67,8 +66,6 @@ class ComboBoxDrives(QtWidgets.QComboBox):
             text = "VFS"
             self.addItem(iname, "")
             self.setItemText(i, text)
-
-
 
 
 class DriveButton(QtWidgets.QPushButton):
@@ -119,13 +116,13 @@ class DriveButton(QtWidgets.QPushButton):
 
 
 class HLayout(QtWidgets.QHBoxLayout):
-    def __init__(self, leftMargin = -1, topMargin = -1,
-                 rightMargin = -1, bottomMargin = 0, layoutSpacing = 7,
-                 stretchFactorH = 0,  stretchFactorV = 0,  
-                 wmin = 48,  hmin = 32,  wmax = 48,  hmax = 32,
-                 wbase = 48, hbase = 32, wicon = 16, hicon = 16,
-                 wspacer = 40,    hspacer = 20):
-        
+    def __init__(self, leftMargin=-1, topMargin=-1,
+                 rightMargin=-1, bottomMargin=0, layoutSpacing=7,
+                 stretchFactorH=0,  stretchFactorV=0,
+                 wmin=48,  hmin=32,  wmax=48,  hmax=32,
+                 wbase=48, hbase=32, wicon=16, hicon=16,
+                 wspacer=40,    hspacer=20):
+
         super().__init__()
         self.leftMargin = leftMargin
         self.topMargin = topMargin
@@ -145,26 +142,25 @@ class HLayout(QtWidgets.QHBoxLayout):
         self.wspacer = wspacer
         self.hspacer = hspacer
         self.setSizeConstraint(QtWidgets.QLayout.SetDefaultConstraint)
-        self.setContentsMargins(leftMargin, topMargin, 
+        self.setContentsMargins(leftMargin, topMargin,
                                 rightMargin, bottomMargin)
         self.setSpacing(layoutSpacing)
-        
-        
-        
+
+
 class DrivesButtonBar:
-    
+
     def __init__(self, pwidget=None):
         self.pwidget = pwidget
-        self.layerDrivesButtonBar = HLayout(hmin = 16, hmax = 16, hbase = 16)       
+        self.layerDrivesButtonBar = HLayout(hmin=16, hmax=16, hbase=16)
         self._setButtons()
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItem = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.layerDrivesButtonBar.addItem(spacerItem)
-        
-    
-    @property    
+
+    @property
     def getLayer(self):
         return self.layerDrivesButtonBar
-    
+
     def _setButtons(self):
         path_abs = os.path.dirname(__file__)
         path_pixmap = "pixmaps/dctheme/16x16/devices"
@@ -173,97 +169,300 @@ class DrivesButtonBar:
         iname1 = os.path.join(path_full, "drive-harddisk.png")
         iname2 = os.path.join(path_full, "drive-virtual.png")
 
-        button1 = DriveButton(objectName="pushButtonDrive1",                              
-                              hmin=16, hmax=16, hbase=16, 
-                              text="C",  path=path_full, iconName=iname1, 
-                              parent = self.pwidget)
-        
-        button2 = DriveButton(objectName="pushButtonDrive2", 
+        button1 = DriveButton(objectName="pushButtonDrive1",
+                              hmin=16, hmax=16, hbase=16,
+                              text="C",  path=path_full, iconName=iname1,
+                              parent=self.pwidget)
+
+        button2 = DriveButton(objectName="pushButtonDrive2",
                                 hmin=16, hmax=16, hbase=16,
-                                text="//",  path=path_full, iconName=iname2, 
-                                parent = self.pwidget)
+                                text="//",  path=path_full, iconName=iname2,
+                                parent=self.pwidget)
 
         self.layerDrivesButtonBar.addWidget(button1)
         self.layerDrivesButtonBar.addWidget(button2)
 
 
 class DrivesListBar:
-    
-    
+
     def __init__(self, pwidget=None):
         self.pwidget = pwidget
-        self.layerDrivesListBar = HLayout() 
+        self.layerDrivesListBar = HLayout()
         self._setComboBox()
-        spacerItemCBox = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItemCBox = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.layerDrivesListBar.addItem(spacerItemCBox)
         self._setLabel()
-        spacerItemButtons = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        spacerItemButtons = QtWidgets.QSpacerItem(
+            40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.layerDrivesListBar.addItem(spacerItemButtons)
         self._setButtons()
-      
-    @property    
+
+    @property
     def getLayer(self):
         return self.layerDrivesListBar
-    
+
     def _setComboBox(self):
-       cbox_drv = ComboBoxDrives(parent = self.pwidget)
+       cbox_drv = ComboBoxDrives(parent=self.pwidget)
        self.layerDrivesListBar.addWidget(cbox_drv)
-       
-    def _setLabel(self):        
+
+    def _setLabel(self):
         labelDiskVolumeSize = QtWidgets.QLabel(self.pwidget)
         labelDiskVolumeSize.setObjectName("labelLeftDiskVolumeSize")
         labelDiskVolumeSize.setText("396Gb")
         self.layerDrivesListBar.addWidget(labelDiskVolumeSize)
-    
+
     def _setButtons(self):
-        self.pushButtonDirectoryHotlist = DriveButton (
+        self.pushButtonDirectoryHotlist = DriveButton(
             objectName="pushButtonDirectoryHotlist", stretchFactorH=0,
                          stretchFactorV=0,  wmin=16, hmin=16, wmax=16,
                          hmax=16, wbase=16,  hbase=16,  wicon=16,  hicon=16,
                          flat=True, text="*",  parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonDirectoryHotlist)
-        
-        self.pushButtonGotoRootDirectory = DriveButton (
+
+        self.pushButtonGotoRootDirectory = DriveButton(
             objectName="pushButtonGotoRootDirectory", stretchFactorH=0,
                          stretchFactorV=0,  wmin=16, hmin=16, wmax=16,
                          hmax=16, wbase=16,  hbase=16,  wicon=16,  hicon=16,
                          flat=True, text="\\", parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonGotoRootDirectory)
-        
-        self.pushButtonGotoParentDirectory = DriveButton (
+
+        self.pushButtonGotoParentDirectory = DriveButton(
             objectName="pushButtonGotoParentDirectory", stretchFactorH=0,
                          stretchFactorV=0,  wmin=16, hmin=16, wmax=16,
                          hmax=16, wbase=16,  hbase=16,  wicon=16,  hicon=16,
                          flat=True, text="..", parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonGotoParentDirectory)
-        
-        self.pushButtonGotoHomeDirectory = DriveButton (
+
+        self.pushButtonGotoHomeDirectory = DriveButton(
             objectName="pushButtonGotoHomeDirectory", stretchFactorH=0,
                          stretchFactorV=0,  wmin=16, hmin=16, wmax=16,
                          hmax=16, wbase=16,  hbase=16,  wicon=16,  hicon=16,
                          flat=True, text="~", parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonGotoHomeDirectory)
-        
-        self.pushButtonRightLeftPanel = DriveButton (
+
+        self.pushButtonRightLeftPanel = DriveButton(
             objectName="pushButtonGotoRightLeftPanel", stretchFactorH=0,
                          stretchFactorV=0,  wmin=16, hmin=16, wmax=16,
                          hmax=16, wbase=16,  hbase=16,  wicon=16,  hicon=16,
                          flat=True, text="<", parent=self.pwidget)
         self.layerDrivesListBar.addWidget(
             self.pushButtonRightLeftPanel)
-        
-   
+
+
+from PyQt5.QtCore import Qt, QPoint
+from PyQt5.QtWidgets import QTabWidget, QAction, QMenu
+
+
+class TabWidget(QTabWidget):
+    def __init__(self):
+        super().__init__()
+        self.__context_menu_p = 0
+        self.__initLastRemovedTabInfo()
+        self.__initUi()
+
+    def __initLastRemovedTabInfo(self):
+        self.__last_removed_tab_idx = []
+        self.__last_removed_tab_widget = []
+        self.__last_removed_tab_title = []
+
+    def __initUi(self):
+        self.setContextMenuPolicy(Qt.CustomContextMenu)
+        self.customContextMenuRequested.connect(self.__prepareMenu)
+        self.setTabsClosable(True)
+        self.tabCloseRequested.connect(self.removeTab)
+
+    def __prepareMenu(self, p):
+        tab_idx = self.tabBar().tabAt(p)
+        if tab_idx != -1:
+            self.__context_menu_p = p
+            
+            newTabAction = QAction('New Tab')
+            newTabAction.setShortcut("Ctrl+T")
+            newTabAction.setStatusTip("")
+            newTabAction.triggered.connect(self.newTab)
+            
+            renameTabAction = QAction('Rename Tab')
+            renameTabAction.setShortcut("")
+            renameTabAction.setStatusTip("")
+            renameTabAction.triggered.connect(self.renameTab)
+            
+            openFolderInNewTabAction = QAction('Open Folder in a New Tab')
+            openFolderInNewTabAction.setShortcut("Ctrl+Up")
+            openFolderInNewTabAction.setStatusTip("")
+            openFolderInNewTabAction.triggered.connect(self.openFolderInNewTab)
+            
+            closeTabAction = QAction('Close Tab')
+            closeTabAction.setShortcut("Ctrl+W")
+            closeTabAction.setStatusTip("")
+            closeTabAction.triggered.connect(self.closeTab)
+            
+            closeAllTabsAction = QAction('Close All Tabs')
+            closeAllTabsAction.setShortcut("")
+            closeAllTabsAction.setStatusTip("")
+            closeAllTabsAction.triggered.connect(self.closeAllTabs)
+            
+            closeDuplicatedTabsAction = QAction('Close Duplicated Tabs')
+            closeDuplicatedTabsAction.setShortcut("")
+            closeDuplicatedTabsAction.setStatusTip("")
+            closeDuplicatedTabsAction.triggered.connect(self.closeDuplicatedTabs)
+            
+            #Tab Options
+            
+            
+            
+            
+            switchToNextTabAction = QAction('Switch To Next Tab')
+            switchToNextTabAction.setShortcut("Ctrl+Tab")
+            switchToNextTabAction.setStatusTip("")
+            switchToNextTabAction.triggered.connect(self.switchToNextTab)
+            
+            switchToPreviousTabAction = QAction('Switch To Previous Tab')
+            switchToPreviousTabAction.setShortcut("Ctrl+Shift+Tab")
+            switchToPreviousTabAction.setStatusTip("")
+            switchToPreviousTabAction.triggered.connect(self.switchToPreviousTab)
+            
+            saveTabsToFileAction = QAction('Save Tabs To File')
+            saveTabsToFileAction.setShortcut("")
+            saveTabsToFileAction.setStatusTip("")
+            saveTabsToFileAction.triggered.connect(self.saveTabsToFile)
+            
+            saveCurrentTabsToNewFavoriteTabsAction = QAction('Save current tabs to a New Favorite Tabs')
+            saveCurrentTabsToNewFavoriteTabsAction.setShortcut("")
+            saveCurrentTabsToNewFavoriteTabsAction.setStatusTip("")
+            saveCurrentTabsToNewFavoriteTabsAction.triggered.connect(self.saveCurrentTabsToNewFavoriteTabs)
+            
+            loadTabsFromFavoriteTabsAction = QAction('Load tabs from Favorite Tabs')
+            loadTabsFromFavoriteTabsAction.setShortcut("")
+            loadTabsFromFavoriteTabsAction.setStatusTip("")
+            loadTabsFromFavoriteTabsAction.triggered.connect(self.loadTabsFromFavoriteTabs)
+            
+            configOfFolderTabsAction = QAction('Configuration of folder tabs')
+            configOfFolderTabsAction.setShortcut("")
+            configOfFolderTabsAction.setStatusTip("")
+            configOfFolderTabsAction.triggered.connect(self.configOfFolderTabs)
+            
+            configOfFavoriteTabsAction = QAction('Configuration of Favorite Tabs')
+            configOfFavoriteTabsAction.setShortcut("")
+            configOfFavoriteTabsAction.setStatusTip("")
+            configOfFavoriteTabsAction.triggered.connect(self.configOfFavoriteTabs)
+            
+            menu = QMenu(self)            
+            menu.addAction(newTabAction)
+            menu.addAction(closeTabAction)
+            menu.addAction(closeAllTabAction)
+            menu.addAction(closeOtherTabAction)
+            menu.addAction(closeTabToTheLeftAction)
+            menu.addAction(closeTabToTheRightAction)
+            menu.addAction(reopenClosedTabAction)
+            menu.exec(self.mapToGlobal(p))
+            
+ '''           
+            ###########################
+            closeTabAction = QAction('Close Tab')
+            closeTabAction.triggered.connect(self.closeTab)
+
+            closeAllTabAction = QAction('Close All Tabs')
+            closeAllTabAction.triggered.connect(self.closeAllTab)
+
+            closeOtherTabAction = QAction('Close Other Tabs')
+            closeOtherTabAction.triggered.connect(self.closeOtherTab)
+
+            closeTabToTheLeftAction = QAction('Close Tabs to the Left')
+            closeTabToTheLeftAction.triggered.connect(self.closeTabToLeft)
+
+            closeTabToTheRightAction = QAction('Close Tabs to the Right')
+            closeTabToTheRightAction.triggered.connect(self.closeTabToRight)
+
+            reopenClosedTabAction = QAction('Reopen Closed Tab')
+            reopenClosedTabAction.triggered.connect(self.reopenClosedTab)
+
+            menu = QMenu(self)
+            menu.addAction(closeTabAction)
+            menu.addAction(closeAllTabAction)
+            menu.addAction(closeOtherTabAction)
+            menu.addAction(closeTabToTheLeftAction)
+            menu.addAction(closeTabToTheRightAction)
+            menu.addAction(reopenClosedTabAction)
+            menu.exec(self.mapToGlobal(p))
+
+    def removeTab(self, idx):
+        self.__saveLastRemovedTabInfo(idx)
+        return super(TabWidget, self).removeTab(idx)
+
+    def __saveLastRemovedTabInfo(self, idx):
+        self.__last_removed_tab_idx.append(idx)
+        self.__last_removed_tab_widget.append(self.widget(idx))
+        self.__last_removed_tab_title.append(self.tabText(idx))
+
+    def keyPressEvent(self, e):
+        if e.modifiers() & Qt.AltModifier and e.key() == Qt.Key_Left:
+            self.setCurrentIndex(self.currentIndex()-1)
+        elif e.modifiers() & Qt.AltModifier and e.key() == Qt.Key_Right:
+            self.setCurrentIndex(self.currentIndex()+1)
+        elif e.modifiers() & Qt.ControlModifier and e.key() == Qt.Key_F4:
+            self.closeTab()
+        return super().keyPressEvent(e)
+
+    #!!!!
+    def closeTab(self):
+        if isinstance(self.__context_menu_p, QPoint):
+            tab_idx = self.tabBar().tabAt(self.__context_menu_p)
+            self.removeTab(tab_idx)
+            self.__context_menu_p = 0
+        else:
+            self.removeTab(self.currentIndex())
+
+    def closeAllTab(self):
+        self.clear()
+
+    def closeOtherTab(self):
+        if isinstance(self.__context_menu_p, QPoint):
+            tab_idx = self.tabBar().tabAt(self.__context_menu_p)
+            self.__removeTabFromLeftTo(tab_idx)
+            tab_idx = 0
+            self.setCurrentIndex(tab_idx)
+            self.__removeTabFromRightTo(tab_idx)
+
+    def closeTabToLeft(self):
+        if isinstance(self.__context_menu_p, QPoint):
+            tab_idx = self.tabBar().tabAt(self.__context_menu_p)
+            self.__removeTabFromLeftTo(tab_idx)
+
+    def __removeTabFromLeftTo(self, idx):
+        for i in range(idx - 1, -1, -1):
+            self.removeTab(i)
+
+    def __removeTabFromRightTo(self, idx):
+        for i in range(self.count()-1, idx, -1):
+            self.removeTab(i)
+
+    def closeTabToRight(self):
+        if isinstance(self.__context_menu_p, QPoint):
+            tab_idx = self.tabBar().tabAt(self.__context_menu_p)
+            self.__removeTabFromRightTo(tab_idx)
+
+    def reopenClosedTab(self):
+        # todo enable/disable action dynamically by existence of closed tab
+        if len(self.__last_removed_tab_idx) > 0:
+            for i in range(len(self.__last_removed_tab_idx)-1, -1, -1):
+                self.insertTab(self.__last_removed_tab_idx[i],
+                               self.__last_removed_tab_widget[i],
+                               self.__last_removed_tab_title[i])
+            self.setCurrentIndex(self.__last_removed_tab_idx[-1])
+            self.__initLastRemovedTabInfo()
+'''
       
     
 class FileSystemTab: 
     
     
     def __init__(self, parent):
-        #self.pwidget = pwidget
+        # self.pwidget = pwidget
         self.tabWidgetPanel = QtWidgets.QTabWidget(parent = parent)
         self.tabWidgetPanel.setMouseTracking(True)
         self.tabWidgetPanel.setAcceptDrops(True)
@@ -285,7 +484,7 @@ class FileSystemTab:
         self.tree.setIndentation(20)
         self.tree.setSortingEnabled(True)
         self.tree.setMouseTracking(True)
-        #self.treeWidgetFilePanel = FileSystemView()
+        # self.treeWidgetFilePanel = FileSystemView()
         self.verticalLayout.addWidget(self.labelTabCurrentDirectoryBar)
         self.verticalLayout.addWidget(self.tree)
         self.tab1.setLayout(self.verticalLayout)
@@ -333,8 +532,8 @@ class Window(QtWidgets.QMainWindow):
         self.splitter = QtWidgets.QSplitter(self.centralWidget)
         self.splitter.setOrientation(QtCore.Qt.Horizontal)
         self.splitter.setObjectName("splitter")
-        #self.tabWidgetLeftPanel = Color("magenta", self.splitter)
-        #self.tabWidgetRightPanel = Color("cyan", self.splitter)
+        # self.tabWidgetLeftPanel = Color("magenta", self.splitter)
+        # self.tabWidgetRightPanel = Color("cyan", self.splitter)
         
         self.tabWidgetLeftPanel = FileSystemTab(parent = self.splitter)
         self.tabWidgetRightPanel = FileSystemTab(parent = self.splitter)
@@ -412,7 +611,7 @@ class Window(QtWidgets.QMainWindow):
         
         self.verticalLayoutBottomBars.addLayout(self.horizontalLayoutFunctionKeyButtonBar)
         self.gridLayout.addLayout(self.verticalLayoutBottomBars, 4, 0, 1, 2)
-        #self.gridLayout.addWidget(self.verticalLayoutBottomBars, 4, 0, 1, 2)
+        # self.gridLayout.addWidget(self.verticalLayoutBottomBars, 4, 0, 1, 2)
         
         self.gridLayout.setRowMinimumHeight(0, 32)
         self.gridLayout.setRowMinimumHeight(2, 32)
